@@ -25,20 +25,21 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav">
-        <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#services" onclick="toggleMenu()">Services</a>
-        <a href="#case-law" onclick="toggleMenu()">Case Law</a>
-        <a href="#reviews" onclick="toggleMenu()">Reviews</a>
-        <a href="#rtm" onclick="toggleMenu()">RTM</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#case-law">Case Law</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#rtm">RTM</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<!-- Floating Contact Button -->
 <a href="#contact" class="floating-contact-btn">Contact Us</a>
 
+<!-- HERO SLIDESHOW -->
 <section class="hero fade-in">
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
         <h1>Bergason Property Services Limited</h1>
         <p>Specialists in Residential Block Management, RTM, and Leasehold Support</p>
@@ -55,13 +56,12 @@
 
     <div class="content-box">
         <p>
-            Bergason Property Services Limited is a premier independent property management firm dedicated to the
-            seamless administration of residential blocks across the UK.
+            Bergason Property Services Limited is a premier independent property management firm dedicated
+            to the seamless administration of residential blocks across the UK.
         </p>
         <p>
-            With decades of collective experience, we bridge the gap between complex property law and practical,
-            everyday estate management. We pride ourselves on transparency, integrity, and a proactive approach to
-            building maintenance and leaseholder relations.
+            With decades of collective experience, we bridge the gap between complex property law and
+            practical estate management with transparency and integrity.
         </p>
     </div>
 
@@ -69,11 +69,11 @@
 
     <div class="content-box">
         <ul class="bullet-list">
-            <li>Service Charges: Transparent budgeting and certification.</li>
-            <li>Section 20: Statutory consultation management.</li>
-            <li>Buildings Insurance: Reinstatement valuations and claims.</li>
-            <li>Fire Safety: Fire Safety Act 2021 compliance.</li>
-            <li>RTM Support: Right to Manage process guidance.</li>
+            <li>Service Charges: Transparent budgeting & certification.</li>
+            <li>Section 20 statutory consultation.</li>
+            <li>Buildings Insurance: Reinstatement valuations & claims.</li>
+            <li>Fire Safety Act 2021 Compliance.</li>
+            <li>Right to Manage support.</li>
         </ul>
     </div>
 </section>
@@ -86,58 +86,57 @@
         <div class="item">
             <button class="title">Full Block Management</button>
             <div class="content">
-                Complete day-to-day management including site inspections, ground rent collection,
-                cleaner/gardener supervision, and 24/7 emergency support.
+                Complete day-to-day management including inspections, arrears, contractors, FRA compliance,
+                insurance and budgeting.
             </div>
         </div>
 
         <div class="item">
             <button class="title">RTM Company Set-Up</button>
             <div class="content">
-                Full formation and statutory notice process for Right to Manage companies.
+                Full RTM formation service under the Commonhold & Leasehold Reform Act 2002.
             </div>
         </div>
 
         <div class="item">
             <button class="title">Budgeting & Accounting</button>
             <div class="content">
-                Accurate service charge budgeting, arrears recovery and certified year-end accounts
-                under RICS and ICAEW regulation.
+                Certified year-end accounts, audits, arrears management and budget forecasting.
             </div>
         </div>
 
         <div class="item">
             <button class="title">Contractor Management</button>
             <div class="content">
-                Vetting, tendering, supervision and insurance verification for all contractors.
+                Approved contractor vetting, procurement, tendering & supervision.
             </div>
         </div>
 
         <div class="item">
             <button class="title">Section 20 Compliance</button>
             <div class="content">
-                Managing the full statutory consultation process for qualifying works exceeding £250.
+                Full statutory 3-stage consultation for qualifying works & long-term agreements.
             </div>
         </div>
 
         <div class="item">
             <button class="title">Building Safety Compliance</button>
             <div class="content">
-                Comprehensive safety compliance including FRAs, EICRs, asbestos monitoring and H&S.
+                FRA, EICR, asbestos management & regulatory inspections.
             </div>
         </div>
 
         <div class="item">
             <button class="title">Major Works Supervision</button>
             <div class="content">
-                Management of large-scale refurbishment projects to ensure cost and quality control.
+                Tender evaluation, project oversight & quality assurance.
             </div>
         </div>
 
         <div class="item">
             <button class="title">Resident Communication</button>
             <div class="content">
-                Online portal for issue reporting, updates, downloads and document access.
+                Online portal with documents, updates, notifications & reporting.
             </div>
         </div>
 
@@ -146,7 +145,7 @@
 
 <section id="case-law" class="section light fade-in">
     <h2>Key Case Law</h2>
-    <p class="subtitle">Legal precedents shaping modern block management.</p>
+    <p class="subtitle">Legal precedents defining modern block management.</p>
 
     <div class="case-grid">
         <div class="case-card" onclick="openModal('garside')">
@@ -172,64 +171,53 @@
 </section>
 
 <!-- CASE LAW MODALS -->
-<div id="garside" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('garside')">&times;</span>
-        <h2>Garside v RFYC (2011)</h2>
-        <ul>
-            <li>Reasonableness includes financial impact.</li>
-            <li>Phasing may be required for affordability.</li>
-            <li>Urgent repairs override cost concerns.</li>
-        </ul>
-    </div>
-</div>
+<div id="garside" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('garside')">&times;</span>
+    <h2>Garside v RFYC (2011)</h2>
+    <ul>
+        <li>“Reasonably incurred” includes financial impact.</li>
+        <li>Phasing works may be required.</li>
+        <li>Urgent repairs override affordability.</li>
+    </ul>
+</div></div>
 
-<div id="waaler" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('waaler')">&times;</span>
-        <h2>Waaler v LB Hounslow (2017)</h2>
-        <ul>
-            <li>Repairs vs improvements distinction.</li>
-            <li>Financial hardship must be considered.</li>
-            <li>Consultation must be meaningful.</li>
-        </ul>
-    </div>
-</div>
+<div id="waaler" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('waaler')">&times;</span>
+    <h2>Waaler v LB Hounslow (2017)</h2>
+    <ul>
+        <li>Repairs vs improvements distinction.</li>
+        <li>Financial hardship must be considered.</li>
+        <li>Consultation must be meaningful.</li>
+    </ul>
+</div></div>
 
-<div id="holland" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('holland')">&times;</span>
-        <h2>Holland v Oxford CC (2002)</h2>
-        <ul>
-            <li>Leaseholders entitled to original invoices.</li>
-            <li>Reinforced inspection rights under LTA 1985.</li>
-        </ul>
-    </div>
-</div>
+<div id="holland" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('holland')">&times;</span>
+    <h2>Holland v Oxford CC (2002)</h2>
+    <ul>
+        <li>Leaseholders entitled to see underlying invoices.</li>
+        <li>Strengthened rights under LTA 1985.</li>
+    </ul>
+</div></div>
 
-<div id="francis" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('francis')">&times;</span>
-        <h2>Francis v Phillips (2014)</h2>
-        <ul>
-            <li>Cannot split works to avoid consultation.</li>
-            <li>Total cost must be considered.</li>
-        </ul>
-    </div>
-</div>
+<div id="francis" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('francis')">&times;</span>
+    <h2>Francis v Phillips (2014)</h2>
+    <ul>
+        <li>Cannot split works to avoid Section 20.</li>
+        <li>Total cost must be considered.</li>
+    </ul>
+</div></div>
 
-<div id="arnold" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('arnold')">&times;</span>
-        <h2>Arnold v Britton (2015)</h2>
-        <ul>
-            <li>Clear lease wording prevails.</li>
-            <li>Fairness does not override contract terms.</li>
-        </ul>
-    </div>
-</div>
+<div id="arnold" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('arnold')">&times;</span>
+    <h2>Arnold v Britton (2015)</h2>
+    <ul>
+        <li>Clear lease wording prevails.</li>
+        <li>Fairness does not override contract text.</li>
+    </ul>
+</div></div>
 
-<!-- REVIEWS SECTION WITH REAL REVIEWS -->
 <section id="reviews" class="section dark fade-in">
     <h2>Client Reviews</h2>
 
@@ -239,17 +227,12 @@
             <h3>Sasha Brookes</h3>
             <p class="review-date">6/8/2023</p>
             <div class="stars">★★★★★</div>
-
             <p>
-                Bergason, a leading rental property management company, has been an exceptional partner 
-                in my journey from landlord to successful multi-property investor. Their unwavering 
-                professionalism, expertise, and outstanding customer service have significantly eased the 
-                burden of managing multiple properties.
+                Bergason has been exceptional in supporting my journey from landlord to multi-property investor.
+                Professional, proactive and reliable.
             </p>
-
             <p>
-                Their tenant screening process ensures reliable occupants, while their proactive maintenance 
-                and technology maximize rental income and overall investment returns. Highly recommended.
+                Their screening and maintenance maximise returns. Highly recommended.
             </p>
         </div>
 
@@ -257,10 +240,8 @@
             <h3>Benjamin Anderson</h3>
             <p class="review-date">6/8/2023</p>
             <div class="stars">★★★★★</div>
-
             <p>
-                Transitioning to Bergason was a breeze! Their professional approach made the process smooth 
-                and their exceptional service has transformed our community. Highly recommended.
+                Transitioning to Bergason was effortless. Their professionalism transformed our community.
             </p>
         </div>
 
@@ -268,11 +249,8 @@
             <h3>Lynne Hinsley</h3>
             <p class="review-date">16/8/2024</p>
             <div class="stars">★★★★★</div>
-
             <p>
-                I wanted an independent management company away from umbrella firms where you lose the 
-                personal touch. Bergason delivered exactly that. It is refreshing dealing directly with a 
-                family-owned business. Extremely professional and tailor-made service. Wonderful!
+                A refreshing family-owned business providing a tailored, personal service. Wonderful.
             </p>
         </div>
 
@@ -280,16 +258,8 @@
             <h3>Natalie</h3>
             <p class="review-date">9/6/2025</p>
             <div class="stars">★★★★★</div>
-
             <p>
-                We’ve been using Bergason’s block management services for over a year now and the 
-                difference has been outstanding. Communication is clear, maintenance is prompt, and their 
-                proactive approach keeps us compliant and on budget.
-            </p>
-
-            <p>
-                The team genuinely cares about our property. A refreshing company that does exactly what 
-                they promise. Highly recommended.
+                Outstanding communication and proactive compliance. They deliver exactly what they promise.
             </p>
         </div>
 
@@ -302,23 +272,23 @@
     <div class="content-box">
         <h3>The RTM Process</h3>
         <ul class="bullet-list">
-            <li>Assess eligibility (50% participation).</li>
-            <li>Form RTM Company.</li>
-            <li>Participation Notices.</li>
-            <li>Claim Notice to freeholder.</li>
-            <li>Acquisition & handover.</li>
+            <li>Eligibility review.</li>
+            <li>RTM company setup.</li>
+            <li>Participation notices.</li>
+            <li>Claim notice to freeholder.</li>
+            <li>Acquisition date handover.</li>
         </ul>
     </div>
 
     <div class="content-box">
-        <h3>What Bergason Does</h3>
-        <p>We act as RTM Company Secretary and Managing Agent, ensuring a smooth legal and administrative process.</p>
+        <h3>What We Do</h3>
+        <p>Full legal process, notices, compliance and professional management handover.</p>
 
         <h3>Benefits</h3>
         <ul class="bullet-list">
-            <li>Control over budgets.</li>
+            <li>Control of budgets.</li>
             <li>Choice of contractors.</li>
-            <li>Direct accountability.</li>
+            <li>Accountability to residents.</li>
         </ul>
     </div>
 </section>
@@ -346,7 +316,7 @@
         Tel: 0121 384 1333<br>
         Email: info@bergason.co.uk<br><br>
 
-        <strong>Company Number:</strong> (as registered)<br><br>
+        <strong>Company Number:</strong> 11329473<br><br>
 
         <strong>Redress Scheme:</strong> The Property Ombudsman (T02686)<br>
         <strong>Client Money Protection:</strong> UKALA (190119)<br>
@@ -355,8 +325,48 @@
 </section>
 
 <footer>
-    © 2023 Bergason Property Services Limited. All Rights Reserved.
+    <div class="footer-links">
+        <span onclick="openModal('legal')">Legal</span> •
+        <span onclick="openModal('privacy')">Privacy Policy</span> •
+        <span onclick="openModal('terms')">Terms & Conditions</span> •
+        <span onclick="openModal('cookies')">Cookie Policy</span> •
+        <span onclick="openModal('aup')">Acceptable Use</span>
+    </div>
+
+    <br>
+    © 2025 Bergason Property Services Limited. All Rights Reserved.
 </footer>
+
+<!-- LEGAL MODALS -->
+<div id="legal" class="modal"><div class="modal-content legal-scroll">
+    <span class="close" onclick="closeModal('legal')">&times;</span>
+    <h2>Legal Notice</h2>
+    <p>This section contains legal information regarding Bergason Property Services Limited.</p>
+</div></div>
+
+<div id="privacy" class="modal"><div class="modal-content legal-scroll">
+    <span class="close" onclick="closeModal('privacy')">&times;</span>
+    <h2>Privacy Policy</h2>
+    <p>Your privacy policy content goes here.</p>
+</div></div>
+
+<div id="terms" class="modal"><div class="modal-content legal-scroll">
+    <span class="close" onclick="closeModal('terms')">&times;</span>
+    <h2>Terms & Conditions</h2>
+    <p>Your terms and conditions content goes here.</p>
+</div></div>
+
+<div id="cookies" class="modal"><div class="modal-content legal-scroll">
+    <span class="close" onclick="closeModal('cookies')">&times;</span>
+    <h2>Cookie Policy</h2>
+    <p>Your cookie policy content goes here.</p>
+</div></div>
+
+<div id="aup" class="modal"><div class="modal-content legal-scroll">
+    <span class="close" onclick="closeModal('aup')">&times;</span>
+    <h2>Acceptable Use Policy</h2>
+    <p>Your acceptable use policy content goes here.</p>
+</div></div>
 
 <script src="script.js"></script>
 </body>
