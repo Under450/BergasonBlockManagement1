@@ -1,145 +1,110 @@
 /* ============================================================
-   MOBILE MENU TOGGLE
+   MOBILE NAVIGATION TOGGLE
 ============================================================ */
 function toggleMenu() {
     const nav = document.getElementById("mobileNav");
-    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 
-// Auto close mobile nav when clicking a link
-document.querySelectorAll(".mobile-nav a").forEach(link => {
-    link.addEventListener("click", () => {
-        document.getElementById("mobileNav").style.display = "none";
-    });
-});
-
 
 /* ============================================================
-   ACCORDION SYSTEM
+   ACCORDION FUNCTIONALITY
 ============================================================ */
-const accordionItems = document.querySelectorAll(".accordion .item");
+document.addEventListener("DOMContentLoaded", () => {
+    const accordionItems = document.querySelectorAll(".accordion .item");
 
-accordionItems.forEach(item => {
-    const title = item.querySelector(".title");
-    const content = item.querySelector(".content");
+    accordionItems.forEach(item => {
+        const title = item.querySelector(".title");
+        const content = item.querySelector(".content");
 
-    title.addEventListener("click", () => {
+        title.addEventListener("click", () => {
+            const isOpen = content.style.display === "block";
 
-        // Close all other items
-        accordionItems.forEach(otherItem => {
-            if (otherItem !== item) {
-                otherItem.querySelector(".content").style.display = "none";
-            }
+            // Close all items
+            document.querySelectorAll(".accordion .content").forEach(c => {
+                c.style.display = "none";
+            });
+
+            // Open selected
+            content.style.display = isOpen ? "none" : "block";
         });
-
-        // Toggle this item
-        content.style.display =
-            (content.style.display === "block") ? "none" : "block";
     });
 });
 
 
 /* ============================================================
-   MODAL CONTROL (CASE LAW + LEGAL PAGES)
+   MODALS (CASE LAW + LEGAL PAGES)
 ============================================================ */
 function openModal(id) {
-    const modal = document.getElementById(id);
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden"; // disable background scroll
+    document.getElementById(id).style.display = "flex";
 }
 
 function closeModal(id) {
-    const modal = document.getElementById(id);
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // enable background scroll
+    document.getElementById(id).style.display = "none";
 }
 
-// Close when clicking outside modal content
-window.addEventListener("click", function(event) {
-    const modals = document.querySelectorAll(".modal");
-
-    modals.forEach(modal => {
-        if (modal.style.display === "flex") {
-            const content = modal.querySelector(".modal-content");
-
-            if (!content.contains(event.target)) {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
+// Close modal when clicking outside content
+window.addEventListener("click", function(e) {
+    document.querySelectorAll(".modal").forEach(modal => {
+        if (e.target === modal) {
+            modal.style.display = "none";
         }
     });
 });
 
 
 /* ============================================================
-   SCROLL FADE-IN
+   HERO SLIDESHOW (Faded, Block-Appropriate)
 ============================================================ */
-const fadeElements = document.querySelectorAll(".fade-in");
-
-function fadeInOnScroll() {
-    const triggerPoint = window.innerHeight * 0.85;
-
-    fadeElements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-
-        if (top < triggerPoint) {
-            el.classList.add("visible");
-        }
-    });
-}
-
-window.addEventListener("scroll", fadeInOnScroll);
-window.addEventListener("load", fadeInOnScroll);
-
-
-/* ============================================================
-   SMOOTH SCROLL FOR ANCHOR LINKS
-============================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            e.preventDefault();
-            window.scrollTo({
-                top: target.offsetTop - 70,
-                behavior: "smooth"
-            });
-        }
-    });
-});
-
-
-/* ============================================================
-   HERO SLIDESHOW (PROPERTY / BLOCK-MANAGEMENT IMAGES)
-============================================================ */
-
-/* You may replace images with your own property/block images */
 const heroImages = [
-    "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1950&q=80", /* modern apartments */
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1950&q=80", /* block hallway */
-    "https://images.unsplash.com/photo-1599422757663-a0a8d3f5f4af?auto=format&fit=crop&w=1950&q=80", /* property lobby */
-    "https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=1950&q=80"  /* building exterior */
+    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1950&q=80",
+    "https://images.unsplash.com/photo-1529429611270-2d5a65f0d4ea?auto=format&fit=crop&w=1950&q=80",
+    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1950&q=80",
+    "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1950&q=80"
 ];
 
+let currentSlide = 0;
+
+// Create slideshow elements
 const heroSection = document.querySelector(".hero");
 
-// Create slides dynamically
-heroImages.forEach((src, index) => {
-    const slide = document.createElement("div");
-    slide.classList.add("hero-slide");
-    slide.style.backgroundImage = `url('${src}')`;
-    if (index === 0) slide.classList.add("active");
-    heroSection.appendChild(slide);
+heroImages.forEach((img, index) => {
+    const div = document.createElement("div");
+    div.classList.add("hero-slide");
+    if (index === 0) div.classList.add("active");
+    div.style.backgroundImage = `url('${img}')`;
+    heroSection.appendChild(div);
 });
 
-let currentSlide = 0;
-const slides = document.querySelectorAll(".hero-slide");
+function cycleSlides() {
+    const slides = document.querySelectorAll(".hero-slide");
 
-// Rotate every 6 seconds
-setInterval(() => {
     slides[currentSlide].classList.remove("active");
-
     currentSlide = (currentSlide + 1) % slides.length;
-
     slides[currentSlide].classList.add("active");
-}, 6000);
+}
+
+setInterval(cycleSlides, 6000); // every 6 seconds
+
+
+/* ============================================================
+   FADE-IN ON SCROLL
+============================================================ */
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+    threshold: 0.3,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
