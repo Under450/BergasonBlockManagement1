@@ -1,401 +1,401 @@
-/* ================================
-   COLOURS & GLOBAL VARIABLES
-================================ */
+/* =========================================
+   GLOBAL THEME VARIABLES
+========================================= */
 :root {
-    --onyx: #353839;
-    --onyx-dark: #2d2f30;
-    --ivory: #FFFFF0;
-    --ivory-soft: #FFFDE8;
-    --gold: #D4AF37;
-    --gold-dark: #B9972F;
-    --shadow: rgba(0,0,0,0.22);
-    --shadow-strong: rgba(0,0,0,0.35);
-    --glow-gold: rgba(212,175,55,0.22);
+    --onyx: #0f0f0f;
+    --ivory: #f4f4f4;
+    --gold: #d4af37;
+    --soft-dark: #1a1a1a;
+    --light-grey: #e8e8e8;
 }
 
-/* ================================
-   RESET / GLOBAL
-================================ */
+/* Global reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: var(--ivory);
-    color: var(--onyx);
-    line-height: 1.8;
+    background: var(--onyx);
+    color: var(--ivory);
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(25px);
-    animation: fadeIn 1s ease forwards;
-}
-@keyframes fadeIn {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ================================
-   HEADER / NAVIGATION
-================================ */
+/* =========================================
+   HEADER & NAV
+========================================= */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--onyx);
-    color: var(--ivory);
+    height: 70px;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
-    z-index: 10000;
-    box-shadow: 0 2px 12px var(--shadow-strong);
+    justify-content: space-between;
+    padding: 0 28px;
+    z-index: 999;
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
     color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
 }
 
 .desktop-nav a {
-    margin-left: 26px;
-    color: var(--ivory);
+    margin-left: 24px;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    transition: 0.3s;
+    color: var(--ivory);
+    font-size: 15px;
+    transition: 0.2s;
 }
-
 .desktop-nav a:hover {
     color: var(--gold);
 }
 
-/* Mobile Nav */
 .hamburger {
-    width: 34px;
-    height: 24px;
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
     cursor: pointer;
 }
 .hamburger span {
-    height: 4px;
-    background: var(--gold);
-    border-radius: 3px;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--ivory);
+    margin: 4px 0;
 }
 
+/* MOBILE NAV */
 .mobile-nav {
     display: none;
     flex-direction: column;
-    background: var(--onyx);
-    position: absolute;
-    top: 68px;
-    left: 0;
-    width: 100%;
-    padding: 28px 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    z-index: 998;
 }
 
 .mobile-nav a {
-    padding: 14px 0;
-    color: var(--ivory);
-    text-align: center;
     text-decoration: none;
-    font-size: 18px;
+    color: var(--ivory);
+    font-size: 16px;
+    margin: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 8px;
 }
-
 .mobile-nav a:hover {
     color: var(--gold);
 }
 
+/* Show hamburger on smaller screens */
 @media (max-width: 900px) {
     .desktop-nav { display: none; }
-    .hamburger { display: flex; }
+    .hamburger { display: block; }
 }
 
-/* ================================
-   HERO SECTION
-================================ */
+/* =========================================
+   FLOATING CONTACT BUTTON
+========================================= */
+.floating-contact-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--gold);
+    color: black;
+    padding: 14px 22px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    z-index: 999;
+    transition: 0.3s;
+}
+.floating-contact-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   HERO SECTION (SLIDESHOW)
+========================================= */
 .hero {
     position: relative;
-    height: 85vh;
-    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: var(--ivory);
+    justify-content: center;
     text-align: center;
-    padding: 180px 20px 120px;
+    color: var(--ivory);
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
 }
 
 .hero-overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(4px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+    max-width: 700px;
 }
 
-.hero h1 {
+.hero-content h1 {
     font-size: 48px;
-    margin-bottom: 15px;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    margin-bottom: 14px;
+}
+.hero-content p {
+    font-size: 19px;
+    margin-bottom: 20px;
+    opacity: 0.85;
 }
 
-.hero p {
-    font-size: 22px;
-    margin-bottom: 35px;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+.hero-buttons {
+    margin-top: 20px;
+}
+.hero-buttons .btn {
+    margin: 0 10px;
 }
 
-/* ================================
+/* =========================================
    BUTTONS
-================================ */
+========================================= */
 .btn {
     display: inline-block;
-    padding: 14px 35px;
+    padding: 12px 24px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
+    font-weight: bold;
+    transition: 0.25s;
 }
 
 .btn.gold {
     background: var(--gold);
-    color: var(--onyx);
-    box-shadow: 0 4px 14px var(--shadow-strong);
+    color: black;
 }
-.btn.gold:hover { background: var(--gold-dark); }
+.btn.gold:hover {
+    background: #f1d770;
+}
 
 .btn.outline {
-    border: 2px solid var(--gold);
-    color: var(--gold);
+    border: 2px solid var(--ivory);
+    color: var(--ivory);
 }
 .btn.outline:hover {
-    background: var(--gold);
-    color: var(--onyx);
+    border-color: var(--gold);
+    color: var(--gold);
 }
 
-/* ================================
-   FLOATING CONTACT BUTTON
-================================ */
-.floating-contact-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: var(--gold);
-    color: var(--onyx);
-    padding: 14px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    box-shadow: 0 6px 18px var(--shadow-strong);
-    z-index: 9999;
-    transition: 0.25s;
-}
-
-.floating-contact-btn:hover {
-    background: var(--gold-dark);
-    transform: translateY(-4px);
-}
-
-/* ================================
-   SECTIONS
-================================ */
+/* =========================================
+   SECTION BASE STYLE
+========================================= */
 .section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 100px 20px;
+    padding: 120px 14%;
 }
 
 .section.light {
-    background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-soft) 100%);
+    background: var(--ivory);
+    color: var(--onyx);
 }
 
 .section.dark {
-    background: linear-gradient(180deg, var(--onyx) 0%, var(--onyx-dark) 100%);
+    background: var(--soft-dark);
     color: var(--ivory);
 }
 
 .section h2 {
-    font-size: 34px;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--gold);
-    position: relative;
-}
-
-.section h2::after {
-    content: "";
-    width: 85px;
-    height: 3px;
-    background: var(--gold);
-    display: block;
-    margin: 12px auto 0;
-    border-radius: 5px;
-}
-
-/* ================================
-   CONTENT BOXES
-================================ */
-.content-box {
-    background: rgba(255,255,255,0.6);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px var(--shadow);
-    backdrop-filter: blur(4px);
-    margin-bottom: 30px;
-}
-
-/* ================================
-   ACCORDION
-================================ */
-.accordion .item {
+    font-size: 36px;
     margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px var(--shadow);
-    border: 1px solid rgba(255,255,255,0.18);
+    color: var(--gold);
+}
+
+.subtitle {
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   CONTENT BOX
+========================================= */
+.content-box {
+    background: rgba(255,255,255,0.08);
+    padding: 28px;
+    border-radius: 14px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.bullet-list li {
+    margin: 8px 0;
+}
+
+/* =========================================
+   ACCORDION
+========================================= */
+.accordion .item {
+    margin-bottom: 14px;
 }
 
 .accordion .title {
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 600;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-    color: var(--onyx);
-    border: none;
-    cursor: pointer;
     width: 100%;
     text-align: left;
+    background: rgba(255,255,255,0.12);
+    padding: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--ivory);
+    font-size: 18px;
+    border-radius: 8px;
     transition: 0.3s;
 }
-
-.accordion .title:hover { background: var(--gold-dark); }
+.accordion .title:hover {
+    background: rgba(255,255,255,0.19);
+}
 
 .accordion .content {
     display: none;
-    padding: 20px;
-    background: #FBF9E6;
-    font-size: 16px;
+    padding: 14px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 0 0 8px 8px;
+    margin-top: -4px;
 }
 
-/* ================================
+/* =========================================
    CASE LAW GRID
-================================ */
+========================================= */
 .case-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 18px;
 }
 
 .case-card {
-    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-    padding: 24px;
+    background: rgba(255,255,255,0.12);
+    padding: 22px;
     border-radius: 12px;
-    color: var(--onyx);
-    box-shadow: 0 6px 18px var(--shadow-strong);
-    transition: 0.25s;
     cursor: pointer;
+    transition: 0.3s;
 }
-
 .case-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-5px);
+}
+.case-card h3 {
+    color: var(--gold);
 }
 
-/* ================================
-   MODALS
-================================ */
+/* =========================================
+   MODALS (case law + legal pages)
+========================================= */
 .modal {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
     justify-content: center;
     align-items: center;
-    z-index: 5000;
+    padding: 20px;
+    z-index: 9999;
 }
 
 .modal-content {
     background: var(--ivory);
-    padding: 35px;
+    color: var(--onyx);
+    padding: 28px;
     width: 90%;
-    max-width: 550px;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
     border-radius: 12px;
-    box-shadow: 0 6px 24px var(--shadow-strong);
-    animation: fadeIn 0.4s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.modal-content h2 {
+    margin-bottom: 16px;
 }
 
 .close {
     float: right;
-    font-size: 32px;
     cursor: pointer;
+    font-size: 24px;
+    color: var(--onyx);
+}
+.close:hover {
+    color: var(--gold);
 }
 
-/* ================================
-   REVIEW CARDS (LEVEL 4 LUXURY)
-================================ */
+/* =========================================
+   REVIEWS (Luxury Cards)
+========================================= */
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 28px;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 22px;
 }
 
 .review-lux {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.08);
     padding: 30px;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255,255,255,0.12);
     box-shadow: 0 6px 22px rgba(0,0,0,0.35);
     backdrop-filter: blur(8px);
-    transition: 0.35s ease;
+    transition: 0.3s ease;
 }
 
 .review-lux:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
 }
 
 .review-lux h3 {
     font-size: 20px;
-    color: var(--gold);
     margin-bottom: 5px;
+    color: var(--gold);
 }
 
 .review-date {
     font-size: 14px;
     opacity: 0.85;
-    margin-bottom: 12px;
-    color: var(--ivory);
-}
-
-.review-lux p {
-    font-size: 16px;
     margin-bottom: 14px;
 }
 
-/* gold stars */
 .stars {
     color: var(--gold);
     font-size: 22px;
@@ -403,47 +403,69 @@ header {
     margin-bottom: 12px;
 }
 
-/* ================================
+/* =========================================
    CONTACT FORM
-================================ */
+========================================= */
 .contact-form {
-    max-width: 500px;
-    margin: auto;
+    max-width: 550px;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
 }
 
+.contact-form label {
+    margin: 8px 0 4px;
+}
 .contact-form input,
 .contact-form textarea {
-    padding: 16px;
-    margin-bottom: 16px;
+    width: 100%;
+    padding: 12px;
     border-radius: 8px;
     border: none;
-    background: rgba(255,255,255,0.85);
-    font-size: 16px;
+    margin-bottom: 12px;
+    background: #ffffff;
+    color: black;
 }
-
 .contact-form textarea {
-    height: 120px;
+    height: 130px;
 }
 
-.contact-form button {
-    margin-top: 10px;
-}
-
-/* ================================
-   FOOTER
-================================ */
+/* Footer info */
 .footer-info {
-    margin-top: 35px;
-    text-align: center;
-    line-height: 1.6;
+    margin-top: 50px;
+    font-size: 15px;
+    opacity: 0.9;
+    line-height: 1.7;
 }
 
+/* =========================================
+   FOOTER
+========================================= */
 footer {
-    background: var(--onyx);
-    color: var(--ivory);
     text-align: center;
-    padding: 25px;
-    font-size: 15px;
+    padding: 40px;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 14px;
+}
+
+.footer-links span {
+    cursor: pointer;
+    color: var(--gold);
+}
+.footer-links span:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   SCROLL EFFECT
+========================================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
