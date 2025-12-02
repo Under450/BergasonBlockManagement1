@@ -1,23 +1,310 @@
-/* ================================
-   FLOATING CONTACT BUTTON
-================================ */
-.floating-contact-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: var(--gold);
-    color: var(--onyx);
-    padding: 14px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    z-index: 9999;
-    transition: 0.25s;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergason Property Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.floating-contact-btn:hover {
-    background: var(--gold-dark);
-    transform: translateY(-4px);
-}
+<header>
+    <div class="logo">BERGASON</div>
+
+    <nav class="desktop-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#case-law">Case Law</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#rtm">RTM</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a onclick="toggleMenu()" href="#about">About</a>
+        <a onclick="toggleMenu()" href="#services">Services</a>
+        <a onclick="toggleMenu()" href="#case-law">Case Law</a>
+        <a onclick="toggleMenu()" href="#reviews">Reviews</a>
+        <a onclick="toggleMenu()" href="#rtm">RTM</a>
+        <a onclick="toggleMenu()" href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- FLOATING CONTACT BUTTON -->
+<a href="#contact" class="floating-contact-btn">Contact Us</a>
+
+<section class="hero fade-in">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Bergason Property Services Limited</h1>
+        <p>Specialists in Residential Block Management, RTM, and Leasehold Support</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn gold">Contact Us</a>
+            <a href="#services" class="btn outline">View Services</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section light fade-in">
+    <h2>Who We Are</h2>
+
+    <div class="content-box">
+        <p>
+            Bergason Property Services Limited is a premier independent property management firm dedicated to the
+            seamless administration of residential blocks across the UK.
+        </p>
+        <p>
+            With decades of collective experience, we bridge the gap between complex property law and practical,
+            everyday estate management. We pride ourselves on transparency, integrity, and a proactive approach to
+            building maintenance and leaseholder relations.
+        </p>
+    </div>
+
+    <h3>Key Compliance Areas</h3>
+    <div class="content-box">
+        <ul class="bullet-list">
+            <li>Service Charges: Transparent budgeting and certification.</li>
+            <li>Section 20: Statutory consultation management.</li>
+            <li>Buildings Insurance: Reinstatement valuations and claims.</li>
+            <li>Fire Safety: Fire Safety Act 2021 compliance.</li>
+            <li>RTM Support: Right to Manage process guidance.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="services" class="section dark fade-in">
+    <h2>Our Services</h2>
+
+    <div class="accordion">
+
+        <div class="item">
+            <button class="title">Full Block Management</button>
+            <div class="content">
+                Complete day-to-day management including site inspections, ground rent collection,
+                cleaner/gardener supervision, and 24/7 emergency support.
+            </div>
+        </div>
+
+        <div class="item">
+            <button class="title">RTM Company Set-Up</button>
+            <div class="content">
+                Handling notices, incorporation and full takeover preparation for RTM companies.
+            </div>
+        </div>
+
+        <div class="item">
+            <button class="title">Budgeting & Accounting</button>
+            <div class="content">
+                Service charge estimation, arrears recovery, and certified accounts under RICS/ICAEW.
+            </div>
+        </div>
+
+        <div class="item">
+            <button class="title">Contractor Management</button>
+            <div class="content">
+                Approved contractor vetting, tendering, supervision and insurance verification.
+            </div>
+        </div>
+
+        <div class="item">
+            <button class="title">Section 20 Compliance</button>
+            <div class="content">
+                Managing all statutory consultation processes for qualifying works.
+            </div>
+        </div>
+
+        <div class="item">
+            <button class="title">Building Safety</button>
+            <div class="content">
+                FRAs, EICRs, asbestos surveys and ongoing compliance monitoring.
+            </div>
+        </div>
+
+        <div class="item">
+            <button class="title">Major Works Supervision</button>
+            <div class="content">
+                Managing renovation projects, quality control and cost reviews.
+            </div>
+        </div>
+
+        <div class="item">
+            <button class="title">Communication Platform</button>
+            <div class="content">
+                Online portal for updates, documents and maintenance tracking.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="case-law" class="section light fade-in">
+    <h2>Key Case Law</h2>
+    <p class="subtitle">Legal precedents shaping modern block management.</p>
+
+    <div class="case-grid">
+        <div class="case-card" onclick="openModal('garside')">
+            <h3>Garside v RFYC</h3>
+            <p>2011 — Reasonableness →</p>
+        </div>
+        <div class="case-card" onclick="openModal('waaler')">
+            <h3>Waaler v LB Hounslow</h3>
+            <p>2017 — Consultation →</p>
+        </div>
+        <div class="case-card" onclick="openModal('holland')">
+            <h3>Holland v Oxford CC</h3>
+            <p>2002 — Transparency →</p>
+        </div>
+        <div class="case-card" onclick="openModal('francis')">
+            <h3>Francis v Phillips</h3>
+            <p>2014 — Caps →</p>
+        </div>
+        <div class="case-card" onclick="openModal('arnold')">
+            <h3>Arnold v Britton</h3>
+            <p>2015 — Interpretation →</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================================
+     CASE LAW MODALS
+================================ -->
+
+<div id="garside" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('garside')">&times;</span>
+        <h2>Garside v RFYC (2011)</h2>
+        <ul>
+            <li>Reasonableness includes impact on leaseholders.</li>
+            <li>Works may need phasing.</li>
+            <li>Urgent repairs override cost arguments.</li>
+            <li>Affordability is a relevant factor.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="waaler" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('waaler')">&times;</span>
+        <h2>Waaler v LB Hounslow (2017)</h2>
+        <ul>
+            <li>Repairs vs improvements distinction.</li>
+            <li>Financial hardship must be considered.</li>
+            <li>Consultation must be meaningful.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="holland" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('holland')">&times;</span>
+        <h2>Holland v Oxford CC (2002)</h2>
+        <ul>
+            <li>Leaseholders entitled to all underlying invoices.</li>
+            <li>Reinforces inspection rights under LTA 1985.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="francis" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('francis')">&times;</span>
+        <h2>Francis v Phillips (2014)</h2>
+        <ul>
+            <li>Cannot split contracts to avoid consultation.</li>
+            <li>Works must be viewed as a whole.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="arnold" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('arnold')">&times;</span>
+        <h2>Arnold v Britton (2015)</h2>
+        <ul>
+            <li>Clear wording prevails even if harsh.</li>
+            <li>Contract interpretation overrides fairness arguments.</li>
+        </ul>
+    </div>
+</div>
+
+<section id="reviews" class="section dark fade-in">
+    <h2>Client Reviews</h2>
+
+    <div class="reviews-grid">
+        <div class="review"><div class="stars">★★★★★</div><p>"Bergason transformed our block."</p><span>- Sarah J.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Professional and responsive."</p><span>- David M.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Saved us thousands."</p><span>- James P.</span></div>
+        <div class="review"><div class="stars">★★★★☆</div><p>"Understands leasehold law."</p><span>- Emma W.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Great RTM support."</p><span>- Robert T.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Highly recommended."</p><span>- Linda K.</span></div>
+    </div>
+</section>
+
+<section id="rtm" class="section light fade-in">
+    <h2>RTM Support</h2>
+
+    <div class="content-box">
+        <h3>The RTM Process</h3>
+        <ul class="bullet-list">
+            <li>Assess eligibility (50% participation).</li>
+            <li>Form RTM company.</li>
+            <li>Serve participation notices.</li>
+            <li>Serve claim notice to freeholder.</li>
+            <li>Handover on acquisition date.</li>
+        </ul>
+    </div>
+
+    <div class="content-box">
+        <h3>What Bergason Does</h3>
+        <p>We act as RTM Company Secretary and Managing Agent, preparing notices and ensuring smooth takeover.</p>
+
+        <h3>Benefits</h3>
+        <ul class="bullet-list">
+            <li>Control over budgets.</li>
+            <li>Choice of contractors.</li>
+            <li>Direct accountability to residents.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact" class="section dark fade-in">
+    <h2>Contact Us</h2>
+
+    <form class="contact-form">
+        <label>Name</label>
+        <input type="text" placeholder="Full Name">
+
+        <label>Email</label>
+        <input type="email" placeholder="Email Address">
+
+        <label>Message</label>
+        <textarea placeholder="How can we help?"></textarea>
+
+        <button type="submit" class="btn gold">Send Message</button>
+    </form>
+
+    <p class="footer-info">
+        <strong>Bergason Property Services Limited</strong><br>
+        8a Bore Street, Lichfield, Staffordshire, WS13 6LL<br><br>
+
+        Tel: 0121 384 1333<br>
+        Email: info@bergason.co.uk<br><br>
+
+        <strong>Company Number:</strong> (as registered)<br><br>
+
+        <strong>Redress Scheme:</strong> The Property Ombudsman (T02686)<br>
+        <strong>Client Money Protection:</strong> UKALA (190119)<br>
+        <strong>Memberships:</strong> The Property Institute (formerly ARMA & IRPM)
+    </p>
+</section>
+
+<footer>
+    © 2023 Bergason Property Services Limited. All Rights Reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
