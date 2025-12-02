@@ -3,14 +3,17 @@
 ================================ */
 :root {
     --onyx: #353839;
+    --onyx-dark: #2d2f30;
     --ivory: #FFFFF0;
+    --ivory-soft: #FFFDE8;
     --gold: #D4AF37;
     --gold-dark: #C2A035;
-    --shadow: rgba(0,0,0,0.15);
+    --shadow: rgba(0,0,0,0.18);
+    --glow: rgba(212,175,55,0.25);
 }
 
 /* ================================
-   GLOBAL RESET
+   GLOBAL STYLES
 ================================ */
 * {
     margin: 0;
@@ -19,22 +22,24 @@
 }
 
 body {
-    background: var(--ivory);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--ivory);
     color: var(--onyx);
-    line-height: 1.6;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Fade-in Animation */
+/* ================================
+   FADE-IN ANIMATION
+================================ */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeIn 0.8s ease forwards;
+    animation: fadeIn 0.9s ease forwards;
 }
 @keyframes fadeIn {
     to {
@@ -55,37 +60,41 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    z-index: 9999;
-    box-shadow: 0 2px 8px var(--shadow);
+    padding: 18px 40px;
+    z-index: 10000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--gold);
+    letter-spacing: 1px;
 }
 
 .desktop-nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    font-weight: 500;
+    margin-left: 28px;
     color: var(--ivory);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
     transition: 0.3s;
 }
+
 .desktop-nav a:hover {
     color: var(--gold);
 }
 
 /* MOBILE NAV */
 .hamburger {
-    width: 32px;
-    height: 22px;
+    width: 34px;
+    height: 24px;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
 }
+
 .hamburger span {
     height: 4px;
     background: var(--gold);
@@ -97,24 +106,25 @@ header {
     flex-direction: column;
     background: var(--onyx);
     position: absolute;
-    top: 60px;
-    width: 100%;
+    top: 68px;
     left: 0;
-    padding: 20px 0;
-    text-align: center;
+    width: 100%;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
+
 .mobile-nav a {
-    padding: 12px 0;
+    padding: 14px 0;
     color: var(--ivory);
-    font-size: 18px;
     text-decoration: none;
+    font-size: 18px;
     transition: 0.3s;
 }
+
 .mobile-nav a:hover {
     color: var(--gold);
 }
 
-/* Mobile Behaviour */
 @media (max-width: 900px) {
     .desktop-nav {
         display: none;
@@ -129,56 +139,60 @@ header {
 ================================ */
 .hero {
     position: relative;
-    height: 80vh;
-    background: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    height: 85vh;
+    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 180px 20px 120px;
     color: var(--ivory);
+    padding: 200px 20px 100px;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(53,56,57,0.6);
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+    );
+    backdrop-filter: blur(3px);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 850px;
-    margin: auto;
+    z-index: 10;
+    max-width: 900px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    font-size: 48px;
+    margin-bottom: 18px;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 35px;
-}
-
-.hero-buttons .btn {
-    margin: 10px;
+    font-size: 22px;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 /* ================================
    BUTTONS
 ================================ */
 .btn {
-    padding: 12px 30px;
+    padding: 14px 35px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
+    font-size: 17px;
 }
 
 .btn.gold {
     background: var(--gold);
     color: var(--onyx);
-    box-shadow: 0 3px 6px var(--shadow);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 .btn.gold:hover {
     background: var(--gold-dark);
@@ -194,103 +208,112 @@ header {
 }
 
 /* ================================
-   SECTION LAYOUT
+   SECTION BASE
 ================================ */
 .section {
-    padding: 80px 20px;
     max-width: 1100px;
     margin: auto;
+    padding: 100px 20px;
 }
 
 .section.light {
-    background: var(--ivory);
+    background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-soft) 100%);
 }
 
 .section.dark {
-    background: var(--onyx);
+    background: linear-gradient(180deg, var(--onyx) 0%, var(--onyx-dark) 100%);
     color: var(--ivory);
 }
 
 .section h2 {
-    font-size: 32px;
-    margin-bottom: 35px;
+    font-size: 34px;
     text-align: center;
+    margin-bottom: 50px;
     color: var(--gold);
+    position: relative;
 }
 
-.section h3 {
-    margin: 20px 0 12px;
-    font-size: 22px;
-    color: var(--gold);
-}
-
-.subtitle {
-    text-align: center;
-    margin-bottom: 35px;
+.section h2::after {
+    content: "";
+    width: 85px;
+    height: 3px;
+    background: var(--gold);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 5px;
 }
 
 /* ================================
-   BULLET LIST
+   CONTENT BOXES
 ================================ */
-.bullet-list li {
-    margin-bottom: 10px;
-    padding-left: 15px;
+.content-box {
+    background: rgba(255,255,255,0.55);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px var(--shadow);
+    backdrop-filter: blur(4px);
 }
 
 /* ================================
-   ACCORDIONS
+   ACCORDION (Services)
 ================================ */
 .accordion .item {
-    margin-bottom: 18px;
-    border-radius: 6px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow);
     overflow: hidden;
-    box-shadow: 0 2px 8px var(--shadow);
+    border: 1px solid rgba(255,255,255,0.12);
 }
 
 .accordion .title {
     width: 100%;
-    text-align: left;
-    padding: 18px;
-    background: var(--gold);
-    border: none;
-    color: var(--onyx);
-    font-weight: bold;
-    cursor: pointer;
+    padding: 20px;
     font-size: 18px;
-    transition: 0.3s;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--onyx);
+    cursor: pointer;
+    transition: 0.25s;
+    border: none;
 }
+
 .accordion .title:hover {
     background: var(--gold-dark);
 }
 
 .accordion .content {
     display: none;
-    padding: 18px;
-    background: #f8f8e8;
-    border-left: 4px solid var(--gold);
+    padding: 20px;
+    background: #fbf9e8;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 /* ================================
-   CASE LAW CARDS
+   CASE LAW SECTION
 ================================ */
 .case-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
     gap: 25px;
 }
 
 .case-card {
-    background: var(--gold);
-    padding: 22px;
-    border-radius: 6px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    padding: 25px;
+    border-radius: 12px;
     color: var(--onyx);
+    box-shadow: 0 4px 14px var(--shadow);
+    border: 1px solid rgba(255,255,255,0.3);
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 2px 6px var(--shadow);
+    transition: 0.25s;
 }
+
 .case-card:hover {
-    background: var(--gold-dark);
-    transform: translateY(-3px);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
 }
 
 /* ================================
@@ -304,21 +327,20 @@ header {
     backdrop-filter: blur(4px);
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 5000;
 }
 
 .modal-content {
     background: var(--ivory);
-    padding: 30px;
+    padding: 35px;
     width: 90%;
     max-width: 550px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow);
     animation: fadeIn 0.4s ease;
 }
 
 .modal-content h2 {
-    color: var(--onyx);
     margin-bottom: 10px;
 }
 
@@ -328,13 +350,12 @@ header {
 
 .close {
     float: right;
-    cursor: pointer;
     font-size: 32px;
-    color: var(--onyx);
+    cursor: pointer;
 }
 
 /* ================================
-   REVIEW CARDS
+   REVIEWS
 ================================ */
 .reviews-grid {
     display: grid;
@@ -343,17 +364,23 @@ header {
 }
 
 .review {
-    background: rgba(255,255,255,0.1);
-    padding: 22px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(255,255,255,0.1);
-    backdrop-filter: blur(1px);
+    background: rgba(255,255,255,0.10);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    transition: 0.25s;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
 }
 
 .stars {
     color: var(--gold);
     font-size: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 /* ================================
@@ -368,10 +395,11 @@ header {
 
 .contact-form input,
 .contact-form textarea {
-    margin-bottom: 15px;
-    padding: 14px;
-    border-radius: 5px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
     border: none;
+    background: rgba(255,255,255,0.85);
     font-size: 16px;
 }
 
@@ -379,18 +407,23 @@ header {
     height: 120px;
 }
 
-.footer-info {
-    margin-top: 35px;
-    text-align: center;
+.contact-form button {
+    margin-top: 10px;
 }
 
 /* ================================
    FOOTER
 ================================ */
+.footer-info {
+    margin-top: 35px;
+    text-align: center;
+    line-height: 1.5;
+}
+
 footer {
     background: var(--onyx);
     color: var(--ivory);
     text-align: center;
     padding: 25px;
-    margin-top: 0;
+    font-size: 15px;
 }
