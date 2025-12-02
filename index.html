@@ -1,201 +1,289 @@
-BERGASON
-About
-Services
-Case Law
-Reviews
-RTM
-Contact
-Bergason Property Services Limited
-Specialists in Residential Block Management, RTM, and Leasehold Support
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergason Property Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-Contact Us View Services
-Who We Are
-Bergason Property Services Limited is a premier independent property management firm dedicated to the seamless administration of residential blocks across the UK.
+<header>
+    <div class="logo">BERGASON</div>
 
-With decades of collective experience, we bridge the gap between complex property law and practical, everyday estate management. We pride ourselves on transparency, integrity, and a proactive approach to building maintenance and leaseholder relations.
+    <nav class="desktop-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#case-law">Case Law</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#rtm">RTM</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-Key Compliance Areas
-Service Charges: Transparent budgeting and certification.
-Section 20: Statutory consultation management.
-Buildings Insurance: Reinstatement valuations and claims.
-Fire Safety: Fire Safety Act 2021 compliance.
-RTM Support: Right to Manage process guidance.
-Our Services
-Full Block Management
-+
-Complete day-to-day management including site inspections, ground rent collection, cleaner/gardener supervision, and 24/7 emergency support.
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
 
-RTM Company Set-Up
-+
-We handle the entire Right to Manage formation process, from initial notices to company incorporation and handover, empowering leaseholders to take control.
+    <nav class="mobile-nav" id="mobileNav">
+        <a onclick="toggleMenu()" href="#about">About</a>
+        <a onclick="toggleMenu()" href="#services">Services</a>
+        <a onclick="toggleMenu()" href="#case-law">Case Law</a>
+        <a onclick="toggleMenu()" href="#reviews">Reviews</a>
+        <a onclick="toggleMenu()" href="#rtm">RTM</a>
+        <a onclick="toggleMenu()" href="#contact">Contact</a>
+    </nav>
+</header>
 
-Budgeting & Accounting
-+
-Precise service charge estimation, arrears recovery, and end-of-year account preparation in strict accordance with RICS and ICAEW guidelines.
+<section class="hero fade-in">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Bergason Property Services Limited</h1>
+        <p>Specialists in Residential Block Management, RTM, and Leasehold Support</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn gold">Contact Us</a>
+            <a href="#services" class="btn outline">View Services</a>
+        </div>
+    </div>
+</section>
 
-Contractor Management
-+
-Vetting and tendering for approved contractors. We ensure all maintenance work is high-quality, insured, and cost-effective.
+<section id="about" class="section light fade-in">
+    <h2>Who We Are</h2>
+    <p>
+        Bergason Property Services Limited is a premier independent property management firm dedicated to the
+        seamless administration of residential blocks across the UK.
+    </p>
+    <p>
+        With decades of collective experience, we bridge the gap between complex property law and practical,
+        everyday estate management. We pride ourselves on transparency, integrity, and a proactive approach to
+        building maintenance and leaseholder relations.
+    </p>
 
-Section 20 Compliance
-+
-Managing the statutory three-stage consultation process for qualifying works exceeding £250 per leaseholder, ensuring full legal compliance.
+    <h3>Key Compliance Areas</h3>
+    <ul class="bullet-list">
+        <li>Service Charges: Transparent budgeting and certification.</li>
+        <li>Section 20: Statutory consultation management.</li>
+        <li>Buildings Insurance: Reinstatement valuations and claims.</li>
+        <li>Fire Safety: Fire Safety Act 2021 compliance.</li>
+        <li>RTM Support: Right to Manage process guidance.</li>
+    </ul>
+</section>
 
-Building Safety
-+
-Implementing rigorous health and safety protocols, including Fire Risk Assessments, EICR electrical testing, and asbestos management.
+<section id="services" class="section dark fade-in">
+    <h2>Our Services</h2>
 
-Major Works Supervision
-+
-Project management for large-scale renovations, ensuring works are delivered on time, within budget, and to the specified standard.
+    <div class="accordion">
+        <!-- Repeatable items -->
+        <div class="item">
+            <button class="title">Full Block Management</button>
+            <div class="content">
+                Complete day-to-day management including site inspections, ground rent collection,
+                cleaner/gardener supervision, and 24/7 emergency support.
+            </div>
+        </div>
 
-Communication Platform
-+
-Access to our digital portal for residents to view updates, download documents, report maintenance issues, and track progress.
+        <div class="item">
+            <button class="title">RTM Company Set-Up</button>
+            <div class="content">
+                We handle notices, incorporation, and full takeover preparation for RTM companies.
+            </div>
+        </div>
 
-Key Case Law
-Legal precedents shaping modern block management.
+        <div class="item">
+            <button class="title">Budgeting & Accounting</button>
+            <div class="content">
+                Service charge estimation, arrears recovery, and certified accounts under RICS/ICAEW.
+            </div>
+        </div>
 
+        <div class="item">
+            <button class="title">Contractor Management</button>
+            <div class="content">
+                Approved contractor vetting, tendering and supervision.
+            </div>
+        </div>
 
-Garside v RFYC 2011
-Service Charge Reasonableness → 
-Waaler v LB Hounslow 2017
-Consultation & Section 20 → 
-Holland v Oxford CC 2002
-Leaseholder Transparency → 
-Francis v Phillips 2014
-Service Charge Caps → 
-Arnold v Britton 2015
-Interpretation of Service Charge Clauses →
-Client Reviews
-★★★★★
-"Bergason transformed our block. The transparency regarding accounts has been a breath of fresh air."
+        <div class="item">
+            <button class="title">Section 20 Compliance</button>
+            <div class="content">
+                Managing all statutory consultation processes for qualifying works.
+            </div>
+        </div>
 
-Sarah J.
+        <div class="item">
+            <button class="title">Building Safety</button>
+            <div class="content">
+                FRAs, EICRs, asbestos, and building safety compliance.
+            </div>
+        </div>
 
-RTM Director
+        <div class="item">
+            <button class="title">Major Works Supervision</button>
+            <div class="content">
+                Managing large-scale renovation projects and quality control.
+            </div>
+        </div>
 
-★★★★★
-"Professional, knowledgeable, and always responsive to our maintenance queries."
+        <div class="item">
+            <button class="title">Communication Platform</button>
+            <div class="content">
+                Online portal access for residents and directors.
+            </div>
+        </div>
+    </div>
+</section>
 
-David M.
+<section id="case-law" class="section light fade-in">
+    <h2>Key Case Law</h2>
+    <p class="subtitle">Legal precedents shaping modern block management.</p>
 
-Leaseholder
+    <div class="case-grid">
+        <div class="case-card" onclick="openModal('garside')">
+            <h3>Garside v RFYC</h3>
+            <p>2011 – Service Charge Reasonableness →</p>
+        </div>
+        <div class="case-card" onclick="openModal('waaler')">
+            <h3>Waaler v LB Hounslow</h3>
+            <p>2017 – Consultation & Section 20 →</p>
+        </div>
+        <div class="case-card" onclick="openModal('holland')">
+            <h3>Holland v Oxford CC</h3>
+            <p>2002 – Transparency →</p>
+        </div>
+        <div class="case-card" onclick="openModal('francis')">
+            <h3>Francis v Phillips</h3>
+            <p>2014 – Service Charge Caps →</p>
+        </div>
+        <div class="case-card" onclick="openModal('arnold')">
+            <h3>Arnold v Britton</h3>
+            <p>2015 – Contract Interpretation →</p>
+        </div>
+    </div>
+</section>
 
-★★★★★
-"Their handling of the Section 20 major works was exemplary. Saved us thousands through smart tendering."
+<!-- MODALS -->
+<div id="garside" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('garside')">&times;</span>
+        <h2>Garside v RFYC (2011)</h2>
+        <ul>
+            <li>Reasonableness includes impact on leaseholders.</li>
+            <li>Works may need phasing.</li>
+            <li>Urgent repairs may override cost arguments.</li>
+            <li>Affordability is relevant.</li>
+        </ul>
+    </div>
+</div>
 
-James P.
+<div id="waaler" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('waaler')">&times;</span>
+        <h2>Waaler v LB Hounslow (2017)</h2>
+        <ul>
+            <li>Distinguishes repairs vs improvements.</li>
+            <li>Financial hardship must be considered.</li>
+            <li>Consultation must be meaningful.</li>
+        </ul>
+    </div>
+</div>
 
-RTM Director
+<div id="holland" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('holland')">&times;</span>
+        <h2>Holland v Oxford CC (2002)</h2>
+        <ul>
+            <li>Leaseholders entitled to supporting invoices.</li>
+            <li>Reinforced inspection rights under LTA 1985.</li>
+        </ul>
+    </div>
+</div>
 
-★★★★☆
-"Finally, a managing agent that actually understands leasehold law and applies it correctly."
+<div id="francis" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('francis')">&times;</span>
+        <h2>Francis v Phillips (2014)</h2>
+        <ul>
+            <li>Cannot split contracts to avoid Section 20.</li>
+            <li>Works must be viewed as a whole.</li>
+        </ul>
+    </div>
+</div>
 
-Emma W.
+<div id="arnold" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('arnold')">&times;</span>
+        <h2>Arnold v Britton (2015)</h2>
+        <ul>
+            <li>Courts uphold clear wording even if harsh.</li>
+            <li>Contract interpretation takes precedence.</li>
+        </ul>
+    </div>
+</div>
 
-Verified Leaseholder
+<section id="reviews" class="section dark fade-in">
+    <h2>Client Reviews</h2>
 
-★★★★★
-"Great support during our RTM setup. They made a complex legal process feel simple."
+    <div class="reviews-grid">
+        <div class="review"><div class="stars">★★★★★</div><p>"Bergason transformed our block."</p><span>- Sarah J.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Professional and responsive."</p><span>- David M.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Saved us thousands."</p><span>- James P.</span></div>
+        <div class="review"><div class="stars">★★★★☆</div><p>"Understands leasehold law."</p><span>- Emma W.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Great RTM support."</p><span>- Robert T.</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>"Highly recommended."</p><span>- Linda K.</span></div>
+    </div>
+</section>
 
-Robert T.
+<section id="rtm" class="section light fade-in">
+    <h2>RTM Support</h2>
 
-RTM Member
+    <h3>The RTM Process</h3>
+    <ul class="bullet-list">
+        <li>Assess eligibility (50% participation).</li>
+        <li>Form RTM company.</li>
+        <li>Serve participation notices.</li>
+        <li>Serve claim notice to freeholder.</li>
+        <li>Handover on acquisition date.</li>
+    </ul>
 
-★★★★★
-"Highly recommended for any residential block looking for proactive management."
+    <h3>What Bergason Does</h3>
+    <p>We act as RTM Company Secretary and Managing Agent, preparing notices and ensuring smooth takeover.</p>
 
-Linda K.
+    <h3>Benefits</h3>
+    <ul class="bullet-list">
+        <li>Control over budgets.</li>
+        <li>Choice of contractors.</li>
+        <li>Direct accountability to residents.</li>
+    </ul>
+</section>
 
-Leaseholder
+<section id="contact" class="section dark fade-in">
+    <h2>Contact Us</h2>
 
-RTM Support
-The RTM Process
-The Commonhold and Leasehold Reform Act 2002 allows leaseholders to take over the management of their building without proving fault.
+    <form class="contact-form">
+        <label>Name</label>
+        <input type="text" placeholder="Full Name">
 
-Feasibility Check: Assess if the building qualifies (50% leaseholder participation required).
-RTM Company Formation: Incorporate a specialised company.
-Notice Participation: Invite all eligible leaseholders.
-Claim Notice: Serve notice to the freeholder.
-Acquisition: Take over management duties on the acquisition date.
-What Bergason Does
-Bergason acts as your RTM Company Secretary and Managing Agent. We handle the technical notices, deal with freeholder counter-notices, and ensure a smooth handover of data and funds.
+        <label>Email</label>
+        <input type="email" placeholder="Email Address">
 
-Why professional management benefits leaseholders
-Control over service charge budgets.
-Choice of insurers and contractors.
-Direct accountability to residents.
-Bergason Property Services
-123 Property Lane
-London, SW1 1AA
+        <label>Message</label>
+        <textarea placeholder="How can we help?"></textarea>
 
-Reg No: 12345678
+        <button type="submit" class="btn gold">Send Message</button>
+    </form>
 
-Email: info@bergason.co.uk
+    <p class="footer-info">
+        Bergason Property Services<br>
+        123 Property Lane, London SW1 1AA<br>
+        Reg No: 12345678<br>
+        info@bergason.co.uk · 020 7946 0000<br>
+        Registered in England & Wales
+    </p>
+</section>
 
-Phone: 020 7946 0000
+<footer>
+    © 2023 Bergason Property Services Limited. All Rights Reserved.
+</footer>
 
-Registered in England & Wales
-
-Enquire Now
-Name 
-Full Name
-Email 
-Email Address
-Message 
-How can we help?
-Send Message
-© 2023 Bergason Property Services Limited. All Rights Reserved.
-
-Garside v RFYC
-×
-Year: 2011 | Court: Upper Tribunal (Lands Chamber)
-
-Key Findings:
-The case concerned whether the cost of major works was "reasonably incurred" under s.19 Landlord and Tenant Act 1985.
-The Tribunal held that "reasonableness" is not just about the cost of the works themselves, but also the financial impact on leaseholders.
-Landlords may be required to "phase" works over several years to reduce the immediate financial burden.
-However, essential repairs (e.g., leaking roofs) may still need immediate action regardless of cost.
-Established that leaseholder affordability is a relevant factor in decision-making.
-Waaler v LB Hounslow
-×
-Year: 2017 | Court: Court of Appeal
-
-Key Findings:
-Concerned the replacement of windows where the old windows were not in total disrepair but replacement was an improvement.
-Distinguished between 'repairs' (where landlord has a duty) and 'improvements' (discretionary).
-If carrying out discretionary improvements, the landlord must take particular account of the leaseholders' financial views and means.
-Failure to consider financial hardship rendered the decision to improve irrational in public law terms.
-Emphasised the need for real consultation, not just a tick-box exercise.
-Holland v Oxford CC
-×
-Year: 2002 | Court: High Court
-
-Key Findings:
-Focused on the transparency of service charge accounts.
-Ruled that leaseholders are entitled to see the underlying receipts, invoices, and vouchers, not just a spreadsheet summary.
-Facilities for inspection must be provided by the landlord.
-Reinforced the rights under Section 22 of the Landlord and Tenant Act 1985.
-Prevents landlords from hiding costs behind vague accounting entries.
-Francis v Phillips
-×
-Year: 2014 | Court: Court of Appeal
-
-Key Findings:
-Redefined "qualifying works" for Section 20 consultation.
-Overturned previous High Court ruling that looked at 'sets' of works.
-Established that works should be looked at broadly: if a project costs more than £250 per leaseholder in total, consultation is required.
-Prevents landlords from artificially splitting contracts to avoid consultation.
-Ensures greater protection for leaseholders against piecemeal charges.
-Arnold v Britton
-×
-Year: 2015 | Court: Supreme Court
-
-Key Findings:
-A landmark case on the interpretation of service charge clauses.
-Leases contained a clause increasing service charges by a fixed 10% compound interest per year.
-Over time, this led to astronomical charges (thousands of pounds per year).
-Supreme Court ruled that clear language in a contract must be upheld, even if the result is disastrous for one party.
-Courts will not intervene to fix a "bad bargain."
-Highlights the critical importance of checking lease terms before purchase.
+<script src="script.js"></script>
+</body>
+</html>
