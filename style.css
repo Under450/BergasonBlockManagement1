@@ -1,141 +1,154 @@
-/* =========================================
-   GLOBAL THEME VARIABLES
-========================================= */
+/* ============================================================
+   GLOBAL VARIABLES
+============================================================ */
 :root {
-    --onyx: #0f0f0f;
-    --ivory: #f4f4f4;
-    --gold: #d4af37;
-    --soft-dark: #1a1a1a;
-    --light-grey: #e8e8e8;
+    --onyx: #111;
+    --ivory: #f8f4e3;
+    --gold: #d4b068;
+    --gold-light: #e8d3a4;
+    --white: #ffffff;
+    --grey-light: #f3f3f3;
+    --grey-mid: #ccc;
+    --black: #000;
+    --transition: 0.3s ease-in-out;
 }
 
-/* Global reset */
+/* ============================================================
+   GLOBAL RESET
+============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", Arial, sans-serif;
 }
 
 body {
-    background: var(--onyx);
-    color: var(--ivory);
+    background: var(--white);
+    color: var(--onyx);
     overflow-x: hidden;
-    line-height: 1.6;
 }
 
-/* =========================================
-   HEADER & NAV
-========================================= */
+/* ============================================================
+   HEADER & NAVIGATION
+============================================================ */
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
     height: 70px;
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: var(--black);
+    color: var(--ivory);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 28px;
-    z-index: 999;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--gold);
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: var(--gold);
+/* LOGO CONTAINER */
+.logo-container {
+    width: 50px;
+    height: 50px;
+    background: var(--ivory);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.logo-img {
+    max-height: 46px;
+    width: auto;
+}
+
+/* Desktop Nav */
 .desktop-nav a {
-    margin-left: 24px;
-    text-decoration: none;
     color: var(--ivory);
-    font-size: 15px;
-    transition: 0.2s;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
 }
+
 .desktop-nav a:hover {
     color: var(--gold);
 }
 
+/* Mobile Navigation */
 .hamburger {
     display: none;
     cursor: pointer;
 }
+
 .hamburger span {
-    display: block;
-    width: 24px;
+    width: 25px;
     height: 3px;
     background: var(--ivory);
+    display: block;
     margin: 4px 0;
 }
 
-/* MOBILE NAV */
 .mobile-nav {
     display: none;
     flex-direction: column;
-    position: fixed;
+    background: var(--black);
+    position: absolute;
     top: 70px;
     right: 0;
-    width: 220px;
-    background: rgba(0,0,0,0.9);
-    padding: 20px;
-    z-index: 998;
+    width: 200px;
+    padding: 15px;
 }
 
 .mobile-nav a {
-    text-decoration: none;
     color: var(--ivory);
-    font-size: 16px;
-    margin: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    padding-bottom: 8px;
+    padding: 10px 0;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
 }
+
 .mobile-nav a:hover {
     color: var(--gold);
 }
 
-/* Show hamburger on smaller screens */
-@media (max-width: 900px) {
+/* RESPONSIVE NAV */
+@media(max-width: 900px) {
     .desktop-nav { display: none; }
     .hamburger { display: block; }
 }
 
-/* =========================================
+/* ============================================================
    FLOATING CONTACT BUTTON
-========================================= */
+============================================================ */
 .floating-contact-btn {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 25px;
+    right: 25px;
     background: var(--gold);
-    color: black;
-    padding: 14px 22px;
-    border-radius: 40px;
+    color: var(--black);
+    padding: 12px 20px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
     z-index: 999;
-    transition: 0.3s;
-}
-.floating-contact-btn:hover {
-    transform: translateY(-4px);
+    transition: var(--transition);
 }
 
-/* =========================================
-   HERO SECTION (SLIDESHOW)
-========================================= */
+.floating-contact-btn:hover {
+    background: var(--gold-light);
+}
+
+/* ============================================================
+   HERO SECTION (FADED SLIDESHOW)
+============================================================ */
 .hero {
-    position: relative;
+    width: 100%;
     height: 100vh;
+    position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--ivory);
+    margin-top: 70px;
 }
 
 .hero-slide {
@@ -148,6 +161,7 @@ header {
     background-position: center;
     opacity: 0;
     transition: opacity 1.8s ease-in-out;
+    filter: brightness(55%); /* keeps them faded */
 }
 
 .hero-slide.active {
@@ -156,169 +170,153 @@ header {
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.45);
-    z-index: 1;
+    background: rgba(0,0,0,0.25);
 }
 
+/* HERO TEXT */
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--ivory);
+    max-width: 900px;
 }
 
 .hero-content h1 {
     font-size: 48px;
-    margin-bottom: 14px;
+    font-weight: 700;
 }
+
 .hero-content p {
-    font-size: 19px;
-    margin-bottom: 20px;
-    opacity: 0.85;
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 300;
 }
 
 .hero-buttons {
-    margin-top: 20px;
-}
-.hero-buttons .btn {
-    margin: 0 10px;
+    margin-top: 35px;
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
+/* Buttons */
 .btn {
-    display: inline-block;
-    padding: 12px 24px;
+    padding: 12px 28px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.25s;
+    font-weight:600;
+    margin: 0 10px;
+    display: inline-block;
 }
 
 .btn.gold {
     background: var(--gold);
-    color: black;
-}
-.btn.gold:hover {
-    background: #f1d770;
+    color: var(--black);
 }
 
 .btn.outline {
-    border: 2px solid var(--ivory);
+    border: 2px solid var(--gold);
     color: var(--ivory);
 }
+
+.btn.gold:hover {
+    background: var(--gold-light);
+}
+
 .btn.outline:hover {
-    border-color: var(--gold);
-    color: var(--gold);
+    background: var(--gold);
+    color: var(--black);
 }
 
-/* =========================================
-   SECTION BASE STYLE
-========================================= */
+/* ============================================================
+   SECTIONS
+============================================================ */
 .section {
-    padding: 120px 14%;
+    padding: 80px 7%;
 }
 
-.section.light {
-    background: var(--ivory);
+.section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 38px;
     color: var(--onyx);
 }
 
 .section.dark {
-    background: var(--soft-dark);
+    background: var(--black);
     color: var(--ivory);
 }
 
-.section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: var(--gold);
+.section.dark h2 {
+    color: var(--ivory);
 }
 
-.subtitle {
-    font-size: 18px;
-    opacity: 0.7;
-    margin-bottom: 18px;
-}
-
-/* =========================================
-   CONTENT BOX
-========================================= */
 .content-box {
-    background: rgba(255,255,255,0.08);
-    padding: 28px;
-    border-radius: 14px;
-    margin: 20px 0;
-    border: 1px solid rgba(255,255,255,0.12);
+    background: var(--grey-light);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--gold);
 }
 
 .bullet-list li {
-    margin: 8px 0;
+    margin-bottom: 8px;
 }
 
-/* =========================================
-   ACCORDION
-========================================= */
+/* ============================================================
+   ACCORDION (SERVICES)
+============================================================ */
 .accordion .item {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
+    border: 1px solid var(--gold);
 }
 
 .accordion .title {
     width: 100%;
-    text-align: left;
-    background: rgba(255,255,255,0.12);
-    padding: 14px;
+    background: var(--gold);
+    padding: 15px;
     border: none;
-    outline: none;
     cursor: pointer;
-    color: var(--ivory);
-    font-size: 18px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-.accordion .title:hover {
-    background: rgba(255,255,255,0.19);
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .accordion .content {
     display: none;
-    padding: 14px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 0 0 8px 8px;
-    margin-top: -4px;
+    background: var(--ivory);
+    padding: 15px;
+    border-top: 1px solid var(--gold);
 }
 
-/* =========================================
-   CASE LAW GRID
-========================================= */
-.case-grid {
+/* ============================================================
+   CASE LAW (PREMIUM GOLD BOXES)
+============================================================ */
+.case-law-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 }
 
-.case-card {
-    background: rgba(255,255,255,0.12);
+.case-law-box {
+    background: var(--black);
+    color: var(--ivory);
+    border: 2px solid var(--gold);
     padding: 22px;
-    border-radius: 12px;
+    transition: var(--transition);
     cursor: pointer;
-    transition: 0.3s;
-}
-.case-card:hover {
-    background: rgba(255,255,255,0.18);
-    transform: translateY(-5px);
-}
-.case-card h3 {
-    color: var(--gold);
 }
 
-/* =========================================
-   MODALS (case law + legal pages)
-========================================= */
+.case-law-box:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* ============================================================
+   MODALS (CASE LAW + LEGAL PAGES)
+============================================================ */
 .modal {
     display: none;
     position: fixed;
@@ -326,145 +324,113 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(4px);
+    background: rgba(0,0,0,0.65);
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    z-index: 9999;
+    z-index: 2000;
 }
 
 .modal-content {
     background: var(--ivory);
-    color: var(--onyx);
-    padding: 28px;
-    width: 90%;
     max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    width: 90%;
+    padding: 25px;
+    border-radius: 6px;
+    position: relative;
+    border: 2px solid var(--gold);
 }
 
 .modal-content h2 {
-    margin-bottom: 16px;
+    color: var(--black);
 }
 
 .close {
-    float: right;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 26px;
     cursor: pointer;
-    font-size: 24px;
-    color: var(--onyx);
-}
-.close:hover {
-    color: var(--gold);
 }
 
-/* =========================================
-   REVIEWS (Luxury Cards)
-========================================= */
+/* Scrollable content */
+.legal-scroll {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* ============================================================
+   REVIEWS (LUXURY STYLE)
+============================================================ */
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 20px;
 }
 
 .review-lux {
-    background: rgba(255,255,255,0.08);
-    padding: 30px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 6px 22px rgba(0,0,0,0.35);
-    backdrop-filter: blur(8px);
-    transition: 0.3s ease;
+    background: var(--onyx);
+    padding: 25px;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
 }
 
-.review-lux:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+.review-lux .stars {
+    color: gold;
+    margin: 10px 0;
 }
 
-.review-lux h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
-    color: var(--gold);
-}
-
-.review-date {
-    font-size: 14px;
-    opacity: 0.85;
-    margin-bottom: 14px;
-}
-
-.stars {
-    color: var(--gold);
-    font-size: 22px;
-    letter-spacing: 4px;
-    margin-bottom: 12px;
-}
-
-/* =========================================
+/* ============================================================
    CONTACT FORM
-========================================= */
+============================================================ */
 .contact-form {
-    max-width: 550px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.contact-form label {
-    margin: 8px 0 4px;
-}
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 12px;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 12px;
-    background: #ffffff;
-    color: black;
-}
-.contact-form textarea {
-    height: 130px;
+    margin-bottom: 15px;
+    border: 1px solid var(--grey-mid);
 }
 
-/* Footer info */
-.footer-info {
-    margin-top: 50px;
-    font-size: 15px;
-    opacity: 0.9;
-    line-height: 1.7;
+.contact-form button {
+    width: 100%;
+    padding: 14px;
 }
 
-/* =========================================
+/* ============================================================
    FOOTER
-========================================= */
+============================================================ */
 footer {
+    background: var(--black);
+    color: var(--ivory);
     text-align: center;
-    padding: 40px;
-    background: #000;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    font-size: 14px;
+    padding: 40px 0 25px;
+    margin-top: 40px;
+    border-top: 2px solid var(--gold);
 }
 
 .footer-links span {
     cursor: pointer;
     color: var(--gold);
+    margin: 0 6px;
 }
+
 .footer-links span:hover {
     text-decoration: underline;
 }
 
-/* =========================================
-   SCROLL EFFECT
-========================================= */
+/* ============================================================
+   FADE-IN ANIMATION
+============================================================ */
 .fade-in {
     opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateY(20px);
+    transition: 1s ease-in-out;
 }
+
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
