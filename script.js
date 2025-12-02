@@ -3,12 +3,25 @@
 ================================ */
 function toggleMenu() {
     const nav = document.getElementById("mobileNav");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+    }
 }
+
+/* Auto close mobile nav when clicking a link */
+document.querySelectorAll(".mobile-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        const nav = document.getElementById("mobileNav");
+        nav.style.display = "none";
+    });
+});
 
 
 /* ================================
-   ACCORDION LOGIC
+   ACCORDION FUNCTIONALITY
 ================================ */
 const accordionItems = document.querySelectorAll(".accordion .item");
 
@@ -18,21 +31,21 @@ accordionItems.forEach(item => {
 
     title.addEventListener("click", () => {
 
-        // Close all open items except this one
-        accordionItems.forEach(i => {
-            if (i !== item) {
-                i.querySelector(".content").style.display = "none";
+        // Close all other items
+        accordionItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.querySelector(".content").style.display = "none";
             }
         });
 
-        // Toggle current content
+        // Toggle this one
         content.style.display = content.style.display === "block" ? "none" : "block";
     });
 });
 
 
 /* ================================
-   MODAL FUNCTIONALITY
+   MODAL SYSTEM
 ================================ */
 function openModal(id) {
     const modal = document.getElementById(id);
@@ -46,7 +59,7 @@ function closeModal(id) {
     document.body.style.overflow = "auto"; // unlock scroll
 }
 
-// Close modal when clicking outside content box
+/* Close by clicking outside modal content */
 window.addEventListener("click", function(event) {
     const modals = document.querySelectorAll(".modal");
 
@@ -69,12 +82,12 @@ window.addEventListener("click", function(event) {
 const fadeElements = document.querySelectorAll(".fade-in");
 
 function handleFadeIn() {
-    const triggerPoint = window.innerHeight * 0.85;
+    const trigger = window.innerHeight * 0.85;
 
     fadeElements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
+        const pos = el.getBoundingClientRect().top;
 
-        if (position < triggerPoint) {
+        if (pos < trigger) {
             el.classList.add("visible");
         }
     });
@@ -85,10 +98,18 @@ window.addEventListener("scroll", handleFadeIn);
 
 
 /* ================================
-   MOBILE MENU AUTO-CLOSE ON CLICK
+   OPTIONAL: SMOOTH SCROLL POLISH
 ================================ */
-document.querySelectorAll(".mobile-nav a").forEach(link => {
-    link.addEventListener("click", () => {
-        document.getElementById("mobileNav").style.display = "none";
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        // Only smooth-scroll if element exists
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            e.preventDefault();
+            window.scrollTo({
+                top: target.offsetTop - 70,
+                behavior: "smooth"
+            });
+        }
     });
 });
