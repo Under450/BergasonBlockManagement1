@@ -56,12 +56,16 @@ window.addEventListener("click", function(e) {
 /* ============================================================
    HERO SLIDESHOW (Faded, Block-Appropriate)
 ============================================================ */
+/* ============================================================
+   HERO SLIDESHOW — PREMIUM BLOCK BUILDING IMAGES
+============================================================ */
 const heroImages = [
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1529429611270-2d5a65f0d4ea?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1950&q=80"
+    "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1950&q=80",  // modern flats
+    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1950&q=80",  // apartment balconies
+    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1950&q=80",  // residential blocks
+    "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1950&q=80"   // managed building exterior
 ];
+
 
 let currentSlide = 0;
 
