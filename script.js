@@ -1,14 +1,14 @@
 /* ================================
-   MOBILE MENU
+   MOBILE MENU TOGGLE
 ================================ */
 function toggleMenu() {
     const nav = document.getElementById("mobileNav");
-    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 
 
 /* ================================
-   ACCORDION FUNCTIONALITY
+   ACCORDION LOGIC
 ================================ */
 const accordionItems = document.querySelectorAll(".accordion .item");
 
@@ -17,41 +17,43 @@ accordionItems.forEach(item => {
     const content = item.querySelector(".content");
 
     title.addEventListener("click", () => {
-        // Close all other accordions
+
+        // Close all open items except this one
         accordionItems.forEach(i => {
             if (i !== item) {
                 i.querySelector(".content").style.display = "none";
             }
         });
 
-        // Toggle selected accordion
-        content.style.display = (content.style.display === "block") ? "none" : "block";
+        // Toggle current content
+        content.style.display = content.style.display === "block" ? "none" : "block";
     });
 });
 
 
 /* ================================
-   CASE LAW MODALS
+   MODAL FUNCTIONALITY
 ================================ */
 function openModal(id) {
     const modal = document.getElementById(id);
     modal.style.display = "flex";
-    document.body.style.overflow = "hidden"; // disable background scroll
+    document.body.style.overflow = "hidden"; // lock scroll
 }
 
 function closeModal(id) {
     const modal = document.getElementById(id);
     modal.style.display = "none";
-    document.body.style.overflow = "auto"; // enable scroll
+    document.body.style.overflow = "auto"; // unlock scroll
 }
 
-// Close modal when clicking outside the box
-document.addEventListener("click", function(event) {
+// Close modal when clicking outside content box
+window.addEventListener("click", function(event) {
     const modals = document.querySelectorAll(".modal");
 
     modals.forEach(modal => {
         if (modal.style.display === "flex") {
             const content = modal.querySelector(".modal-content");
+
             if (!content.contains(event.target)) {
                 modal.style.display = "none";
                 document.body.style.overflow = "auto";
@@ -67,24 +69,23 @@ document.addEventListener("click", function(event) {
 const fadeElements = document.querySelectorAll(".fade-in");
 
 function handleFadeIn() {
-    const triggerBottom = window.innerHeight * 0.85;
+    const triggerPoint = window.innerHeight * 0.85;
 
     fadeElements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
+        const position = el.getBoundingClientRect().top;
 
-        if (elementTop < triggerBottom) {
+        if (position < triggerPoint) {
             el.classList.add("visible");
         }
     });
 }
 
-// Add visible class immediately if already in view
 window.addEventListener("load", handleFadeIn);
 window.addEventListener("scroll", handleFadeIn);
 
 
 /* ================================
-   OPTIONAL: CLOSE MOBILE MENU ON NAV CLICK
+   MOBILE MENU AUTO-CLOSE ON CLICK
 ================================ */
 document.querySelectorAll(".mobile-nav a").forEach(link => {
     link.addEventListener("click", () => {
