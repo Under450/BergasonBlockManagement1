@@ -1,114 +1,86 @@
 /* ============================================================
-   MOBILE NAVIGATION TOGGLE
+   MOBILE NAVIGATION
 ============================================================ */
 function toggleMenu() {
     const nav = document.getElementById("mobileNav");
     nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 
-
 /* ============================================================
-   ACCORDION FUNCTIONALITY
+   ACCORDION
 ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
-    const accordionItems = document.querySelectorAll(".accordion .item");
+    const items = document.querySelectorAll(".accordion .item");
 
-    accordionItems.forEach(item => {
+    items.forEach(item => {
         const title = item.querySelector(".title");
         const content = item.querySelector(".content");
 
         title.addEventListener("click", () => {
-            const isOpen = content.style.display === "block";
+            const open = content.style.display === "block";
 
-            // Close all
             document.querySelectorAll(".accordion .content").forEach(c => {
                 c.style.display = "none";
             });
 
-            // Open the selected one
-            content.style.display = isOpen ? "none" : "block";
+            content.style.display = open ? "none" : "block";
         });
     });
 });
 
-
 /* ============================================================
-   MODALS (CASE LAW + LEGAL)
+   MODALS
 ============================================================ */
-function openModal(id) {
-    document.getElementById(id).style.display = "flex";
-}
+function openModal(id){ document.getElementById(id).style.display = "flex"; }
+function closeModal(id){ document.getElementById(id).style.display = "none"; }
 
-function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-}
-
-// close modal when clicking outside
-window.addEventListener("click", function(e) {
-    document.querySelectorAll(".modal").forEach(modal => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
+window.addEventListener("click", e => {
+    document.querySelectorAll(".modal").forEach(m => {
+        if (e.target === m) m.style.display = "none";
     });
 });
-
 
 /* ============================================================
    HERO SLIDESHOW — UK BLOCK BUILDINGS
 ============================================================ */
-const heroImages = [
-    "https://images.unsplash.com/photo-1582407947304-71f1f1d5c9d8?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1591455754041-b61c9a3fb63f?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=1950&q=80"
+const ukHero = [
+    "https://images.unsplash.com/photo-1530092376999-2541f1032f5f?auto=format&fit=crop&w=1950&q=80",  
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1950&q=80",  
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118d?auto=format&fit=crop&w=1950&q=80",  
+    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1950&q=80"    
 ];
 
-let currentSlide = 0;
+let slideIndex = 0;
+const hero = document.querySelector(".hero");
 
-// Build image DOM elements
-const heroSection = document.querySelector(".hero");
-
-heroImages.forEach((img, index) => {
-    const div = document.createElement("div");
-    div.classList.add("hero-slide");
-    if (index === 0) div.classList.add("active");
-    div.style.backgroundImage = `url('${img}')`;
-    heroSection.appendChild(div);
+ukHero.forEach((url, i) => {
+    const d = document.createElement("div");
+    d.classList.add("hero-slide");
+    if (i === 0) d.classList.add("active");
+    d.style.backgroundImage = `url('${url}')`;
+    hero.appendChild(d);
 });
 
-// Cycle images
-function cycleSlides() {
+function nextSlide() {
     const slides = document.querySelectorAll(".hero-slide");
-
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
+    slides[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
 }
 
-setInterval(cycleSlides, 6000);
-
+setInterval(nextSlide, 6000);
 
 /* ============================================================
-   FADE-IN ON SCROLL
+   FADE IN ON SCROLL
 ============================================================ */
 const faders = document.querySelectorAll(".fade-in");
 
-const appearOptions = {
-    threshold: 0.3,
-    rootMargin: "0px 0px -50px 0px"
-};
+const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+    });
+}, { threshold: 0.3 });
 
-const appearOnScroll = new IntersectionObserver(
-    function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-        });
-    },
-    appearOptions
-);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
+faders.forEach(f => observer.observe(f));
