@@ -11,7 +11,9 @@
     --grey-mid: #ccc;
     --black: #000;
     --transition: 0.3s ease-in-out;
-    --max-width: 1250px;
+    --max-width: 1300px;
+    --radius: 10px;
+    --shadow: 0 6px 22px rgba(0,0,0,0.25);
 }
 
 /* ============================================================
@@ -32,12 +34,13 @@ body {
 }
 
 /* ============================================================
-   HEADER + LOGO
+   HEADER
 ============================================================ */
 header {
     width: 100%;
     height: 80px;
     background: var(--black);
+    border-bottom: 2px solid var(--gold);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,22 +48,19 @@ header {
     position: fixed;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--gold);
 }
 
 .logo-container {
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: transparent !important;
     border: none !important;
+    height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .logo-img {
     height: 60px;
     width: auto;
-    background: transparent !important;
 }
 
 /* Desktop nav */
@@ -71,9 +71,7 @@ header {
     font-weight: 500;
     transition: var(--transition);
 }
-.desktop-nav a:hover {
-    color: var(--gold);
-}
+.desktop-nav a:hover { color: var(--gold); }
 
 /* Mobile nav */
 .hamburger {
@@ -81,32 +79,28 @@ header {
     cursor: pointer;
 }
 .hamburger span {
-    width: 28px;
     height: 3px;
+    width: 28px;
     background: var(--ivory);
-    margin: 5px 0;
     display: block;
+    margin: 5px 0;
 }
-
 .mobile-nav {
-    display: none;
-    flex-direction: column;
-    background: var(--black);
     position: absolute;
     top: 80px;
     right: 0;
-    width: 230px;
+    background: var(--black);
+    width: 240px;
     padding: 15px;
+    display: none;
+    flex-direction: column;
 }
 .mobile-nav a {
     color: var(--ivory);
-    padding: 10px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--gold);
-    text-decoration: none;
 }
-.mobile-nav a:hover {
-    color: var(--gold);
-}
+.mobile-nav a:hover { color: var(--gold); }
 
 @media (max-width: 900px) {
     .desktop-nav { display: none; }
@@ -124,9 +118,9 @@ header {
     color: var(--black);
     padding: 12px 22px;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+    text-decoration: none;
+    box-shadow: var(--shadow);
     transition: var(--transition);
     z-index: 999;
 }
@@ -140,35 +134,32 @@ header {
 .hero {
     width: 100%;
     height: 100vh;
-    position: relative;
     margin-top: 80px;
+    position: relative;
     overflow: hidden;
 }
 .hero-slide {
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0; left: 0;
+    position: absolute;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    filter: brightness(58%);
+    transition: opacity 1.4s ease-in-out;
+    filter: brightness(60%);
 }
 .hero-slide.active {
     opacity: 1;
 }
 .hero-overlay {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0,0,0,0.25);
 }
 .hero-content {
     position: absolute;
-    z-index: 10;
     top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     text-align: center;
     color: var(--ivory);
 }
@@ -178,114 +169,131 @@ header {
 }
 .hero-content p {
     font-size: 22px;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
-/* ============================================================
-   BUTTONS
-============================================================ */
+/* Buttons */
 .btn {
     padding: 12px 28px;
+    margin: 5px 10px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 10px;
 }
-.btn.gold {
-    background: var(--gold);
-    color: var(--black);
-}
-.btn.outline {
-    border: 2px solid var(--gold);
-    color: var(--ivory);
-}
+.btn.gold { background: var(--gold); color: var(--black); }
+.btn.outline { border: 2px solid var(--gold); color: var(--ivory); }
 .btn.gold:hover { background: var(--gold-light); }
 .btn.outline:hover { background: var(--gold); color: var(--black); }
 
 /* ============================================================
-   SECTION
+   SECTION UNIVERSAL
 ============================================================ */
 .section {
-    padding: 85px 7%;
+    padding: 85px 5%;
     max-width: var(--max-width);
     margin: auto;
 }
 .section h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     font-size: 38px;
 }
-.section.dark {
-    background: var(--black);
-    color: var(--ivory);
-}
+
+/* Light / Dark backgrounds */
+.section.dark { background: var(--black); color: var(--ivory); }
+.section.light { background: var(--white); color: var(--onyx); }
 
 /* ============================================================
-   WHY CHOOSE US REWRITE
+   WHY CHOOSE US — HYBRID STYLE
 ============================================================ */
-.why-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    grid-gap: 25px;
-    margin: 35px 0;
-}
-.why-card {
-    background: var(--ivory);
-    border-left: 5px solid var(--gold);
-    padding: 22px;
-    border-radius: 8px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
-}
-.why-card h3 {
-    margin-bottom: 12px;
-    font-size: 22px;
+
+.wc-intro {
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.75;
+    padding: 0 5px;
 }
 
-/* content boxes */
-.content-box {
-    background: var(--grey-light);
-    padding: 30px;
-    border-left: 4px solid var(--gold);
+.wc-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 45px;
+}
+.wc-columns h3 { margin-bottom: 12px; font-size: 24px; }
+.wc-columns p { margin-bottom: 15px; }
+
+@media (max-width: 900px) {
+    .wc-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Prestige title */
+.wc-prestige-title {
+    text-align: center;
+    font-size: 32px;
+    margin: 45px 0 25px;
+}
+
+/* Prestige cards */
+.wc-prestige-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.wc-card {
+    background: var(--ivory);
+    padding: 25px;
+    border-left: 5px solid var(--gold);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+.wc-card h4 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+/* Detailed list */
+.wc-detail ul {
+    padding-left: 20px;
     margin-bottom: 25px;
-    border-radius: 8px;
 }
-.big-text p { margin-bottom: 18px; }
-.big-text h3 {
-    margin-top: 25px;
+.wc-detail ul li {
     margin-bottom: 10px;
-    font-size: 23px;
+    font-size: 17px;
 }
-.bullet-list.large li {
-    margin-bottom: 10px;
+.wc-detail p {
+    margin-bottom: 15px;
     font-size: 17px;
 }
 
 /* ============================================================
-   ACCORDION
+   ACCORDION — PRESTIGE STYLE
 ============================================================ */
 .accordion.prestige .item {
-    margin-bottom: 18px;
     background: var(--ivory);
     border: 2px solid var(--gold);
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
 }
 .accordion .title {
     width: 100%;
     background: var(--gold);
     padding: 16px;
-    cursor: pointer;
     text-align: left;
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 }
 .accordion .content {
     display: none;
     padding: 18px;
-    font-size: 16px;
-    color: var(--black);
     background: var(--ivory);
+    color: var(--black);
 }
 
 /* ============================================================
@@ -293,19 +301,19 @@ header {
 ============================================================ */
 .case-law-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 25px;
 }
 .case-law-box {
-    background: var(--onyx);
-    color: var(--ivory);
-    padding: 25px;
+    background: var(--black);
     border: 3px solid var(--gold);
+    padding: 25px;
     border-radius: 12px;
+    text-align: center;
+    color: var(--ivory);
     cursor: pointer;
     transition: var(--transition);
-    text-align: center;
-    box-shadow: 0 4px 22px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow);
 }
 .case-law-box:hover {
     background: var(--gold);
@@ -313,26 +321,26 @@ header {
 }
 
 /* ============================================================
-   MODALS
+   MODALS — FULL LEGAL DOCUMENTS
 ============================================================ */
 .modal {
-    display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background: rgba(0,0,0,0.65);
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 2000;
 }
 .modal-content {
     background: var(--ivory);
-    max-width: 750px;
-    width: 92%;
     padding: 35px;
-    border-radius: 10px;
+    max-width: 800px;
+    width: 92%;
+    border-radius: var(--radius);
     border: 3px solid var(--gold);
-    box-shadow: 0 5px 25px rgba(0,0,0,0.45);
+    box-shadow: var(--shadow);
     position: relative;
 }
 .legal-scroll {
@@ -341,11 +349,9 @@ header {
 }
 .close {
     position: absolute;
-    top: 12px;
-    right: 17px;
-    font-size: 32px;
-    line-height: 1;
+    top: 12px; right: 17px;
     cursor: pointer;
+    font-size: 32px;
 }
 
 /* ============================================================
@@ -354,25 +360,22 @@ header {
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 20px;
+    gap: 22px;
 }
 .review-lux {
-    background: var(--onyx);
+    background: var(--black);
     border: 3px solid var(--gold);
-    border-radius: 10px;
+    border-radius: var(--radius);
     padding: 25px;
     color: var(--ivory);
 }
-.stars {
-    color: gold;
-    margin: 10px 0;
-}
+.stars { color: gold; }
 
 /* ============================================================
    CONTACT FORM
 ============================================================ */
 .contact-form {
-    max-width: 520px;
+    max-width: 550px;
     margin: 0 auto;
 }
 .contact-form input,
@@ -393,17 +396,21 @@ header {
 footer {
     background: var(--black);
     color: var(--ivory);
+    padding: 45px 0 35px;
     text-align: center;
-    padding: 45px 0 30px;
     border-top: 2px solid var(--gold);
 }
+
 .footer-links span {
-    cursor: pointer;
     color: var(--gold);
-    margin: 0 6px;
+    margin: 0 5px;
+    cursor: pointer;
 }
-.footer-links span:hover {
-    text-decoration: underline;
+.footer-links span:hover { text-decoration: underline; }
+
+.footer-info {
+    margin-top: 35px;
+    font-size: 17px;
 }
 
 /* ============================================================
