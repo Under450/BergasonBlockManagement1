@@ -11,6 +11,7 @@
     --grey-mid: #ccc;
     --black: #000;
     --transition: 0.3s ease-in-out;
+    --max-width: 1250px;
 }
 
 /* ============================================================
@@ -27,6 +28,7 @@ body {
     background: var(--white);
     color: var(--onyx);
     overflow-x: hidden;
+    line-height: 1.65;
 }
 
 /* ============================================================
@@ -47,20 +49,21 @@ header {
 }
 
 .logo-container {
-    width: 60px;
     height: 60px;
-    background: var(--ivory);
-    border: 1px solid var(--gold);
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent !important;
+    border: none !important;
 }
 
 .logo-img {
-    height: 56px;
+    height: 60px;
     width: auto;
+    background: transparent !important;
 }
 
+/* Desktop nav */
 .desktop-nav a {
     color: var(--ivory);
     margin-left: 22px;
@@ -68,17 +71,15 @@ header {
     font-weight: 500;
     transition: var(--transition);
 }
-
 .desktop-nav a:hover {
     color: var(--gold);
 }
 
-/* Mobile menu */
+/* Mobile nav */
 .hamburger {
     display: none;
     cursor: pointer;
 }
-
 .hamburger span {
     width: 28px;
     height: 3px;
@@ -94,22 +95,20 @@ header {
     position: absolute;
     top: 80px;
     right: 0;
-    width: 220px;
+    width: 230px;
     padding: 15px;
 }
-
 .mobile-nav a {
     color: var(--ivory);
     padding: 10px 0;
     border-bottom: 1px solid var(--gold);
     text-decoration: none;
 }
-
 .mobile-nav a:hover {
     color: var(--gold);
 }
 
-@media(max-width: 900px) {
+@media (max-width: 900px) {
     .desktop-nav { display: none; }
     .hamburger { display: block; }
 }
@@ -131,7 +130,6 @@ header {
     transition: var(--transition);
     z-index: 999;
 }
-
 .floating-contact-btn:hover {
     background: var(--gold-light);
 }
@@ -146,46 +144,38 @@ header {
     margin-top: 80px;
     overflow: hidden;
 }
-
 .hero-slide {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    top: 0; left: 0;
     background-size: cover;
     background-position: center center;
     opacity: 0;
-    transition: opacity 1.7s ease-in-out;
-    filter: brightness(55%);
+    transition: opacity 1.5s ease-in-out;
+    filter: brightness(58%);
 }
-
 .hero-slide.active {
     opacity: 1;
 }
-
 .hero-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.25);
 }
-
 .hero-content {
     position: absolute;
     z-index: 10;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: var(--ivory);
 }
-
 .hero-content h1 {
     font-size: 48px;
     font-weight: 700;
 }
-
 .hero-content p {
     font-size: 22px;
     margin-top: 15px;
@@ -198,74 +188,89 @@ header {
     padding: 12px 28px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight:600;
+    font-weight: 600;
     margin: 0 10px;
 }
-
 .btn.gold {
     background: var(--gold);
     color: var(--black);
 }
-
 .btn.outline {
     border: 2px solid var(--gold);
     color: var(--ivory);
 }
-
 .btn.gold:hover { background: var(--gold-light); }
 .btn.outline:hover { background: var(--gold); color: var(--black); }
 
 /* ============================================================
-   SECTION STYLING
+   SECTION
 ============================================================ */
 .section {
     padding: 85px 7%;
+    max-width: var(--max-width);
+    margin: auto;
 }
-
 .section h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 38px;
 }
-
 .section.dark {
     background: var(--black);
     color: var(--ivory);
 }
 
 /* ============================================================
-   CONTENT BOXES
+   WHY CHOOSE US REWRITE
 ============================================================ */
+.why-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    grid-gap: 25px;
+    margin: 35px 0;
+}
+.why-card {
+    background: var(--ivory);
+    border-left: 5px solid var(--gold);
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+.why-card h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+/* content boxes */
 .content-box {
     background: var(--grey-light);
     padding: 30px;
     border-left: 4px solid var(--gold);
     margin-bottom: 25px;
+    border-radius: 8px;
 }
-
-.big-text p {
-    margin-bottom: 18px;
-    line-height: 1.65;
-}
-
+.big-text p { margin-bottom: 18px; }
 .big-text h3 {
-    margin-top: 22px;
+    margin-top: 25px;
     margin-bottom: 10px;
     font-size: 23px;
 }
+.bullet-list.large li {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
 
 /* ============================================================
-   ACCORDION (PRESTIGE)
+   ACCORDION
 ============================================================ */
 .accordion.prestige .item {
     margin-bottom: 18px;
+    background: var(--ivory);
     border: 2px solid var(--gold);
     border-radius: 10px;
     overflow: hidden;
-    background: var(--ivory);
     box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
-
 .accordion .title {
     width: 100%;
     background: var(--gold);
@@ -275,7 +280,6 @@ header {
     font-size: 18px;
     font-weight: 600;
 }
-
 .accordion .content {
     display: none;
     padding: 18px;
@@ -285,16 +289,15 @@ header {
 }
 
 /* ============================================================
-   CASE LAW BOXES
+   CASE LAW
 ============================================================ */
 .case-law-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap: 22px;
 }
-
 .case-law-box {
-    background: var(--black);
+    background: var(--onyx);
     color: var(--ivory);
     padding: 25px;
     border: 3px solid var(--gold);
@@ -302,9 +305,8 @@ header {
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 22px rgba(0,0,0,0.3);
 }
-
 .case-law-box:hover {
     background: var(--gold);
     color: var(--black);
@@ -323,28 +325,26 @@ header {
     align-items: center;
     z-index: 2000;
 }
-
 .modal-content {
     background: var(--ivory);
-    max-width: 650px;
+    max-width: 750px;
     width: 92%;
-    padding: 30px;
-    border-radius: 8px;
+    padding: 35px;
+    border-radius: 10px;
     border: 3px solid var(--gold);
     box-shadow: 0 5px 25px rgba(0,0,0,0.45);
     position: relative;
 }
-
 .legal-scroll {
     max-height: 70vh;
     overflow-y: auto;
 }
-
 .close {
     position: absolute;
     top: 12px;
-    right: 15px;
-    font-size: 28px;
+    right: 17px;
+    font-size: 32px;
+    line-height: 1;
     cursor: pointer;
 }
 
@@ -353,10 +353,9 @@ header {
 ============================================================ */
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px ,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
     gap: 20px;
 }
-
 .review-lux {
     background: var(--onyx);
     border: 3px solid var(--gold);
@@ -364,7 +363,6 @@ header {
     padding: 25px;
     color: var(--ivory);
 }
-
 .stars {
     color: gold;
     margin: 10px 0;
@@ -377,7 +375,6 @@ header {
     max-width: 520px;
     margin: 0 auto;
 }
-
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -385,7 +382,6 @@ header {
     margin-bottom: 15px;
     border: 1px solid var(--grey-mid);
 }
-
 .contact-form button {
     width: 100%;
     padding: 16px;
@@ -401,13 +397,11 @@ footer {
     padding: 45px 0 30px;
     border-top: 2px solid var(--gold);
 }
-
 .footer-links span {
     cursor: pointer;
     color: var(--gold);
     margin: 0 6px;
 }
-
 .footer-links span:hover {
     text-decoration: underline;
 }
@@ -417,10 +411,9 @@ footer {
 ============================================================ */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(22px);
     transition: 1s ease-in-out;
 }
-
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
