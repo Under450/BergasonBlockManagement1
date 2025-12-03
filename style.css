@@ -30,7 +30,7 @@ body {
 }
 
 /* ============================================================
-   HEADER + LOGO (60px Container)
+   HEADER + LOGO
 ============================================================ */
 header {
     width: 100%;
@@ -46,7 +46,6 @@ header {
     border-bottom: 2px solid var(--gold);
 }
 
-/* LOGO */
 .logo-container {
     width: 60px;
     height: 60px;
@@ -62,10 +61,9 @@ header {
     width: auto;
 }
 
-/* NAV */
 .desktop-nav a {
     color: var(--ivory);
-    margin-left: 25px;
+    margin-left: 22px;
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
@@ -75,7 +73,7 @@ header {
     color: var(--gold);
 }
 
-/* MOBILE NAV */
+/* Mobile menu */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -116,7 +114,6 @@ header {
     .hamburger { display: block; }
 }
 
-
 /* ============================================================
    FLOATING CONTACT BUTTON
 ============================================================ */
@@ -139,16 +136,15 @@ header {
     background: var(--gold-light);
 }
 
-
 /* ============================================================
-   HERO — FADED BLOCK MANAGEMENT SLIDESHOW
+   HERO SECTION
 ============================================================ */
 .hero {
     width: 100%;
     height: 100vh;
     position: relative;
-    overflow: hidden;
     margin-top: 80px;
+    overflow: hidden;
 }
 
 .hero-slide {
@@ -158,7 +154,7 @@ header {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     opacity: 0;
     transition: opacity 1.7s ease-in-out;
     filter: brightness(55%);
@@ -195,18 +191,15 @@ header {
     margin-top: 15px;
 }
 
-.hero-buttons {
-    margin-top: 30px;
-}
-
-/* HERO BUTTONS */
+/* ============================================================
+   BUTTONS
+============================================================ */
 .btn {
     padding: 12px 28px;
     border-radius: 6px;
     text-decoration: none;
     font-weight:600;
     margin: 0 10px;
-    display: inline-block;
 }
 
 .btn.gold {
@@ -219,25 +212,19 @@ header {
     color: var(--ivory);
 }
 
-.btn.gold:hover {
-    background: var(--gold-light);
-}
-
-.btn.outline:hover {
-    background: var(--gold);
-    color: var(--black);
-}
+.btn.gold:hover { background: var(--gold-light); }
+.btn.outline:hover { background: var(--gold); color: var(--black); }
 
 /* ============================================================
-   SECTIONS
+   SECTION STYLING
 ============================================================ */
 .section {
-    padding: 90px 7%;
+    padding: 85px 7%;
 }
 
 .section h2 {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-size: 38px;
 }
 
@@ -246,22 +233,30 @@ header {
     color: var(--ivory);
 }
 
+/* ============================================================
+   CONTENT BOXES
+============================================================ */
 .content-box {
     background: var(--grey-light);
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 30px;
     border-left: 4px solid var(--gold);
+    margin-bottom: 25px;
 }
 
-.bullet-list li {
-    margin-bottom: 8px;
+.big-text p {
+    margin-bottom: 18px;
+    line-height: 1.65;
 }
 
+.big-text h3 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+    font-size: 23px;
+}
 
 /* ============================================================
-   PRESTIGE ACCORDION (VERSION B)
+   ACCORDION (PRESTIGE)
 ============================================================ */
-
 .accordion.prestige .item {
     margin-bottom: 18px;
     border: 2px solid var(--gold);
@@ -275,7 +270,6 @@ header {
     width: 100%;
     background: var(--gold);
     padding: 16px;
-    border: none;
     cursor: pointer;
     text-align: left;
     font-size: 18px;
@@ -284,17 +278,15 @@ header {
 
 .accordion .content {
     display: none;
-    background: var(--ivory);
     padding: 18px;
-    color: var(--black);
     font-size: 16px;
+    color: var(--black);
+    background: var(--ivory);
 }
 
-
 /* ============================================================
-   PREMIUM CASE LAW BOXES (VERSION B)
+   CASE LAW BOXES
 ============================================================ */
-
 .case-law-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -318,18 +310,14 @@ header {
     color: var(--black);
 }
 
-
 /* ============================================================
-   MODALS (LEGAL + CASE LAW)
+   MODALS
 ============================================================ */
-
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0,0,0,0.65);
     justify-content: center;
     align-items: center;
@@ -343,13 +331,13 @@ header {
     padding: 30px;
     border-radius: 8px;
     border: 3px solid var(--gold);
-    position: relative;
     box-shadow: 0 5px 25px rgba(0,0,0,0.45);
+    position: relative;
 }
 
-.modal-content h2 {
-    margin-bottom: 15px;
-    color: var(--black);
+.legal-scroll {
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
 .close {
@@ -360,20 +348,12 @@ header {
     cursor: pointer;
 }
 
-.legal-scroll {
-    max-height: 70vh;
-    overflow-y: auto;
-    padding-right: 5px;
-}
-
-
 /* ============================================================
-   REVIEWS (LUX STYLE)
+   REVIEWS
 ============================================================ */
-
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px ,1fr));
     gap: 20px;
 }
 
@@ -383,7 +363,6 @@ header {
     border-radius: 10px;
     padding: 25px;
     color: var(--ivory);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
 
 .stars {
@@ -391,11 +370,9 @@ header {
     margin: 10px 0;
 }
 
-
 /* ============================================================
    CONTACT FORM
 ============================================================ */
-
 .contact-form {
     max-width: 520px;
     margin: 0 auto;
@@ -414,11 +391,9 @@ header {
     padding: 16px;
 }
 
-
 /* ============================================================
    FOOTER
 ============================================================ */
-
 footer {
     background: var(--black);
     color: var(--ivory);
@@ -437,9 +412,8 @@ footer {
     text-decoration: underline;
 }
 
-
 /* ============================================================
-   FADE IN ANIMATION
+   ANIMATIONS
 ============================================================ */
 .fade-in {
     opacity: 0;
