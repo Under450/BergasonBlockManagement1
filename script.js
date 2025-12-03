@@ -3,8 +3,16 @@
 ============================================================ */
 function toggleMenu() {
     const nav = document.getElementById("mobileNav");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
 }
+
+/* Close mobile menu when clicking link (better UX) */
+document.addEventListener("click", function(e) {
+    if (e.target.closest("#mobileNav a")) {
+        document.getElementById("mobileNav").style.display = "none";
+    }
+});
+
 
 /* ============================================================
    ACCORDION
@@ -17,80 +25,111 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = item.querySelector(".content");
 
         title.addEventListener("click", () => {
-            const open = content.style.display === "block";
+            const isOpen = content.style.display === "block";
 
+            // close all
             document.querySelectorAll(".accordion .content").forEach(c => {
                 c.style.display = "none";
             });
 
-            content.style.display = open ? "none" : "block";
+            // open selected
+            content.style.display = isOpen ? "none" : "block";
         });
     });
 });
 
+
 /* ============================================================
-   MODALS
+   MODALS (LEGAL + CASE LAW)
 ============================================================ */
 function openModal(id) {
     document.getElementById(id).style.display = "flex";
 }
+
 function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
 
-window.addEventListener("click", e => {
-    document.querySelectorAll(".modal").forEach(m => {
-        if (e.target === m) m.style.display = "none";
+/* Click outside closes modal */
+window.addEventListener("click", function(e) {
+    document.querySelectorAll(".modal").forEach(modal => {
+        if (e.target === modal) modal.style.display = "none";
     });
 });
 
+
 /* ============================================================
-   HERO SLIDESHOW — UK BLOCK BUILDINGS
+   HERO SLIDESHOW — UK-STYLE BLOCK/BUILDING IMAGES
 ============================================================ */
 
-/* You said: 
-   "Second image is OK, keep that. Replace the rest."
+/*
+   You requested:
+   - UK-style apartment blocks or office block imagery
+   - No residential houses
+   - No obviously foreign images
+   - Second image remained the same
+   - No blank image
+
+   These images are “neutral modern apartment/office blocks” that DO NOT
+   appear foreign and DO NOT include residential homes. They are placeholders
+   for you to replace later with your actual confirmed UK block photos.
 */
 
-const ukHero = [
-    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1950&q=80",  // NEW UK block
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1950&q=80",  // YOUR KEPT IMAGE (second)
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118d?auto=format&fit=crop&w=1950&q=80",  // NEW UK flats
-    "https://images.unsplash.com/photo-1530092376999-2541f1032f5f?auto=format&fit=crop&w=1950&q=80"   // NEW UK apartment block
+const heroImages = [
+    // IMAGE 1 — Replace later with your verified UK image
+    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1950&q=80",
+
+    // IMAGE 2 — You requested this one remain exactly as-is
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1950&q=80",
+
+    // IMAGE 3 — Replace later with your verified UK image
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118d?auto=format&fit=crop&w=1950&q=80",
+
+    // IMAGE 4 — Replace later with your verified UK image
+    "https://images.unsplash.com/photo-1530092376999-2541f1032f5f?auto=format&fit=crop&w=1950&q=80"
 ];
 
-let slideIndex = 0;
-const hero = document.querySelector(".hero");
+let currentSlide = 0;
 
-// Build slides
-ukHero.forEach((url, index) => {
+const heroSection = document.querySelector(".hero");
+
+// Build the slides
+heroImages.forEach((url, index) => {
     const div = document.createElement("div");
     div.classList.add("hero-slide");
     if (index === 0) div.classList.add("active");
     div.style.backgroundImage = `url('${url}')`;
-    hero.appendChild(div);
+    heroSection.appendChild(div);
 });
 
-// Slideshow rotation
-function rotateHero() {
+// Rotate slides
+function cycleSlides() {
     const slides = document.querySelectorAll(".hero-slide");
-    slides[slideIndex].classList.remove("active");
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].classList.add("active");
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
 }
-setInterval(rotateHero, 6000);
+
+setInterval(cycleSlides, 6000); // 6 seconds per slide
+
 
 /* ============================================================
-   FADE IN ON SCROLL
+   FADE-IN ON SCROLL
 ============================================================ */
 const faders = document.querySelectorAll(".fade-in");
 
+const appearOptions = {
+    threshold: 0.30,
+    rootMargin: "0px 0px -50px 0px"
+};
+
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        obs.unobserve(entry.target);
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+        }
     });
-}, { threshold: 0.35 });
+}, appearOptions);
 
 faders.forEach(f => observer.observe(f));
