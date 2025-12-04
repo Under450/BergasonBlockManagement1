@@ -1,154 +1,412 @@
-/* GENERAL */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bergason Property Services</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-/* HEADER */
-header {
-    width: 100%;
-    background: #000;
-    color: #fff;
-    padding: 18px 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+<body>
 
-.logo-img {
-    height: 60px;
-}
+<!-- ============================================================
+   HEADER
+============================================================ -->
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="Bergason Logo" class="logo-img">
+    </div>
 
-/* NAVIGATION */
-.desktop-nav a {
-    margin-left: 25px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
+    <nav class="desktop-nav">
+        <a href="#about">Why Choose Us</a>
+        <a href="#services">Services</a>
+        <a href="#case-law">Case Law</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#rtm">RTM</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-.hamburger { display: none; }
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
 
-/* HERO SECTION */
-.hero {
-    width: 100%;
-    height: 600px;
-    background-image: url("hero.jpg"); /* Replace with your hero filename */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#about">Why Choose Us</a>
+        <a href="#services">Services</a>
+        <a href="#case-law">Case Law</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#rtm">RTM</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-/* OPTION 1 – Light transparent overlay */
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.15); /* FIXED HERE */
-}
+<a href="#contact" class="floating-contact-btn">Contact Us</a>
 
-.hero-content {
-    position: relative;
-    text-align: center;
-    top: 40%;
-    transform: translateY(-40%);
-    color: white;
-}
+<!-- ============================================================
+   HERO SECTION
+============================================================ -->
+<section class="hero fade-in">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Bergason Property Services Limited</h1>
+        <p>Specialists in Residential Block Management, RTM, and Leasehold Support</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn gold">Contact Us</a>
+            <a href="#services" class="btn outline">View Services</a>
+        </div>
+    </div>
+</section>
 
-.hero h1 {
-    font-size: 48px;
-    font-weight: bold;
-}
+<!-- ============================================================
+   WHY CHOOSE US (TWO-COLUMN PROFESSIONAL)
+============================================================ -->
+<section id="about" class="section light fade-in">
+<h2>Why Choose Us?</h2>
 
-.hero p {
-    font-size: 22px;
-    margin-top: 10px;
-}
+<div class="wc-columns">
 
-/* BUTTONS */
-.btn {
-    padding: 12px 26px;
-    border-radius: 6px;
-    font-size: 18px;
-    text-decoration: none;
-}
+    <!-- LEFT COLUMN -->
+    <div class="wc-left">
 
-.btn.gold { background: #d9b56c; color: #000; }
-.btn.outline { border: 2px solid #d9b56c; color: #fff; }
+        <p><strong>Bergason Block Management</strong> offers a complete professional property management service for freeholders, residential management companies and property developers.</p>
 
-/* SECTIONS */
-.section {
-    padding: 80px 10%;
-}
+        <p>With over 37 years in the property and legal industry, we focus on customer service, ensuring dedicated attention to your property needs.</p>
 
-.section.light { background: #f8f8f8; }
-.section.dark { background: #111; color: #fff; }
+        <p>We operate a 24hr, 7 day a week service for emergencies. This ensures all issues are dealt with and hopefully abated before further issues arise.</p>
 
-/* CASE LAW */
-.case-law-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
+        <p>Our clients often experience a 15-25 percent reduction in expenditure within the first year which directly leads to lower service charges.</p>
 
-.case-law-box {
-    width: 260px;
-    padding: 30px;
-    background: #000;
-    color: #fff;
-    border-radius: 12px;
-    border: 2px solid #d9b56c;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        <p>As a family-run business, we prioritise face-to-face communication and swift responses to address any concerns our clients may have.</p>
 
-/* MODALS */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
-}
+        <p>We offer tailored solutions allowing you, the freeholder or directors, to make discretionary expenditure decisions without the heavy administrative burden often found elsewhere.</p>
 
-.modal-content {
-    background: #fff;
-    width: 60%;
-    padding: 30px;
-    border-radius: 10px;
-    max-height: 80vh;
-    overflow-y: auto;
-}
+        <p>Whether you require full hands-on management or a more controlled service, Bergason adapts to your needs. A director personally oversees your block or steps back as required.</p>
 
-.close { float: right; cursor: pointer; }
+        <p>Changing block management companies is not the logistical nightmare many believe. Our transition process typically takes 5 to 7 days.</p>
 
-/* REVIEWS */
-.review {
-    background: #000;
-    border: 2px solid #d9b56c;
-    border-radius: 15px;
-    padding: 25px;
-    transition: 0.3s;
-}
+    </div>
 
-.review:hover {
-    background: #d9b56c;
-    color: #000;
-}
+    <!-- RIGHT COLUMN -->
+    <div class="wc-right">
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #000;
-    color: #fff;
-}
+        <p>The services that might typically be covered, but not limited to the Block Management services we provide are:</p>
 
-.footer-links span {
-    cursor: pointer;
-    color: #d9b56c;
-}
+        <ul>
+            <li>Preparing and distributing service charge budgets/estimates.</li>
+            <li>Collecting service charges.</li>
+            <li>Preparation of invoices prior to examination by independent accountants.</li>
+            <li>Providing information to auditors for annual accounts.</li>
+            <li>Collecting routine service charge arrears.</li>
+            <li>Liaising with residents and associations.</li>
+            <li>Employing contractors and arranging quotes.</li>
+            <li>Inspecting the property and handling non-major repairs.</li>
+            <li>Periodic health and safety checks.</li>
+            <li>Holding annual resident meetings if required.</li>
+            <li>Record-keeping of residents and tenancy details.</li>
+            <li>Corporate governance support for RMC/RTM companies.</li>
+        </ul>
+
+        <p>Fees typically range between <strong>£14 to £20 + VAT per unit per month</strong>.</p>
+
+        <p>We always recommend a free site inspection to assess the development and prepare a tailored management plan.</p>
+
+        <p>A breakdown of additional fees outside the core package (e.g. Section 20 works) can be provided once instructed.</p>
+
+        <p>If you would like any further information, call us or arrange for a director to meet on-site to discuss requirements.</p>
+
+    </div>
+
+</div>
+
+<!-- PRESTIGE CARDS -->
+<h3 class="wc-prestige-title">What Sets Us Apart</h3>
+
+<div class="wc-prestige-grid">
+
+<div class="wc-card">
+<h4>24/7 Direct Access</h4>
+<p>Emergency support is available 24 hours a day, 7 days a week.</p>
+</div>
+
+<div class="wc-card">
+<h4>Cost Reduction 15–25%</h4>
+<p>Most sites experience 15–25 percent cost reduction in the first year.</p>
+</div>
+
+<div class="wc-card">
+<h4>Tailored Control</h4>
+<p>Directors may choose full management or retain approval rights.</p>
+</div>
+
+<div class="wc-card">
+<h4>Rapid Transition</h4>
+<p>Management transfer completed in 5–7 days.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ============================================================
+   OUR SERVICES — ACCORDION
+============================================================ -->
+<section id="services" class="section dark fade-in">
+<h2>Our Services</h2>
+
+<div class="accordion prestige">
+
+    <div class="item">
+        <div class="title">Full Block Management <span class="plus">+</span></div>
+        <div class="content">Full operational oversight including site inspections, maintenance coordination, compliance and financial management.</div>
+    </div>
+
+    <div class="item">
+        <div class="title">RTM Formation <span class="plus">+</span></div>
+        <div class="content">Eligibility checks, notices, participation, company formation and freeholder handover.</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Service Charge Accounts <span class="plus">+</span></div>
+        <div class="content">Budgeting, forecasting, ledger control, arrears and preparation for annual examination.</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Contractor Procurement <span class="plus">+</span></div>
+        <div class="content">Tendering, comparison, compliance checks and quality monitoring.</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Section 20 Compliance <span class="plus">+</span></div>
+        <div class="content">Full statutory consultation for qualifying works and long-term agreements.</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Safety & Compliance <span class="plus">+</span></div>
+        <div class="content">FRA, EICR, asbestos, water hygiene and general health and safety.</div>
+    </div>
+
+</div>
+</section>
+
+<!-- ============================================================
+   CASE LAW
+============================================================ -->
+<section id="case-law" class="section light fade-in">
+<h2>Key Case Law</h2>
+
+<div class="case-law-container">
+    <div class="case-law-box" onclick="openModal('garside')"><h3>Garside v RFYC (2011)</h3><p>Reasonableness →</p></div>
+    <div class="case-law-box" onclick="openModal('waaler')"><h3>Waaler v LB Hounslow (2017)</h3><p>Improvements →</p></div>
+    <div class="case-law-box" onclick="openModal('holland')"><h3>Holland v Oxford CC (2002)</h3><p>Transparency →</p></div>
+    <div class="case-law-box" onclick="openModal('francis')"><h3>Francis v Phillips (2014)</h3><p>Qualifying Works →</p></div>
+    <div class="case-law-box" onclick="openModal('arnold')"><h3>Arnold v Britton (2015)</h3><p>Interpretation →</p></div>
+</div>
+</section>
+
+<!-- ============================================================
+   CASE LAW MODALS
+============================================================ -->
+<div class="modal" id="garside"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('garside')">&times;</span>
+<h2>Garside v RFYC (2011)</h2>
+<p>This case examined whether costs were “reasonably incurred” under s.19 Landlord and Tenant Act 1985.</p>
+<ul>
+<li>Leaseholder affordability is relevant</li>
+<li>Works may require phasing</li>
+<li>Urgent repairs may proceed even if expensive</li>
+<li>Tribunals may adjust unreasonable charges</li>
+</ul>
+</div></div>
+
+<div class="modal" id="waaler"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('waaler')">&times;</span>
+<h2>Waaler v LB Hounslow (2017)</h2>
+<p>Established key distinctions between repairs (mandatory) and improvements (discretionary).</p>
+<p>Leaseholder finances must be considered during consultation.</p>
+</div></div>
+
+<div class="modal" id="holland"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('holland')">&times;</span>
+<h2>Holland v Oxford CC (2002)</h2>
+<p>Confirmed leaseholder rights to inspect invoices and supporting documents under Section 22 LTA 1985.</p>
+</div></div>
+
+<div class="modal" id="francis"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('francis')">&times;</span>
+<h2>Francis v Phillips (2014)</h2>
+<p>Splitting works artificially to avoid Section 20 consultation is unlawful.</p>
+</div></div>
+
+<div class="modal" id="arnold"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('arnold')">&times;</span>
+<h2>Arnold v Britton (2015)</h2>
+<p>Confirmed strict interpretation of contractual lease terms even if the results are harsh.</p>
+</div></div>
+
+<!-- ============================================================
+   REVIEWS
+============================================================ -->
+<section id="reviews" class="section dark fade-in">
+<h2>Client Reviews</h2>
+
+<div class="reviews-grid">
+
+<div class="review review-lux">
+<h3>Sasha Brookes</h3>
+<p class="review-date">6/8/2023</p>
+<div class="stars">★★★★★</div>
+<p>Bergason’s management has been outstanding—professional, responsive and effective.</p>
+</div>
+
+<div class="review review-lux">
+<h3>Benjamin Anderson</h3>
+<p class="review-date">6/8/2023</p>
+<div class="stars">★★★★★</div>
+<p>Very impressed with their communication and proactive handling of issues.</p>
+</div>
+
+<div class="review review-lux">
+<h3>Lynne Hinsley</h3>
+<p class="review-date">16/8/2024</p>
+<div class="stars">★★★★★</div>
+<p>A reliable family-run business offering personal service and professionalism.</p>
+</div>
+
+<div class="review review-lux">
+<h3>Natalie</h3>
+<p class="review-date">9/6/2025</p>
+<div class="stars">★★★★★</div>
+<p>They resolved long-standing issues within weeks of taking over management.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================================================
+   RTM
+============================================================ -->
+<section id="rtm" class="section light fade-in">
+<h2>RTM Support</h2>
+
+<div class="content-box">
+<h3>The RTM Process</h3>
+<ul>
+<li>Eligibility assessments</li>
+<li>Member participation coordination</li>
+<li>Notice drafting and service</li>
+<li>Company formation</li>
+<li>Freeholder handover</li>
+</ul>
+</div>
+
+<div class="content-box">
+<h3>Benefits</h3>
+<ul>
+<li>Financial control</li>
+<li>Transparency in expenditure</li>
+<li>Choice of contractors</li>
+<li>Improved communication</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+   CONTACT
+============================================================ -->
+<section id="contact" class="section dark fade-in">
+<h2>Contact Us</h2>
+
+<form class="contact-form">
+<label>Name</label>
+<input type="text" placeholder="Full Name">
+
+<label>Email</label>
+<input type="email" placeholder="Email Address">
+
+<label>Message</label>
+<textarea placeholder="How can we help?"></textarea>
+
+<button type="submit" class="btn gold">Send Message</button>
+</form>
+
+<p class="footer-info">
+<strong>Bergason Property Services Limited</strong><br>
+8a Bore Street, Lichfield, Staffordshire, WS13 6LL<br><br>
+
+Tel: 0121 384 1333<br>
+Email: info@bergason.co.uk<br><br>
+
+<strong>Company Number:</strong> 11329473<br><br>
+
+<strong>Redress Scheme:</strong> The Property Ombudsman (T02686)<br>
+<strong>Client Money Protection:</strong> UKALA (190119)<br>
+<strong>Memberships:</strong> The Property Institute (ARMA & IRPM)
+</p>
+
+</section>
+
+<!-- ============================================================
+   FOOTER
+============================================================ -->
+<footer>
+<div class="footer-links">
+    <span onclick="openModal('legal')">Legal</span> •
+    <span onclick="openModal('privacy')">Privacy Policy</span> •
+    <span onclick="openModal('terms')">Terms & Conditions</span> •
+    <span onclick="openModal('cookies')">Cookie Policy</span> •
+    <span onclick="openModal('aup')">Acceptable Use</span>
+</div>
+<br>
+© 2025 Bergason Property Services Limited. All Rights Reserved.
+</footer>
+
+<!-- ============================================================
+   FULL LEGAL DOCUMENTS
+============================================================ -->
+
+<!-- LEGAL NOTICE -->
+<div class="modal" id="legal"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('legal')">&times;</span>
+<h2>Legal Notice</h2>
+<p>This website is operated by Bergason Property Services Limited. All information is for general guidance only and does not constitute legal advice.</p>
+<p>No liability is accepted for inaccuracies, omissions or technical issues that may arise. Independent professional advice should be obtained where required.</p>
+</div></div>
+
+<!-- PRIVACY -->
+<div class="modal" id="privacy"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('privacy')">&times;</span>
+<h2>Privacy Policy</h2>
+<p>Bergason Property Services Limited processes personal data in accordance with UK GDPR.</p>
+<p>We collect identity, contact, financial, tenancy and property-related information required for block management services.</p>
+<p>Data may be shared with contractors, insurers, auditors, legal advisers and statutory bodies where necessary.</p>
+<p>You have rights to access, rectification, erasure, restriction and ICO complaint.</p>
+</div></div>
+
+<!-- TERMS -->
+<div class="modal" id="terms"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('terms')">&times;</span>
+<h2>Terms & Conditions</h2>
+<p>By using this site, you agree to these terms. You must not misuse the site, attempt unauthorised access, or disrupt functionality.</p>
+<p>Bergason Property Services Limited offers no warranty as to accuracy of content and accepts no liability for loss arising from use of this website.</p>
+</div></div>
+
+<!-- COOKIES -->
+<div class="modal" id="cookies"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('cookies')">&times;</span>
+<h2>Cookie Policy</h2>
+<p>This website uses only essential cookies required for functionality. No tracking, marketing or analytics cookies are used.</p>
+<p>You may disable cookies in your browser settings.</p>
+</div></div>
+
+<!-- ACCEPTABLE USE -->
+<div class="modal" id="aup"><div class="modal-content legal-scroll">
+<span class="close" onclick="closeModal('aup')">&times;</span>
+<h2>Acceptable Use Policy</h2>
+<p>You may use this site only for lawful purposes. You must not attempt to damage, overload, hack or disrupt the website.</p>
+</div></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
