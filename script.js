@@ -6,7 +6,7 @@ function toggleMenu() {
     nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
 }
 
-/* Close mobile menu when clicking link (better UX) */
+/* Close mobile menu when clicking a link */
 document.addEventListener("click", function(e) {
     if (e.target.closest("#mobileNav a")) {
         document.getElementById("mobileNav").style.display = "none";
@@ -15,25 +15,36 @@ document.addEventListener("click", function(e) {
 
 
 /* ============================================================
-   ACCORDION
+   ACCORDION WITH + ICON ROTATION
 ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
+
     const items = document.querySelectorAll(".accordion .item");
 
     items.forEach(item => {
         const title = item.querySelector(".title");
         const content = item.querySelector(".content");
+        const plus = item.querySelector(".plus");
 
         title.addEventListener("click", () => {
+
             const isOpen = content.style.display === "block";
 
-            // close all
+            /* Close all accordions */
             document.querySelectorAll(".accordion .content").forEach(c => {
                 c.style.display = "none";
             });
 
-            // open selected
-            content.style.display = isOpen ? "none" : "block";
+            /* Reset all + icons */
+            document.querySelectorAll(".accordion .plus").forEach(p => {
+                p.style.transform = "rotate(0deg)";
+            });
+
+            /* Toggle the clicked one */
+            if (!isOpen) {
+                content.style.display = "block";
+                plus.style.transform = "rotate(45deg)";
+            }
         });
     });
 });
@@ -50,83 +61,59 @@ function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
 
-/* Click outside closes modal */
+/* Close modal when clicking outside content */
 window.addEventListener("click", function(e) {
     document.querySelectorAll(".modal").forEach(modal => {
-        if (e.target === modal) modal.style.display = "none";
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
     });
 });
 
 
 /* ============================================================
-   HERO SLIDESHOW — UK-STYLE BLOCK/BUILDING IMAGES
+   HERO — SINGLE SLIDE SYSTEM (Option B)
 ============================================================ */
 
-/*
-   You requested:
-   - UK-style apartment blocks or office block imagery
-   - No residential houses
-   - No obviously foreign images
-   - Second image remained the same
-   - No blank image
-
-   These images are “neutral modern apartment/office blocks” that DO NOT
-   appear foreign and DO NOT include residential homes. They are placeholders
-   for you to replace later with your actual confirmed UK block photos.
+/* 
+   Your hero uses only ONE slide (a single office desk photo).
+   We keep the slideshow structure intact, but do NOT rotate.
+   This preserves compatibility with your original codebase.
 */
 
-const heroImages = [
-    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2000&q=60",
-    "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=2000&q=60",
-    "https://images.unsplash.com/photo-1519139270027-3631bf29e08a?auto=format&fit=crop&w=2000&q=60",
-    "https://images.unsplash.com/photo-1496309732348-3627f3f040ee?auto=format&fit=crop&w=2000&q=60",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=60",
-    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=2000&q=60"
-];
-
-
-
-let currentSlide = 0;
-
-const heroSection = document.querySelector(".hero");
-
-// Build the slides
-heroImages.forEach((url, index) => {
-    const div = document.createElement("div");
-    div.classList.add("hero-slide");
-    if (index === 0) div.classList.add("active");
-    div.style.backgroundImage = `url('${url}')`;
-    heroSection.appendChild(div);
-});
-
-// Rotate slides
-function cycleSlides() {
+document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".hero-slide");
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-}
 
-setInterval(cycleSlides, 6000); // 6 seconds per slide
+    /* If more slides ever get added, this will auto-rotate */
+    if (slides.length > 1) {
+        let current = 0;
+        setInterval(() => {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 7000);
+    }
+});
 
 
 /* ============================================================
-   FADE-IN ON SCROLL
+   FASTER FADE-IN ON SCROLL (Option B)
 ============================================================ */
 const faders = document.querySelectorAll(".fade-in");
 
-const appearOptions = {
-    threshold: 0.30,
-    rootMargin: "0px 0px -50px 0px"
-};
+const observer = new IntersectionObserver(
+    (entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                obs.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.15,      // triggers earlier when content is 15 percent visible
+        rootMargin: "0px 0px -10px 0px"
+    }
+);
 
-const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-faders.forEach(f => observer.observe(f));
+faders.forEach(el => observer.observe(el));
