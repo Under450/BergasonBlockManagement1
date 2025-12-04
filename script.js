@@ -76,13 +76,14 @@ window.addEventListener("click", function(e) {
 */
 
 const heroImages = [
-    "https://barnimages.com/wp-content/uploads/2019/10/20180821-barnimages-02-960x636.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Tower_Block_UK_photo_cl2-13.jpg/1200px-Tower_Block_UK_photo_cl2-13.jpg",
-    "https://st.hzcdn.com/simgs/ffb196290543451d_4-9993/home-design.jpg",
-    "https://images.unsplash.com/photo-1677195061854-6345ae17fb87?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWslMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    "https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/photography/reference-projects/UK_MKT_PHO_REF_FAC_BASE_011.jpg.imgTransformer/media_16to10/md-2/1704384116149/UK_MKT_PHO_REF_FAC_BASE_011.jpg",
-    "https://st5.depositphotos.com/6109242/76085/i/450/depositphotos_760855064-stock-photo-birmingham-september-2024-aerial-view.jpg"
+    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2000&q=60",
+    "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=2000&q=60",
+    "https://images.unsplash.com/photo-1519139270027-3631bf29e08a?auto=format&fit=crop&w=2000&q=60",
+    "https://images.unsplash.com/photo-1496309732348-3627f3f040ee?auto=format&fit=crop&w=2000&q=60",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=60",
+    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=2000&q=60"
 ];
+
 
 
 let currentSlide = 0;
