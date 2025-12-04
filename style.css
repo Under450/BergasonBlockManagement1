@@ -4,67 +4,67 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #222;
-}
-
-.section {
-    padding: 90px 8%;
-}
-
-.section.dark {
-    background: #000;
-    color: #fff;
-}
-
-.section.light {
     background: #fff;
     color: #000;
 }
 
-h1, h2, h3, h4 {
-    margin-top: 0;
+h2 {
     text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.section {
+    padding: 80px 10%;
+}
+
+.section.light {
+    background: #f8f8f8;
+    color: #000;
+}
+
+.section.dark {
+    background: #111;
+    color: #fff;
 }
 
 /* ============================================================
    HEADER
 ============================================================ */
 header {
-    position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
     background: #000;
+    color: #fff;
+    padding: 18px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    z-index: 50;
 }
 
-.logo-img { height: 55px; }
+.logo-img {
+    height: 60px;
+}
 
-/* Desktop Nav */
+/* DESKTOP NAV */
 .desktop-nav a {
+    margin-left: 25px;
     color: #fff;
-    margin-left: 20px;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 16px;
 }
 
-.desktop-nav a:hover {
-    color: #d9a441;
+/* MOBILE NAV */
+.hamburger {
+    display: none;
+    cursor: pointer;
 }
 
-/* Mobile Menu */
-.hamburger { display: none; cursor: pointer; }
 .hamburger span {
     display: block;
     width: 26px;
     height: 3px;
     background: #fff;
-    margin: 5px;
+    margin: 5px 0;
 }
 
 .mobile-nav {
@@ -78,252 +78,256 @@ header {
     color: #fff;
     margin: 10px 0;
     text-decoration: none;
+    font-size: 18px;
 }
 
-/* Floating Contact Button */
+/* ============================================================
+   FLOATING CONTACT BUTTON
+============================================================ */
 .floating-contact-btn {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #d9a441;
-    color: #000;
-    padding: 14px 22px;
+    background: #d9b56c;
+    padding: 15px 22px;
     border-radius: 6px;
+    color: #000;
     font-weight: bold;
     text-decoration: none;
-    z-index: 60;
+    z-index: 999;
 }
 
 /* ============================================================
    HERO SECTION
 ============================================================ */
 .hero {
-    height: 75vh;
+    width: 100%;
+    height: 600px;
+    background-image: url("https://images.unsplash.com/photo-1529429611278-4f056c1c1f4c?auto=format&fit=crop&w=1950&q=80");
     background-size: cover;
     background-position: center;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .hero-overlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.15);
 }
 
 .hero-content {
     position: relative;
-    z-index: 3;
     text-align: center;
+    top: 40%;
+    transform: translateY(-40%);
     color: #fff;
 }
 
-.hero-buttons {
-    margin-top: 25px;
-}
-
-.btn {
-    padding: 12px 22px;
-    text-decoration: none;
-    border-radius: 5px;
+.hero h1 {
+    font-size: 48px;
     font-weight: bold;
 }
 
-.btn.gold { background: #d9a441; color: #000; }
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 12px 26px;
+    border-radius: 6px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.btn.gold {
+    background: #d9b56c;
+    color: #000;
+}
+
 .btn.outline {
-    border: 2px solid #fff;
+    border: 2px solid #d9b56c;
     color: #fff;
 }
 
 /* ============================================================
-   WHY CHOOSE US (STYLE D - PRESTIGE)
+   WHY CHOOSE US – TWO COLUMN PROFESSIONAL
 ============================================================ */
-#about {
-    border: 6px solid #d9c08f;
-    padding: 60px;
-    border-radius: 24px;
-}
-
-.wc-intro { font-size: 18px; line-height: 1.6; }
-
 .wc-columns {
     display: flex;
     gap: 40px;
+    margin-bottom: 50px;
+}
+
+.wc-left, .wc-right {
+    width: 50%;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Prestige Title */
+.wc-prestige-title {
+    text-align: center;
     margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 28px;
 }
 
-.wc-columns div {
-    flex: 1;
-}
-
+/* Prestige Cards */
 .wc-prestige-grid {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .wc-card {
+    width: 250px;
     padding: 25px;
-    border-radius: 16px;
-    background: #111;
     color: #fff;
+    background: #000;
+    border: 2px solid #d9b56c;
+    border-radius: 12px;
+    text-align: center;
 }
 
 /* ============================================================
-   OUR FULL DUTIES (2 COLUMNS)
-============================================================ */
-.wc-detail ul {
-    columns: 2;
-    column-gap: 40px;
-}
-
-/* ============================================================
-   SERVICES ACCORDION – ORANGE UPDATE
+   ACCORDION – ORANGE VARIANT
 ============================================================ */
 .accordion .item {
-    background: #111;
     margin-bottom: 10px;
     border-radius: 8px;
     overflow: hidden;
+    background: #222;
 }
 
 .accordion .title {
-    width: 100%;
-    background: #111;
-    border: none;
+    padding: 18px;
+    background: #000;
     color: #fff;
     font-size: 20px;
-    padding: 18px;
-    text-align: left;
     cursor: pointer;
-    position: relative;
+    border-left: 5px solid #d9b56c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.accordion .title:hover {
-    color: #d9a441;
+.title .plus {
+    color: #d9b56c;
+    font-weight: bold;
+    font-size: 26px;
 }
 
-.plus {
-    float: right;
-    font-size: 24px;
-    color: #fff;
-    transition: 0.3s ease;
-}
-
-/* Active */
-.active-title {
-    color: #d9a441 !important;
-}
-
-.active-title .plus {
-    color: #d9a441 !important;
-    transform: rotate(45deg);
-}
-
-/* CONTENT ORANGE */
 .accordion .content {
     display: none;
-    background: #d9a441 !important;
-    padding: 20px;
-    color: #000 !important;
+    padding: 15px;
+    background: #d9b56c;
+    color: #000;
+    font-size: 17px;
 }
 
 /* ============================================================
    CASE LAW
 ============================================================ */
 .case-law-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
 .case-law-box {
+    width: 260px;
+    padding: 30px;
     background: #000;
     color: #fff;
     border-radius: 12px;
-    padding: 25px;
+    border: 2px solid #d9b56c;
     cursor: pointer;
-    text-align: center;
-    border: 3px solid #d9a441;
+    transition: 0.3s;
 }
 
-/* ============================================================
-   REVIEWS — HOVER TO CREAM
-============================================================ */
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.review-lux {
-    background: #111;
-    padding: 25px;
-    border-radius: 12px;
-    transition: background 0.3s ease;
-}
-
-.review-lux:hover {
-    background: #d9c08f !important;
-    color: #000 !important;
-}
-
-.review-lux:hover .stars {
+.case-law-box:hover {
+    background: #d9b56c;
     color: #000;
 }
 
 /* ============================================================
-   CONTACT FORM
+   REVIEWS – CREAM HOVER
+============================================================ */
+.reviews-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.review {
+    width: 260px;
+    padding: 25px;
+    background: #000;
+    border: 2px solid #d9b56c;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.review:hover {
+    background: #f5e9d0;
+    color: #000;
+}
+
+/* ============================================================
+   RTM
+============================================================ */
+.content-box {
+    background: #fff;
+    border: 2px solid #d9b56c;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* ============================================================
+   CONTACT
 ============================================================ */
 .contact-form {
-    width: 40%;
-    margin: auto;
+    width: 60%;
+    margin: 0 auto 40px auto;
     display: flex;
     flex-direction: column;
 }
 
-.contact-form input,
+.contact-form input, 
 .contact-form textarea {
-    margin-bottom: 15px;
     padding: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
     border-radius: 6px;
-    border: none;
+    border: 1px solid #ccc;
 }
 
 .footer-info {
     margin-top: 40px;
-    text-align: center;
-    line-height: 1.6;
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #000;
-    color: #fff;
-}
-
-.footer-links span {
-    cursor: pointer;
-    color: #d9a441;
+    line-height: 1.7;
 }
 
 /* ============================================================
    MODALS
 ============================================================ */
 .modal {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
     justify-content: center;
     align-items: center;
 }
@@ -332,13 +336,59 @@ footer {
     background: #fff;
     width: 60%;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 10px;
     max-height: 80vh;
     overflow-y: auto;
 }
 
 .close {
     float: right;
-    font-size: 28px;
     cursor: pointer;
+    font-size: 28px;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #000;
+    color: #fff;
+}
+
+.footer-links span {
+    cursor: pointer;
+    color: #d9b56c;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 900px) {
+
+    .wc-columns {
+        flex-direction: column;
+    }
+
+    .wc-left, .wc-right {
+        width: 100%;
+    }
+
+    .reviews-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
 }
