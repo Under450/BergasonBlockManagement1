@@ -1,4 +1,4 @@
-/* ============================================================
+f/* ============================================================
    MOBILE NAVIGATION
 ============================================================ */
 function toggleMenu() {
@@ -76,18 +76,14 @@ window.addEventListener("click", function(e) {
 */
 
 const heroImages = [
-    // IMAGE 1 — Replace later with your verified UK image
-    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1950&q=80",
-
-    // IMAGE 2 — You requested this one remain exactly as-is
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1950&q=80",
-
-    // IMAGE 3 — Replace later with your verified UK image
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118d?auto=format&fit=crop&w=1950&q=80",
-
-    // IMAGE 4 — Replace later with your verified UK image
-    "https://images.unsplash.com/photo-1530092376999-2541f1032f5f?auto=format&fit=crop&w=1950&q=80"
+    "https://barnimages.com/wp-content/uploads/2019/10/20180821-barnimages-02-960x636.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Tower_Block_UK_photo_cl2-13.jpg/1200px-Tower_Block_UK_photo_cl2-13.jpg",
+    "https://st.hzcdn.com/simgs/ffb196290543451d_4-9993/home-design.jpg",
+    "https://images.unsplash.com/photo-1677195061854-6345ae17fb87?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWslMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "https://www.wienerberger.co.uk/content/dam/wienerberger/united-kingdom/marketing/photography/reference-projects/UK_MKT_PHO_REF_FAC_BASE_011.jpg.imgTransformer/media_16to10/md-2/1704384116149/UK_MKT_PHO_REF_FAC_BASE_011.jpg",
+    "https://st5.depositphotos.com/6109242/76085/i/450/depositphotos_760855064-stock-photo-birmingham-september-2024-aerial-view.jpg"
 ];
+
 
 let currentSlide = 0;
 
