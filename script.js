@@ -6,6 +6,7 @@ function toggleMenu() {
     nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
 }
 
+/* Close mobile nav when clicking a link */
 document.addEventListener("click", function(e) {
     if (e.target.closest("#mobileNav a")) {
         document.getElementById("mobileNav").style.display = "none";
@@ -14,7 +15,7 @@ document.addEventListener("click", function(e) {
 
 
 /* ============================================================
-   ACCORDION — UPDATED FOR ORANGE + ACTIVE STATE
+   ACCORDION — STRUCTURE 1 (NO BUTTON TAGS)
 ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".accordion .item");
@@ -22,16 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
     items.forEach(item => {
         const title = item.querySelector(".title");
         const content = item.querySelector(".content");
+        const plus = item.querySelector(".plus");
 
         title.addEventListener("click", () => {
             const isOpen = content.style.display === "block";
 
-            document.querySelectorAll(".accordion .content").forEach(c => c.style.display = "none");
-            document.querySelectorAll(".accordion .title").forEach(t => t.classList.remove("active-title"));
+            /* Close all first */
+            document.querySelectorAll(".accordion .content").forEach(c => {
+                c.style.display = "none";
+            });
+            document.querySelectorAll(".accordion .plus").forEach(p => {
+                p.textContent = "+";
+            });
 
+            /* Open selected */
             if (!isOpen) {
                 content.style.display = "block";
-                title.classList.add("active-title");
+                plus.textContent = "-";
             }
         });
     });
@@ -39,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ============================================================
-   MODALS
+   MODALS (CASE LAW + LEGAL)
 ============================================================ */
 function openModal(id) {
     document.getElementById(id).style.display = "flex";
@@ -49,33 +57,32 @@ function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
 
+/* Close modal when clicking outside */
 window.addEventListener("click", function(e) {
     document.querySelectorAll(".modal").forEach(modal => {
-        if (e.target === modal) modal.style.display = "none";
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
     });
 });
 
 
 /* ============================================================
-   HERO IMAGE (single background)
-============================================================ */
-
-document.querySelector(".hero").style.backgroundImage =
-    "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1950&q=80')";
-
-
-/* ============================================================
-   FADE-IN EFFECT
+   FADE-IN ON SCROLL
 ============================================================ */
 const faders = document.querySelectorAll(".fade-in");
 
-const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.2 });
+const observerOptions = {
+    threshold: 0.25,
+    rootMargin: "0px 0px -50px 0px"
+};
 
-faders.forEach(f => observer.observe(f));
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+    });
+}, observerOptions);
+
+faders.forEach(el => appearOnScroll.observe(el));
