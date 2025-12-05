@@ -143,13 +143,53 @@ header {
 /* ============================================================
    WHY CHOOSE US
 ============================================================ */
-.wc-textblock {
+/* ============================================================
+   WHY CHOOSE US – NEW GRID LAYOUT (MATCHES SCREENSHOT)
+============================================================ */
+
+.why-text {
     max-width: 900px;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #333;
+    margin: 0 auto 50px auto;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
 }
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 6px solid #d9a464; /* soft gold accent */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.why-box h3 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.why-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ============================================================
    WHAT SETS US APART
