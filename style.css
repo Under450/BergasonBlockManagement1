@@ -22,26 +22,54 @@ h2 {
 }
 
 /* HEADER */
+/* HEADER */
 header {
+    width: 100%;
     background: #fff;
     border-bottom: 3px solid #d9a464;
+}
+
+/* Inner wrapper so the header matches site width */
+.header-inner {
+    max-width: 1200px;     /* matches your site width */
+    margin: 0 auto;
     padding: 20px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
 }
 
-.logo { height: 70px; }
+.logo-img {
+    height: 60px;
+}
 
+/* Desktop navigation */
 .desktop-nav a {
     margin-left: 25px;
+    color: #000;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    color: #000;
+    font-size: 16px;
 }
 
-.desktop-nav a:hover { color: #d9a464; }
+.desktop-nav a:hover {
+    color: #d9a464;
+}
+
+/* Hamburger only for mobile */
+.hamburger {
+    display: none;
+}
+
+/* Mobile nav */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 3px solid #d9a464;
+}
 
 /* HERO */
 .hero {
