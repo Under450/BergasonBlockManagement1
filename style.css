@@ -165,12 +165,15 @@ header {
    WHY CHOOSE US – NEW GRID LAYOUT (MATCHES SCREENSHOT)
 ============================================================ */
 /* Extra services section box - centered and styled */
+/* Full-width centered container for extra services section */
 .why-extra-wrapper {
-    display: flex;
-    justify-content: center;
     width: 100%;
-    margin-top: 50px;
+    max-width: 1200px;   /* same width as Why Choose Us grid */
+    margin: 60px auto;   /* centers it and adds spacing */
+    padding: 0 10%;      /* matches all other sections */
+    box-sizing: border-box;
 }
+
 
 .why-extra-box {
     background: #fff;
@@ -178,11 +181,12 @@ header {
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     padding: 40px 50px;
     border-radius: 12px;
-    max-width: 1200px;
+    width: 100%;          /* ensures full available width */
     text-align: left;
     font-size: 19px;
     line-height: 1.65;
 }
+
 
 /* Two-column bullet layout */
 .why-two-col {
