@@ -1,9 +1,6 @@
 /* ============================================================
    GLOBAL
 ============================================================ */
-/* ============================================================
-   GLOBAL
-============================================================ */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -12,6 +9,9 @@ body {
 
 .section {
     padding: 90px 10%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section.light {
@@ -23,20 +23,14 @@ body {
     color: #fff;
 }
 
-/* Universal container width */
-/* Correct global width constraint */
-.wrapper {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Fix heading alignment */
+/* Center all section titles */
 .section h2,
 .section h3 {
     text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: bold;
 }
-
 
 /* ============================================================
    HEADER
@@ -50,17 +44,11 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid #d9a464;
-}
-
-/* FIX HEADER WIDTH TO MATCH SITE WIDTH */
-header {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    box-sizing: border-box;
 }
 
 .logo-img {
-    height: 80px;
+    height: 60px;
 }
 
 .desktop-nav a {
@@ -161,77 +149,6 @@ header {
 /* ============================================================
    WHY CHOOSE US
 ============================================================ */
-/* ============================================================
-   WHY CHOOSE US – NEW GRID LAYOUT (MATCHES SCREENSHOT)
-============================================================ */
-/* Extra services section box - centered and styled */
-/* Full-width centered container for extra services section */
-.why-extra-wrapper {
-    width: 100%;
-    max-width: 1200px;   /* same width as Why Choose Us grid */
-    margin: 60px auto;   /* centers it and adds spacing */
-    padding: 0 10%;      /* matches all other sections */
-    box-sizing: border-box;
-}
-
-
-.why-extra-box {
-    background: #fff;
-    border-left: 6px solid #d9a464;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    padding: 40px 50px;
-    border-radius: 12px;
-    width: 100%;          /* ensures full available width */
-    text-align: left;
-    font-size: 19px;
-    line-height: 1.65;
-}
-
-
-/* Two-column bullet layout */
-.why-two-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    margin: 30px 0;
-}
-
-.why-two-col ul {
-    padding-left: 20px;
-}
-
-.why-two-col li {
-    margin-bottom: 10px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .why-two-col {
-        grid-template-columns: 1fr;
-    }
-}
-
-.why-extra-text {
-    max-width: 1000px;
-    margin: 50px auto;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.why-two-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin: 25px 0;
-}
-
-.why-two-col ul {
-    padding-left: 20px;
-}
-
-.why-two-col li {
-    margin-bottom: 8px;
-}
 
 .why-text {
     max-width: 900px;
@@ -254,7 +171,7 @@ header {
     background: #fff;
     padding: 40px;
     border-radius: 12px;
-    border-left: 6px solid #d9a464; /* soft gold accent */
+    border-left: 6px solid #d9a464;
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
@@ -269,13 +186,46 @@ header {
     line-height: 1.6;
 }
 
+/* ============================================================
+   EXTRA INFO SECTION (NEW BLOCK YOU REQUESTED)
+============================================================ */
+
+.why-extra-wrapper {
+    width: 100%;
+    max-width: 1200px;      /* aligns with Why Choose Us grid */
+    margin: 60px auto 40px auto;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+
+.why-extra-box {
+    background: #fff;
+    padding: 45px 55px;
+    border-radius: 12px;
+    border-left: 6px solid #d9a464;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+.why-extra-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.why-extra-grid ul {
+    padding-left: 20px;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
 /* Mobile responsive */
-@media (max-width: 900px) {
-    .why-grid {
+@media (max-width: 800px) {
+    .why-extra-grid {
         grid-template-columns: 1fr;
     }
 }
-
 
 /* ============================================================
    WHAT SETS US APART
@@ -285,6 +235,7 @@ header {
     justify-content: space-between;
     margin-top: 40px;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .prestige-card {
