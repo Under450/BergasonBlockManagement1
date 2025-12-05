@@ -4,119 +4,70 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #000;
+    background: #fff;
 }
 
 .section {
-    padding: 80px 10%;
+    padding: 90px 10%;
 }
 
 .section.light {
-    background: #f8f8f8;
+    background: #f7f7f7;
 }
 
 .section.dark {
     background: #1a1a1a;
-    color: #ffffff;
+    color: #fff;
 }
 
 h2 {
     text-align: center;
-    font-size: 36px;
     margin-bottom: 40px;
+    font-size: 36px;
     font-weight: bold;
-}
-
-/* Accent colour */
-:root {
-    --gold: #d9a464;
-    --charcoal: #1a1a1a;
 }
 
 /* ============================================================
    HEADER
 ============================================================ */
-
 header {
     width: 100%;
-    background: #ffffff;
-    border-bottom: 3px solid var(--gold);
-}
-
-.header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    background: #fff;
+    color: #000;
     padding: 20px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
+    border-bottom: 3px solid #d9a464;
 }
 
 .logo-img {
     height: 60px;
 }
 
-/* Desktop Navigation */
-.desktop-nav {
-    display: flex;
-}
-
 .desktop-nav a {
     margin-left: 25px;
     color: #000;
     text-decoration: none;
-    font-size: 16px;
     font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
 }
 
 .desktop-nav a:hover {
-    color: var(--gold);
+    color: #d9a464;
 }
 
-/* Mobile Hamburger */
 .hamburger {
     display: none;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 30px;
-    height: 4px;
-    background: #000;
-    display: block;
-    margin: 6px 0;
-}
-
-/* Mobile Navigation */
-.mobile-nav {
-    display: none;
-    flex-direction: column;
-    background: #ffffff;
-    padding: 20px 35px;
-    border-bottom: 3px solid var(--gold);
-}
-
-.mobile-nav a {
-    padding: 12px 0;
-    color: #000;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.mobile-nav a:hover {
-    color: var(--gold);
 }
 
 /* ============================================================
-   HERO SECTION
+   HERO
 ============================================================ */
-
 .hero {
-    height: 600px;
     width: 100%;
+    height: 600px;
     background-image: url("hero.jpg");
     background-size: cover;
     background-position: center;
@@ -129,7 +80,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.15); /* Light overlay to brighten image */
+    background: rgba(0,0,0,0.15);
 }
 
 .hero-content {
@@ -144,204 +95,214 @@ header {
 .hero h1 {
     font-size: 48px;
     margin: 0;
-    font-weight: bold;
 }
 
 .hero p {
     font-size: 22px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
+/* ============================================================
+   BUTTONS
+============================================================ */
 .btn {
     padding: 12px 26px;
     border-radius: 6px;
-    display: inline-block;
-    text-decoration: none;
     font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
     margin: 10px;
 }
 
 .btn.gold {
-    background: var(--gold);
+    background: #d9a464;
     color: #000;
 }
 
 .btn.outline {
-    border: 2px solid var(--gold);
+    border: 2px solid #d9a464;
     color: #fff;
 }
 
-/* Floating Contact Button */
+/* ============================================================
+   FLOATING CONTACT BUTTON
+============================================================ */
 .floating-contact-btn {
     position: fixed;
-    bottom: 20px;
     right: 20px;
-    background: var(--gold);
+    bottom: 20px;
+    background: #d9a464;
     padding: 14px 20px;
     border-radius: 8px;
-    text-decoration: none;
     color: #000;
+    text-decoration: none;
     font-weight: bold;
-    z-index: 99;
+    z-index: 999;
 }
 
 /* ============================================================
    WHY CHOOSE US
 ============================================================ */
-
-.wc-image-text {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.wc-image-text img {
-    width: 45%;
-    border-radius: 12px;
-}
-
-.wc-image-text div {
-    width: 55%;
+.wc-textblock {
+    max-width: 900px;
+    margin: auto;
     font-size: 18px;
-    line-height: 1.6;
-}
-
-.wc-section-title {
-    text-align: center;
-    margin-top: 60px;
-    font-size: 30px;
-    font-weight: bold;
+    line-height: 1.7;
+    color: #333;
 }
 
 /* ============================================================
-   WHAT SETS US APART BOXES
+   WHAT SETS US APART
 ============================================================ */
-
-.wc-prestige-grid {
+.prestige-grid {
     display: flex;
-    gap: 30px;
     justify-content: space-between;
+    margin-top: 40px;
+    gap: 25px;
 }
 
-.wc-box {
-    width: 24%;
-    background: #faf5eb; /* light cream tone */
-    border-left: 6px solid var(--gold);
+.prestige-card {
+    width: 32%;
+    background: #faf5ee;
+    border: 2px solid #d9a464;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
 }
 
-.wc-box h4 {
-    margin-top: 0;
-    font-size: 20px;
+.prestige-card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
 }
 
-.wc-box p {
-    margin-top: 10px;
-    font-size: 16px;
+.prestige-card p {
+    font-size: 17px;
+    line-height: 1.6;
 }
 
 /* ============================================================
    SERVICES ACCORDION
 ============================================================ */
-
 .accordion .item {
-    background: var(--charcoal);
-    border: 2px solid var(--gold);
-    margin-bottom: 12px;
+    background: #222;
+    border: 2px solid #d9a464;
     border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 0;
 }
 
 .accordion .title {
-    background: transparent;
+    background: none;
+    color: #d9a464;
+    width: 100%;
     padding: 18px;
+    text-align: left;
     font-size: 20px;
-    color: var(--gold);
+    border: none;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    border: none;
-    width: 100%;
-    cursor: pointer;
 }
 
 .plus {
-    font-size: 26px;
     font-weight: bold;
+    font-size: 24px;
 }
 
 .accordion .content {
     display: none;
+    background: #d9a464;
     padding: 20px;
-    background: var(--gold);
     color: #000;
     border-radius: 0 0 10px 10px;
 }
 
 /* ============================================================
-   CASE LAW BOXES
+   CASE LAW
 ============================================================ */
-
 .case-law-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .case-law-box {
     width: 260px;
     padding: 30px;
-    background: var(--charcoal);
+    background: #1a1a1a;
     color: #fff;
-    border: 2px solid var(--gold);
     border-radius: 12px;
+    border: 2px solid #d9a464;
     cursor: pointer;
-    text-align: center;
     transition: 0.3s;
+    text-align: center;
 }
 
 .case-law-box:hover {
-    background: var(--gold);
+    background: #d9a464;
     color: #000;
 }
 
 /* ============================================================
    REVIEWS
 ============================================================ */
-
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
 }
 
 .review {
-    border-radius: 12px;
+    background: #1a1a1a;
+    border: 2px solid #d9a464;
     padding: 25px;
-    background: var(--charcoal);
-    border: 2px solid var(--gold);
-    color: #fff;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
 .review:hover {
-    background: var(--gold);
+    background: #d9a464;
     color: #000;
 }
 
-/* ============================================================
-   CONTACT FORM
-============================================================ */
+.stars {
+    color: #d9a464;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
 
+/* ============================================================
+   RTM SUPPORT
+============================================================ */
+.rtm-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.rtm-box {
+    width: 48%;
+    background: #faf5ee;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #d9a464;
+}
+
+.rtm-box h3 {
+    margin-bottom: 10px;
+}
+
+/* ============================================================
+   CONTACT
+============================================================ */
 .contact-grid {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
 }
 
 .contact-form {
-    width: 48%;
+    width: 45%;
 }
 
 .contact-form input,
@@ -349,27 +310,56 @@ header {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
 }
 
 .footer-info {
-    width: 48%;
+    width: 45%;
     line-height: 1.8;
 }
 
 /* ============================================================
    FOOTER
 ============================================================ */
-
 footer {
-    background: #ffffff;
-    border-top: 3px solid var(--gold);
-    padding: 40px;
     text-align: center;
+    padding: 40px;
+    background: #fff;
+    border-top: 3px solid #d9a464;
+    color: #000;
 }
 
 .footer-links span {
     cursor: pointer;
-    color: var(--gold);
-    margin: 0 10px;
+    color: #d9a464;
+}
+
+/* ============================================================
+   MODALS
+============================================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    width: 60%;
+    padding: 30px;
+    border-radius: 12px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
 }
