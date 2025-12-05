@@ -164,6 +164,27 @@ header {
 /* ============================================================
    WHY CHOOSE US – NEW GRID LAYOUT (MATCHES SCREENSHOT)
 ============================================================ */
+.why-extra-text {
+    max-width: 1000px;
+    margin: 50px auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.why-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 25px 0;
+}
+
+.why-two-col ul {
+    padding-left: 20px;
+}
+
+.why-two-col li {
+    margin-bottom: 8px;
+}
 
 .why-text {
     max-width: 900px;
