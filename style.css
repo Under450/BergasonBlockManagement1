@@ -1,109 +1,71 @@
-/* ============================================================
+/* ===================================================================
    GLOBAL
-============================================================ */
+=================================================================== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #fff;
-    color: #000;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 32px;
-}
-
-.section {
-    padding: 80px 10%;
+    background: #FFFFFF;
+    color: #000000;
 }
 
 .section.light {
-    background: #f8f8f8;
-    color: #000;
+    background: #F5F5F5;
 }
 
 .section.dark {
-    background: #111;
-    color: #fff;
+    background: #3A3A3A;
+    color: #FFFFFF;
 }
 
-/* ============================================================
+/* Universal accent: any line or border that needs colour */
+hr, .accent-line {
+    border: none;
+    border-bottom: 2px solid #D9B67A;
+    width: 60px;
+    margin: 20px auto;
+}
+
+/* ===================================================================
    HEADER
-============================================================ */
+=================================================================== */
 header {
     width: 100%;
-    background: #000;
-    color: #fff;
+    background: #FFFFFF;
+    color: #000;
     padding: 18px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid #D9B67A;
 }
 
-.logo-img {
-    height: 60px;
-}
-
-/* DESKTOP NAV */
-.desktop-nav a {
+.desktop-nav a,
+.mobile-nav a {
     margin-left: 25px;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 16px;
+    position: relative;
 }
 
-/* MOBILE NAV */
-.hamburger {
-    display: none;
-    cursor: pointer;
+/* Navigation hover underline accent */
+.desktop-nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: #D9B67A;
 }
 
-.hamburger span {
-    display: block;
-    width: 26px;
-    height: 3px;
-    background: #fff;
-    margin: 5px 0;
-}
-
-.mobile-nav {
-    display: none;
-    flex-direction: column;
-    background: #000;
-    padding: 20px;
-}
-
-.mobile-nav a {
-    color: #fff;
-    margin: 10px 0;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* ============================================================
-   FLOATING CONTACT BUTTON
-============================================================ */
-.floating-contact-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #d9b56c;
-    padding: 15px 22px;
-    border-radius: 6px;
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 999;
-}
-
-/* ============================================================
+/* ===================================================================
    HERO SECTION
-============================================================ */
+=================================================================== */
 .hero {
     width: 100%;
     height: 600px;
-    background-image: url("https://images.unsplash.com/photo-1529429611278-4f056c1c1f4c?auto=format&fit=crop&w=1950&q=80");
+    background-image: url("hero.jpg"); /* Replace with final hero image */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -115,28 +77,31 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0,0,0,0.10); /* light, no dark tint */
 }
 
 .hero-content {
     position: relative;
     text-align: center;
-    top: 40%;
+    top: 42%;
     transform: translateY(-40%);
-    color: #fff;
 }
 
 .hero h1 {
     font-size: 48px;
     font-weight: bold;
+    color: white;
 }
 
 .hero p {
     font-size: 22px;
     margin-top: 10px;
+    color: white;
 }
 
-/* BUTTONS */
+/* ===================================================================
+   BUTTONS — ALL ACCENTS UPDATED
+=================================================================== */
 .btn {
     padding: 12px 26px;
     border-radius: 6px;
@@ -145,181 +110,98 @@ header {
 }
 
 .btn.gold {
-    background: #d9b56c;
+    background: #D9B67A;
     color: #000;
 }
 
 .btn.outline {
-    border: 2px solid #d9b56c;
-    color: #fff;
+    border: 2px solid #D9B67A;
+    color: white;
 }
 
-/* ============================================================
-   WHY CHOOSE US – TWO COLUMN PROFESSIONAL
-============================================================ */
-.wc-columns {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-.wc-left, .wc-right {
-    width: 50%;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Prestige Title */
-.wc-prestige-title {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    font-size: 28px;
-}
-
-/* Prestige Cards */
-.wc-prestige-grid {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.wc-card {
-    width: 250px;
-    padding: 25px;
-    color: #fff;
-    background: #000;
-    border: 2px solid #d9b56c;
-    border-radius: 12px;
-    text-align: center;
-}
-
-/* ============================================================
-   ACCORDION – ORANGE VARIANT
-============================================================ */
-.accordion .item {
-    margin-bottom: 10px;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #222;
-}
-
-.accordion .title {
-    padding: 18px;
-    background: #000;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    border-left: 5px solid #d9b56c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.title .plus {
-    color: #d9b56c;
-    font-weight: bold;
-    font-size: 26px;
-}
-
-.accordion .content {
-    display: none;
-    padding: 15px;
-    background: #d9b56c;
-    color: #000;
-    font-size: 17px;
-}
-
-/* ============================================================
-   CASE LAW
-============================================================ */
+/* ===================================================================
+   CASE LAW BOXES — ALL ACCENTS UPDATED
+=================================================================== */
 .case-law-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .case-law-box {
     width: 260px;
     padding: 30px;
-    background: #000;
-    color: #fff;
+    background: #3A3A3A;
+    color: #FFFFFF;
     border-radius: 12px;
-    border: 2px solid #d9b56c;
+    border: 2px solid #D9B67A;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .case-law-box:hover {
-    background: #d9b56c;
-    color: #000;
+    background: #D9B67A;
+    color: #000000;
+    border-color: #D9B67A;
 }
 
-/* ============================================================
-   REVIEWS – CREAM HOVER
-============================================================ */
-.reviews-grid {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.review {
-    width: 260px;
-    padding: 25px;
-    background: #000;
-    border: 2px solid #d9b56c;
+/* ===================================================================
+   SERVICES ACCORDION — TITLES, BORDERS, + SIGNS UPDATED
+=================================================================== */
+.accordion .item {
+    border: 2px solid #D9B67A;
     border-radius: 12px;
+    margin-bottom: 15px;
+    background: white;
+}
+
+.accordion .title {
+    width: 100%;
+    padding: 18px;
+    background: white;
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion .title::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 26px;
+    color: #D9B67A; /* ACCENT */
+}
+
+.accordion .content {
+    padding: 18px;
+    background: #D9B67A; /* OPEN BOX NOW ORANGE */
+    color: black;
+    display: none;
+}
+
+/* ===================================================================
+   REVIEWS — HOVER + BORDERS UPDATED ACCENT
+=================================================================== */
+.review {
+    background: #3A3A3A;
+    border: 2px solid #D9B67A;
+    border-radius: 15px;
+    padding: 25px;
     transition: 0.3s;
 }
 
 .review:hover {
-    background: #f5e9d0;
-    color: #000;
+    background: #D9B67A;
+    color: black;
 }
 
-/* ============================================================
-   RTM
-============================================================ */
-.content-box {
-    background: #fff;
-    border: 2px solid #d9b56c;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 20px;
-    color: #000;
-}
-
-/* ============================================================
-   CONTACT
-============================================================ */
-.contact-form {
-    width: 60%;
-    margin: 0 auto 40px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form input, 
-.contact-form textarea {
-    padding: 12px;
-    margin-bottom: 12px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.footer-info {
-    margin-top: 40px;
-    line-height: 1.7;
-}
-
-/* ============================================================
-   MODALS
-============================================================ */
+/* ===================================================================
+   MODALS — UPDATED BORDER/ACCENTS
+=================================================================== */
 .modal {
     display: none;
     position: fixed;
@@ -327,68 +209,40 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background: #fff;
+    background: white;
     width: 60%;
     padding: 30px;
     border-radius: 10px;
     max-height: 80vh;
     overflow-y: auto;
+    border: 3px solid #D9B67A; /* ACCENT */
 }
 
 .close {
     float: right;
     cursor: pointer;
     font-size: 28px;
+    color: #D9B67A;
 }
 
-/* ============================================================
-   FOOTER
-============================================================ */
+/* ===================================================================
+   FOOTER — ACCENTS UPDATED
+=================================================================== */
 footer {
     text-align: center;
     padding: 40px;
-    background: #000;
-    color: #fff;
+    background: #3A3A3A;
+    color: white;
+    border-top: 3px solid #D9B67A;
 }
 
 .footer-links span {
     cursor: pointer;
-    color: #d9b56c;
-}
-
-/* ============================================================
-   RESPONSIVE
-============================================================ */
-@media (max-width: 900px) {
-
-    .wc-columns {
-        flex-direction: column;
-    }
-
-    .wc-left, .wc-right {
-        width: 100%;
-    }
-
-    .reviews-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .desktop-nav {
-        display: none;
-    }
-
-    .contact-form {
-        width: 90%;
-    }
+    color: #D9B67A;
 }
