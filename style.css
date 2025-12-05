@@ -485,3 +485,59 @@ footer {
     cursor: pointer;
     font-size: 28px;
 }
+/* ============================================================
+   WHY EXTRA (FULL WIDTH, CENTERED, TWO COLUMNS)
+============================================================ */
+
+.why-extra-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+}
+
+.why-extra-box {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    border-left: 6px solid #d9a464;
+}
+
+.why-extra-intro {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.why-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.why-two-col ul {
+    padding-left: 20px;
+}
+
+.why-two-col li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.why-extra-strong {
+    font-weight: bold;
+    color: #d9a464;
+    text-align: center;
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .why-two-col {
+        grid-template-columns: 1fr;
+    }
+}
