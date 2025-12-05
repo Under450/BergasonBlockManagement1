@@ -164,6 +164,49 @@ header {
 /* ============================================================
    WHY CHOOSE US – NEW GRID LAYOUT (MATCHES SCREENSHOT)
 ============================================================ */
+/* Extra services section box - centered and styled */
+.why-extra-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.why-extra-box {
+    background: #fff;
+    border-left: 6px solid #d9a464;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    padding: 40px 50px;
+    border-radius: 12px;
+    max-width: 1200px;
+    text-align: left;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+/* Two-column bullet layout */
+.why-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin: 30px 0;
+}
+
+.why-two-col ul {
+    padding-left: 20px;
+}
+
+.why-two-col li {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .why-two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
 .why-extra-text {
     max-width: 1000px;
     margin: 50px auto;
