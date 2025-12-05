@@ -32,20 +32,24 @@ h2 {
 /* ============================================================
    HEADER
 ============================================================ */
+/* ============================================================
+   HEADER
+============================================================ */
+
 header {
     width: 100%;
     background: #ffffff;
     border-bottom: 3px solid #d9a464;
-    position: relative;
-    z-index: 10;
 }
 
 .header-inner {
     width: 100%;
-    padding: 20px 10%;      /* MATCHES SITE WIDTH */
+    max-width: 1200px;      /* matches full site width properly */
+    margin: 0 auto;
+    padding: 20px 35px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
 }
 
@@ -66,7 +70,7 @@ header {
     color: #d9a464;
 }
 
-/* Mobile nav icon (hidden on desktop) */
+/* Hamburger icon (hidden on desktop) */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -76,25 +80,25 @@ header {
     display: block;
     width: 30px;
     height: 4px;
-    margin: 6px;
     background: #000;
+    margin: 6px 0;
 }
 
-/* Mobile menu container */
+/* Mobile nav container */
 .mobile-nav {
     display: none;
     flex-direction: column;
-    background: #fff;
-    padding: 15px 10%;
+    background: #ffffff;
+    padding: 20px 35px;
     border-bottom: 3px solid #d9a464;
 }
 
 .mobile-nav a {
-    padding: 12px 0;
     font-size: 18px;
-    color: #000;
     font-weight: bold;
+    padding: 12px 0;
     text-decoration: none;
+    color: #000;
 }
 
 .mobile-nav a:hover {
