@@ -1,8 +1,10 @@
-const items = document.querySelectorAll(".item");
+function toggleMenu() {
+    document.getElementById("mobileNav").classList.toggle("open");
+}
 
-items.forEach(item => {
-    item.querySelector(".title").addEventListener("click", () => {
-        const content = item.querySelector(".content");
+document.querySelectorAll(".title").forEach(button => {
+    button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
         content.style.display = content.style.display === "block" ? "none" : "block";
     });
 });
