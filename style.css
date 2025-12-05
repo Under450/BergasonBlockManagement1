@@ -1,71 +1,67 @@
-/* ===================================================================
+/* ============================================================
    GLOBAL
-=================================================================== */
+============================================================ */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #FFFFFF;
-    color: #000000;
+    background: #fff;
+}
+
+.section {
+    padding: 90px 10%;
 }
 
 .section.light {
-    background: #F5F5F5;
+    background: #f7f7f7;
 }
 
 .section.dark {
-    background: #3A3A3A;
-    color: #FFFFFF;
+    background: #1a1a1a;
+    color: #fff;
 }
 
-/* Universal accent: any line or border that needs colour */
-hr, .accent-line {
-    border: none;
-    border-bottom: 2px solid #D9B67A;
-    width: 60px;
-    margin: 20px auto;
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* ===================================================================
+/* ============================================================
    HEADER
-=================================================================== */
+============================================================ */
 header {
     width: 100%;
-    background: #FFFFFF;
+    background: #fff;
     color: #000;
-    padding: 18px 35px;
+    padding: 20px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #D9B67A;
+    border-bottom: 3px solid #d9a464;
 }
 
-.desktop-nav a,
-.mobile-nav a {
+.logo-img {
+    height: 60px;
+}
+
+.desktop-nav a {
     margin-left: 25px;
     color: #000;
     text-decoration: none;
+    font-weight: bold;
     font-size: 16px;
-    position: relative;
 }
 
-/* Navigation hover underline accent */
-.desktop-nav a:hover::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 100%;
-    height: 2px;
-    background: #D9B67A;
+.desktop-nav a:hover {
+    color: #d9a464;
 }
 
-/* ===================================================================
-   HERO SECTION
-=================================================================== */
+/* ============================================================
+   HERO
+============================================================ */
 .hero {
     width: 100%;
     height: 600px;
-    background-image: url("hero.jpg"); /* Replace with final hero image */
+    background-image: url("hero.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -77,131 +73,255 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.10); /* light, no dark tint */
+    background: rgba(0,0,0,0.15);
 }
 
 .hero-content {
     position: relative;
+    z-index: 2;
     text-align: center;
-    top: 42%;
+    top: 40%;
     transform: translateY(-40%);
+    color: #fff;
 }
 
 .hero h1 {
     font-size: 48px;
-    font-weight: bold;
-    color: white;
+    margin: 0;
 }
 
 .hero p {
     font-size: 22px;
     margin-top: 10px;
-    color: white;
 }
 
-/* ===================================================================
-   BUTTONS — ALL ACCENTS UPDATED
-=================================================================== */
 .btn {
     padding: 12px 26px;
     border-radius: 6px;
     font-size: 18px;
     text-decoration: none;
+    display: inline-block;
+    margin: 10px;
 }
 
 .btn.gold {
-    background: #D9B67A;
+    background: #d9a464;
     color: #000;
 }
 
 .btn.outline {
-    border: 2px solid #D9B67A;
-    color: white;
+    border: 2px solid #d9a464;
+    color: #fff;
 }
 
-/* ===================================================================
-   CASE LAW BOXES — ALL ACCENTS UPDATED
-=================================================================== */
+/* Floating contact */
+.floating-contact-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #d9a464;
+    padding: 14px 20px;
+    border-radius: 8px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 99;
+}
+
+/* ============================================================
+   WHY CHOOSE US
+============================================================ */
+.wc-image-text {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.wc-image-text img {
+    width: 45%;
+    border-radius: 12px;
+}
+
+.wc-image-text div {
+    width: 55%;
+}
+
+.wc-section-title {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* What Sets Us Apart */
+.wc-prestige-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.wc-card {
+    width: 32%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid #d9a464;
+    text-align: center;
+}
+
+.wc-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Duties split columns */
+.duties-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.duties-grid ul {
+    width: 48%;
+}
+
+.fee-note {
+    text-align: center;
+    margin-top: 25px;
+    font-weight: bold;
+    color: #d9a464;
+}
+
+/* ============================================================
+   SERVICES ACCORDION
+============================================================ */
+.accordion .item {
+    background: #2a2a2a;
+    border: 2px solid #d9a464;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.accordion .title {
+    background: none;
+    color: #d9a464;
+    width: 100%;
+    padding: 18px;
+    text-align: left;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.plus {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.accordion .content {
+    display: none;
+    background: #d9a464;
+    padding: 20px;
+    color: #000;
+    border-radius: 0 0 10px 10px;
+}
+
+/* ============================================================
+   CASE LAW BOXES
+============================================================ */
 .case-law-container {
     display: flex;
-    justify-content: center;
     gap: 25px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .case-law-box {
     width: 260px;
     padding: 30px;
-    background: #3A3A3A;
-    color: #FFFFFF;
+    background: #1a1a1a;
+    color: #fff;
     border-radius: 12px;
-    border: 2px solid #D9B67A;
+    border: 2px solid #d9a464;
     cursor: pointer;
     transition: 0.3s;
+    text-align: center;
 }
 
 .case-law-box:hover {
-    background: #D9B67A;
-    color: #000000;
-    border-color: #D9B67A;
+    background: #d9a464;
+    color: #000;
 }
 
-/* ===================================================================
-   SERVICES ACCORDION — TITLES, BORDERS, + SIGNS UPDATED
-=================================================================== */
-.accordion .item {
-    border: 2px solid #D9B67A;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    background: white;
+/* ============================================================
+   REVIEWS
+============================================================ */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
 }
 
-.accordion .title {
-    width: 100%;
-    padding: 18px;
-    background: white;
-    color: black;
-    font-size: 20px;
-    text-align: left;
-    border: none;
-    cursor: pointer;
-    position: relative;
-}
-
-.accordion .title::after {
-    content: "+";
-    position: absolute;
-    right: 20px;
-    font-size: 26px;
-    color: #D9B67A; /* ACCENT */
-}
-
-.accordion .content {
-    padding: 18px;
-    background: #D9B67A; /* OPEN BOX NOW ORANGE */
-    color: black;
-    display: none;
-}
-
-/* ===================================================================
-   REVIEWS — HOVER + BORDERS UPDATED ACCENT
-=================================================================== */
 .review {
-    background: #3A3A3A;
-    border: 2px solid #D9B67A;
-    border-radius: 15px;
+    background: #1a1a1a;
+    border: 2px solid #d9a464;
     padding: 25px;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
 .review:hover {
-    background: #D9B67A;
-    color: black;
+    background: #d9a464;
+    color: #000;
 }
 
-/* ===================================================================
-   MODALS — UPDATED BORDER/ACCENTS
-=================================================================== */
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-info {
+    width: 45%;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    border-top: 3px solid #d9a464;
+}
+
+.footer-links span {
+    cursor: pointer;
+    color: #d9a464;
+}
+
+/* ============================================================
+   MODALS
+============================================================ */
 .modal {
     display: none;
     position: fixed;
@@ -209,40 +329,21 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.65);
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background: white;
+    background: #fff;
     width: 60%;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     max-height: 80vh;
     overflow-y: auto;
-    border: 3px solid #D9B67A; /* ACCENT */
 }
 
 .close {
     float: right;
     cursor: pointer;
-    font-size: 28px;
-    color: #D9B67A;
-}
-
-/* ===================================================================
-   FOOTER — ACCENTS UPDATED
-=================================================================== */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #3A3A3A;
-    color: white;
-    border-top: 3px solid #D9B67A;
-}
-
-.footer-links span {
-    cursor: pointer;
-    color: #D9B67A;
 }
