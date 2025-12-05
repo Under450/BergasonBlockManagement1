@@ -1,10 +1,18 @@
+/* ============================================================
+   MOBILE MENU
+============================================================ */
 function toggleMenu() {
-    document.getElementById("mobileNav").classList.toggle("open");
+    const nav = document.getElementById("mobileNav");
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 
-document.querySelectorAll(".accordion .title").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const content = btn.nextElementSibling;
+
+/* ============================================================
+   ACCORDION
+============================================================ */
+document.querySelectorAll(".accordion .title").forEach(button => {
+    button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
         content.style.display = content.style.display === "block" ? "none" : "block";
     });
 });
