@@ -24,8 +24,9 @@ body {
 }
 
 /* Universal container width */
-.section {
-    max-width: 1400px;
+/* Correct global width constraint */
+.wrapper {
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
