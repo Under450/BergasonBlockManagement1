@@ -52,8 +52,15 @@ header {
     border-bottom: 3px solid #d9a464;
 }
 
+/* FIX HEADER WIDTH TO MATCH SITE WIDTH */
+header {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .logo-img {
-    height: 60px;
+    height: 80px;
 }
 
 .desktop-nav a {
