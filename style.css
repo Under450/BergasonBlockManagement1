@@ -1,65 +1,30 @@
-/* ============================================================
-   GLOBAL
-============================================================ */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
-}
+body { margin: 0; font-family: Arial, sans-serif; }
 
-.section {
-    padding: 90px 10%;
-}
+.section { padding: 90px 10%; }
+.section.light { background: #f7f7f7; }
+.section.dark { background: #1a1a1a; color: #fff; }
 
-.section.light {
-    background: #f7f7f7;
-}
+h2 { text-align: center; margin-bottom: 40px; }
 
-.section.dark {
-    background: #1a1a1a;
-    color: #fff;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* ============================================================
-   HEADER
-============================================================ */
 header {
-    width: 100%;
-    background: #fff;
-    color: #000;
-    padding: 20px 35px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 20px 35px;
     border-bottom: 3px solid #d9a464;
-}
-
-.logo-img {
-    height: 60px;
+    background: #fff;
 }
 
 .desktop-nav a {
     margin-left: 25px;
-    color: #000;
-    text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    color: #000;
+    text-decoration: none;
 }
 
-.desktop-nav a:hover {
-    color: #d9a464;
-}
+.desktop-nav a:hover { color: #d9a464; }
 
-/* ============================================================
-   HERO
-============================================================ */
 .hero {
-    width: 100%;
     height: 600px;
     background-image: url("hero.jpg");
     background-size: cover;
@@ -67,283 +32,115 @@ header {
     position: relative;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.hero-overlay { 
+    position: absolute; 
+    top:0; left:0; width:100%; height:100%;
     background: rgba(0,0,0,0.15);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    top: 40%;
+.hero-content { 
+    position: relative; 
+    top: 40%; 
     transform: translateY(-40%);
-    color: #fff;
+    text-align: center; 
+    color:#fff;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin: 0;
+.btn { padding:12px 26px; border-radius:6px; text-decoration:none; }
+.btn.gold { background:#d9a464; color:#000; }
+.btn.outline { border:2px solid #d9a464; color:#fff; }
+
+.why-grid { display:flex; gap:50px; }
+
+.apart-grid {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:25px;
 }
 
-.hero p {
-    font-size: 22px;
-    margin-top: 10px;
+.apart-card {
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    border:2px solid #d9a464;
+    text-align:center;
 }
 
-.btn {
-    padding: 12px 26px;
-    border-radius: 6px;
-    font-size: 18px;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px;
-}
-
-.btn.gold {
-    background: #d9a464;
-    color: #000;
-}
-
-.btn.outline {
-    border: 2px solid #d9a464;
-    color: #fff;
-}
-
-/* Floating contact */
-.floating-contact-btn {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: #d9a464;
-    padding: 14px 20px;
-    border-radius: 8px;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    z-index: 99;
-}
-
-/* ============================================================
-   WHY CHOOSE US
-============================================================ */
-.wc-image-text {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.wc-image-text img {
-    width: 45%;
-    border-radius: 12px;
-}
-
-.wc-image-text div {
-    width: 55%;
-}
-
-.wc-section-title {
-    margin-top: 50px;
-    text-align: center;
-}
-
-/* What Sets Us Apart */
-.wc-prestige-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.wc-card {
-    width: 32%;
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    border: 2px solid #d9a464;
-    text-align: center;
-}
-
-.wc-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Duties split columns */
-.duties-grid {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.duties-grid ul {
-    width: 48%;
-}
-
-.fee-note {
-    text-align: center;
-    margin-top: 25px;
-    font-weight: bold;
-    color: #d9a464;
-}
-
-/* ============================================================
-   SERVICES ACCORDION
-============================================================ */
 .accordion .item {
-    background: #2a2a2a;
-    border: 2px solid #d9a464;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    padding: 0;
+    background:#2a2a2a;
+    margin-bottom:15px;
+    border-radius:10px;
+    border:2px solid #d9a464;
 }
 
-.accordion .title {
-    background: none;
-    color: #d9a464;
-    width: 100%;
-    padding: 18px;
-    text-align: left;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
+.title {
+    width:100%;
+    background:none;
+    color:#d9a464;
+    padding:18px;
+    font-size:20px;
+    border:none;
+    text-align:left;
+    display:flex;
+    justify-content:space-between;
 }
 
-.plus {
-    font-weight: bold;
-    font-size: 24px;
+.content {
+    display:none;
+    background:#d9a464;
+    padding:20px;
+    color:#000;
 }
 
-.accordion .content {
-    display: none;
-    background: #d9a464;
-    padding: 20px;
-    color: #000;
-    border-radius: 0 0 10px 10px;
-}
-
-/* ============================================================
-   CASE LAW BOXES
-============================================================ */
-.case-law-container {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
+.case-law-grid {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .case-law-box {
-    width: 260px;
-    padding: 30px;
-    background: #1a1a1a;
-    color: #fff;
-    border-radius: 12px;
-    border: 2px solid #d9a464;
-    cursor: pointer;
-    transition: 0.3s;
-    text-align: center;
+    background:#1a1a1a;
+    border:2px solid #d9a464;
+    padding:25px;
+    border-radius:12px;
+    color:#fff;
+    cursor:pointer;
 }
 
-.case-law-box:hover {
-    background: #d9a464;
-    color: #000;
-}
-
-/* ============================================================
-   REVIEWS
-============================================================ */
 .reviews-grid {
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 20px;
+    gap:25px;
 }
 
 .review {
-    background: #1a1a1a;
-    border: 2px solid #d9a464;
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s;
+    background:#1a1a1a;
+    border:2px solid #d9a464;
+    padding:25px;
+    border-radius:12px;
 }
 
-.review:hover {
-    background: #d9a464;
-    color: #000;
+.rtm-grid {
+    display:flex;
+    gap:30px;
 }
 
-/* ============================================================
-   CONTACT
-============================================================ */
-.contact-grid {
-    display: flex;
-    justify-content: space-between;
+.rtm-box {
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    border:2px solid #d9a464;
+    width:50%;
 }
 
-.contact-form {
-    width: 45%;
-}
+.contact-grid { display:flex; justify-content:space-between; }
+.contact-form input, 
+.contact-form textarea { width:100%; padding:12px; margin-bottom:15px; }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-}
-
-.footer-info {
-    width: 45%;
-    line-height: 1.8;
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
 footer {
-    text-align: center;
-    padding: 40px;
-    background: #fff;
-    border-top: 3px solid #d9a464;
-}
-
-.footer-links span {
-    cursor: pointer;
-    color: #d9a464;
-}
-
-/* ============================================================
-   MODALS
-============================================================ */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.65);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #fff;
-    width: 60%;
-    padding: 30px;
-    border-radius: 12px;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.close {
-    float: right;
-    cursor: pointer;
+    padding:40px;
+    text-align:center;
+    background:#fff;
+    border-top:3px solid #d9a464;
 }
