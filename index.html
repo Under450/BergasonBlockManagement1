@@ -9,234 +9,273 @@
 
 <body>
 
-/* HEADER */
-header {
-    width: 100%;
-    background: #fff;
-    border-bottom: 3px solid #d9a464;
-}
+<!-- ============================================================
+   HEADER
+============================================================ -->
+<header>
+    <div class="header-inner">
+        <img src="logo.png" class="logo-img" alt="Bergason Logo">
 
-/* Inner wrapper so the header matches site width */
-.header-inner {
-    max-width: 1200px;     /* matches your site width */
-    margin: 0 auto;
-    padding: 20px 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-}
+        <nav class="desktop-nav">
+            <a href="#about">Why Choose Us</a>
+            <a href="#sets-apart">What Sets Us Apart</a>
+            <a href="#services">Our Services</a>
+            <a href="#case-law">Key Case Law</a>
+            <a href="#reviews">Client Reviews</a>
+            <a href="#rtm">RTM Support</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
 
-.logo-img {
-    height: 60px;
-}
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
 
-/* Desktop navigation */
-.desktop-nav a {
-    margin-left: 25px;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-}
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#about">Why Choose Us</a>
+        <a href="#sets-apart">What Sets Us Apart</a>
+        <a href="#services">Our Services</a>
+        <a href="#case-law">Key Case Law</a>
+        <a href="#reviews">Client Reviews</a>
+        <a href="#rtm">RTM Support</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+</header>
 
-.desktop-nav a:hover {
-    color: #d9a464;
-}
+<a href="#contact" class="floating-contact-btn">Contact Us</a>
 
-/* Hamburger only for mobile */
-.hamburger {
-    display: none;
-}
-
-/* Mobile nav */
-.mobile-nav {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    padding: 20px;
-    border-bottom: 3px solid #d9a464;
-}
-
-
-
-
-<!-- HERO (Image 22) -->
+<!-- ============================================================
+   HERO SECTION
+============================================================ -->
 <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1>Bergason Property Services Limited</h1>
-        <p>Specialists in Residential Block Management, RTM and Leasehold Support</p>
+        <p>Specialists in Residential Block Management, RTM, and Leasehold Support</p>
         <a href="#contact" class="btn gold">Contact Us</a>
+        <a href="#services" class="btn outline">View Services</a>
     </div>
 </section>
 
+<!-- ============================================================
+   WHY CHOOSE US
+============================================================ -->
+<section id="about" class="section light">
+<h2>Why Choose Us?</h2>
 
-<!-- WHY CHOOSE US -->
-<section id="why" class="section light">
-<h2>Why Choose Us</h2>
+<p>
+Bergason Block Management offers a complete professional property management service for freeholders,
+residential management companies and property developers. We combine corporate-level compliance and governance
+expertise with the attention and personal service of a family-run practice.
+</p>
 
-<div class="wc-container">
-    <p><strong>Bergason Block Management</strong> offers a complete professional property management service for
-    freeholders, residential management companies and property developers.</p>
+<p>
+With over 37 years in the property and legal sectors, we ensure full compliance with legislation, leases,
+RICS standards and The Property Institute guidance.
+</p>
 
-    <p>With over 37 years in the property and legal industry, we focus on customer service, ensuring dedicated
-    attention to your property needs.</p>
+<p>
+We operate a 24-hour, 7-days-a-week emergency service ensuring issues are handled rapidly, preventing escalation.
+Clients often experience a 15–25 percent reduction in expenditure in the first year due to structured tendering,
+oversight, and proactive management.
+</p>
 
-    <p>We operate a 24hr, 7 day a week service for emergencies. This ensures all issues are dealt with and abated
-    before further issues arise.</p>
+<p>
+We prioritise face-to-face communication, personal service, and swift responses. Directors may choose full hands-on
+management or delegate operational authority while retaining discretionary control.
+</p>
 
-    <p>Clients typically experience a <strong>15–25 percent reduction</strong> in expenditure within the first year.</p>
-
-    <p>As a family-run business, we prioritise face-to-face communication and swift responses to any concerns.</p>
-</div>
+<p>
+Changing block management companies is not complex — we typically complete transitions within 5 to 7 days.
+</p>
 
 </section>
 
-
-<!-- WHAT SETS US APART -->
-<section id="apart" class="section">
+<!-- ============================================================
+   WHAT SETS US APART
+============================================================ -->
+<section id="sets-apart" class="section light">
 <h2>What Sets Us Apart</h2>
 
-<div class="card-grid">
+<div class="wc-prestige-grid">
 
-<div class="card">
-    <h3>24/7 Direct Access</h3>
-    <p>Emergency support is available 24 hours a day, 7 days a week.</p>
-</div>
+    <div class="wc-box">
+        <h4>24/7 Direct Access</h4>
+        <p>Emergency support available all year round, ensuring issues are handled before escalation.</p>
+    </div>
 
-<div class="card">
-    <h3>Cost Reduction 15–25%</h3>
-    <p>Most developments experience significant reductions in expenditure in the first year.</p>
-</div>
+    <div class="wc-box">
+        <h4>Cost Reduction 15–25%</h4>
+        <p>Most developments experience 15–25 percent lower expenditure within the first year.</p>
+    </div>
 
-<div class="card">
-    <h3>Tailored Control</h3>
-    <p>Directors may retain approval of discretionary items or delegate full authority.</p>
-</div>
+    <div class="wc-box">
+        <h4>Tailored Control</h4>
+        <p>We adapt to the level of involvement directors prefer, from full oversight to delegated operations.</p>
+    </div>
 
-<div class="card">
-    <h3>Rapid Transition</h3>
-    <p>Transfer of management typically takes 5–7 days.</p>
-</div>
+    <div class="wc-box">
+        <h4>Rapid Transition</h4>
+        <p>Management transfer completed within 5–7 days, ensuring continuity and minimal disruption.</p>
+    </div>
 
 </div>
 </section>
 
-
-<!-- SERVICES -->
+<!-- ============================================================
+   OUR SERVICES
+============================================================ -->
 <section id="services" class="section dark">
 <h2>Our Services</h2>
 
 <div class="accordion">
 
-<div class="item">
-<button class="title">Full Block Management</button>
-<div class="content">All operational management including inspections, repairs, communication and accounts.</div>
-</div>
+    <div class="item">
+        <button class="title">Full Block Management <span class="plus">+</span></button>
+        <div class="content">Full operational oversight including inspections, accounts, compliance and resident communication.</div>
+    </div>
 
-<div class="item">
-<button class="title">RTM Formation</button>
-<div class="content">Eligibility checks, notices, participation support and company setup.</div>
-</div>
+    <div class="item">
+        <button class="title">RTM Formation <span class="plus">+</span></button>
+        <div class="content">Eligibility checks, notices, participation, company formation and freeholder handover.</div>
+    </div>
 
-<div class="item">
-<button class="title">Service Charge Accounts</button>
-<div class="content">Budgeting, forecasting, arrears management and ledger control.</div>
-</div>
+    <div class="item">
+        <button class="title">Service Charge Accounts <span class="plus">+</span></button>
+        <div class="content">Budgeting, arrears control, forecasting and financial reporting.</div>
+    </div>
 
-<div class="item">
-<button class="title">Contractor Procurement</button>
-<div class="content">Tendering, compliance checks and supervision.</div>
-</div>
+    <div class="item">
+        <button class="title">Contractor Procurement <span class="plus">+</span></button>
+        <div class="content">Tendering, price comparison, quotes, compliance verification and quality oversight.</div>
+    </div>
 
-<div class="item">
-<button class="title">Section 20 Compliance</button>
-<div class="content">Full statutory major works consultation process.</div>
-</div>
+    <div class="item">
+        <button class="title">Section 20 Compliance <span class="plus">+</span></button>
+        <div class="content">Full statutory consultation process for major works and long-term agreements.</div>
+    </div>
 
-<div class="item">
-<button class="title">Safety & Compliance</button>
-<div class="content">FRA, EICR, asbestos, water safety and Building Safety Act compliance.</div>
-</div>
+    <div class="item">
+        <button class="title">Safety & Compliance <span class="plus">+</span></button>
+        <div class="content">FRA, EICR, asbestos, water hygiene and Building Safety Act compliance oversight.</div>
+    </div>
 
 </div>
 </section>
 
-
-<!-- CASE LAW -->
-<section id="case" class="section light">
+<!-- ============================================================
+   KEY CASE LAW
+============================================================ -->
+<section id="case-law" class="section light">
 <h2>Key Case Law</h2>
 
-<div class="case-grid">
-    <div class="case-box">Garside v RFYC (2011)</div>
-    <div class="case-box">Waaler v LB Hounslow (2017)</div>
-    <div class="case-box">Holland v Oxford CC (2002)</div>
-    <div class="case-box">Francis v Phillips (2014)</div>
-    <div class="case-box">Arnold v Britton (2015)</div>
+<div class="case-law-container">
+    <div class="case-law-box" onclick="openModal('garside')">Garside v RFYC (2011)<br>Reasonableness →</div>
+    <div class="case-law-box" onclick="openModal('waaler')">Waaler v LB Hounslow (2017)<br>Improvements →</div>
+    <div class="case-law-box" onclick="openModal('holland')">Holland v Oxford CC (2002)<br>Transparency →</div>
+    <div class="case-law-box" onclick="openModal('francis')">Francis v Phillips (2014)<br>Qualifying Works →</div>
+    <div class="case-law-box" onclick="openModal('arnold')">Arnold v Britton (2015)<br>Interpretation →</div>
 </div>
-
 </section>
 
-
-<!-- CLIENT REVIEWS -->
+<!-- ============================================================
+   CLIENT REVIEWS
+============================================================ -->
 <section id="reviews" class="section dark">
 <h2>Client Reviews</h2>
 
 <div class="reviews-grid">
-<div class="review">Outstanding service. Highly responsive.</div>
-<div class="review">Professional, proactive and reliable.</div>
-<div class="review">Excellent communication and support.</div>
-<div class="review">Issues resolved quickly and efficiently.</div>
-</div>
 
+    <div class="review"><strong>Sasha Brookes</strong><br>★★★★★<br>Bergason’s management has been outstanding.</div>
+    <div class="review"><strong>Benjamin Anderson</strong><br>★★★★★<br>Excellent communication and proactive handling.</div>
+    <div class="review"><strong>Lynne Hinsley</strong><br>★★★★★<br>Professional, efficient and personal service.</div>
+    <div class="review"><strong>Natalie</strong><br>★★★★★<br>Long-standing issues resolved quickly.</div>
+
+</div>
 </section>
 
-
-<!-- RTM SUPPORT -->
+<!-- ============================================================
+   RTM SUPPORT
+============================================================ -->
 <section id="rtm" class="section light">
 <h2>RTM Support</h2>
 
-<div class="rtm-box">
-<ul>
-<li>Eligibility assessments</li>
-<li>Notice drafting & service</li>
-<li>Participation support</li>
-<li>Company formation</li>
-<li>Freeholder handover</li>
-</ul>
-</div>
+<div class="contact-grid">
 
+    <div class="content-box">
+        <h3>The RTM Process</h3>
+        <ul>
+            <li>Eligibility assessments</li>
+            <li>Participation coordination</li>
+            <li>Notice drafting</li>
+            <li>Company formation</li>
+            <li>Freeholder handover</li>
+        </ul>
+    </div>
+
+    <div class="content-box">
+        <h3>Benefits</h3>
+        <ul>
+            <li>Financial control</li>
+            <li>Transparency</li>
+            <li>Choice of contractors</li>
+            <li>Improved communication</li>
+        </ul>
+    </div>
+
+</div>
 </section>
 
-
-<!-- CONTACT -->
+<!-- ============================================================
+   CONTACT
+============================================================ -->
 <section id="contact" class="section dark">
 <h2>Contact Us</h2>
 
 <div class="contact-grid">
 
-<form>
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<textarea placeholder="Message"></textarea>
-<button class="btn gold">Send Message</button>
-</form>
+    <form class="contact-form">
+        <label>Name</label>
+        <input type="text">
 
-<div class="contact-info">
-<strong>Bergason Property Services Limited</strong><br>
-8a Bore Street,<br>Lichfield,<br>WS13 6LL<br><br>
-Company No: 11329473<br>
-The Property Ombudsman (T02686)<br>
-Client Money Protection: UKALA (190119)
-</div>
+        <label>Email</label>
+        <input type="email">
+
+        <label>Message</label>
+        <textarea></textarea>
+
+        <button type="submit" class="btn gold">Send Message</button>
+    </form>
+
+    <div class="footer-info">
+        <strong>Bergason Property Services Limited</strong><br>
+        8a Bore Street,<br>
+        Lichfield,<br>
+        Staffordshire,<br>
+        WS13 6LL<br><br>
+
+        <strong>Company Number:</strong> 11329473<br>
+        <strong>Redress Scheme:</strong> The Property Ombudsman (T02686)<br>
+        <strong>Client Money Protection:</strong> UKALA (190119)<br>
+        <strong>Memberships:</strong> The Property Institute (ARMA & IRPM)
+    </div>
 
 </div>
 </section>
 
-
+<!-- ============================================================
+   FOOTER
+============================================================ -->
 <footer>
-© 2025 Bergason Property Services Limited
+    <div class="footer-links">
+        <span onclick="openModal('legal')">Legal</span> •
+        <span onclick="openModal('privacy')">Privacy Policy</span> •
+        <span onclick="openModal('terms')">Terms & Conditions</span> •
+        <span onclick="openModal('cookies')">Cookie Policy</span> •
+        <span onclick="openModal('aup')">Acceptable Use</span>
+    </div>
+    <br>
+    © 2025 Bergason Property Services Limited. All Rights Reserved.
 </footer>
 
 <script src="script.js"></script>
