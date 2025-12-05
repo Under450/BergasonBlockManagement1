@@ -23,11 +23,17 @@ body {
     color: #fff;
 }
 
-/* ✔ NEW – universal container width control */
+/* Universal container width */
 .section {
-    max-width: 1400px; 
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Fix heading alignment */
+.section h2,
+.section h3 {
+    text-align: center;
 }
 
 
