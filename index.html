@@ -9,33 +9,55 @@
 
 <body>
 
-<header>
-    <div class="header-inner">
-        <img src="logo.png" alt="Bergason Logo" class="logo-img">
+/* HEADER */
+header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 3px solid #d9a464;
+}
 
-        <nav class="desktop-nav">
-            <a href="#about">Why Choose Us</a>
-            <a href="#services">Our Services</a>
-            <a href="#case-law">Key Case Law</a>
-            <a href="#reviews">Client Reviews</a>
-            <a href="#rtm">RTM Support</a>
-            <a href="#contact">Contact Us</a>
-        </nav>
+/* Inner wrapper so the header matches site width */
+.header-inner {
+    max-width: 1200px;     /* matches your site width */
+    margin: 0 auto;
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
 
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </div>
+.logo-img {
+    height: 60px;
+}
 
-    <nav class="mobile-nav" id="mobileNav">
-        <a href="#about">Why Choose Us</a>
-        <a href="#services">Our Services</a>
-        <a href="#case-law">Key Case Law</a>
-        <a href="#reviews">Client Reviews</a>
-        <a href="#rtm">RTM Support</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
-</header>
+/* Desktop navigation */
+.desktop-nav a {
+    margin-left: 25px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.desktop-nav a:hover {
+    color: #d9a464;
+}
+
+/* Hamburger only for mobile */
+.hamburger {
+    display: none;
+}
+
+/* Mobile nav */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 3px solid #d9a464;
+}
+
 
 
 
