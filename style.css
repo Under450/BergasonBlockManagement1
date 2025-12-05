@@ -13,25 +13,27 @@ body {
 }
 
 .section.light {
-    background: #f7f7f7;
+    background: #f8f8f8;
 }
 
 .section.dark {
-    background: #000;
-    color: #fff;
+    background: #1a1a1a;
+    color: #ffffff;
 }
 
 h2 {
     text-align: center;
-    font-size: 38px;
+    font-size: 36px;
     margin-bottom: 40px;
     font-weight: bold;
 }
 
+/* Accent colour */
+:root {
+    --gold: #d9a464;
+    --charcoal: #1a1a1a;
+}
 
-/* ============================================================
-   HEADER
-============================================================ */
 /* ============================================================
    HEADER
 ============================================================ */
@@ -39,12 +41,11 @@ h2 {
 header {
     width: 100%;
     background: #ffffff;
-    border-bottom: 3px solid #d9a464;
+    border-bottom: 3px solid var(--gold);
 }
 
 .header-inner {
-    width: 100%;
-    max-width: 1200px;      /* matches full site width properly */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 35px;
     display: flex;
@@ -57,61 +58,65 @@ header {
     height: 60px;
 }
 
-/* Desktop navigation */
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+}
+
 .desktop-nav a {
     margin-left: 25px;
     color: #000;
     text-decoration: none;
-    font-weight: bold;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .desktop-nav a:hover {
-    color: #d9a464;
+    color: var(--gold);
 }
 
-/* Hamburger icon (hidden on desktop) */
+/* Mobile Hamburger */
 .hamburger {
     display: none;
     cursor: pointer;
 }
 
 .hamburger span {
-    display: block;
     width: 30px;
     height: 4px;
     background: #000;
+    display: block;
     margin: 6px 0;
 }
 
-/* Mobile nav container */
+/* Mobile Navigation */
 .mobile-nav {
     display: none;
     flex-direction: column;
     background: #ffffff;
     padding: 20px 35px;
-    border-bottom: 3px solid #d9a464;
+    border-bottom: 3px solid var(--gold);
 }
 
 .mobile-nav a {
+    padding: 12px 0;
+    color: #000;
+    text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    padding: 12px 0;
-    text-decoration: none;
-    color: #000;
 }
 
 .mobile-nav a:hover {
-    color: #d9a464;
+    color: var(--gold);
 }
-
 
 /* ============================================================
    HERO SECTION
 ============================================================ */
+
 .hero {
+    height: 600px;
     width: 100%;
-    height: 550px;
     background-image: url("hero.jpg");
     background-size: cover;
     background-position: center;
@@ -119,202 +124,252 @@ header {
 }
 
 .hero-overlay {
-    background: rgba(0,0,0,0.25); /* light + sharp overlay */
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0,0,0,0.15); /* Light overlay to brighten image */
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
-    top: 35%;
-    transform: translateY(-35%);
+    top: 40%;
+    transform: translateY(-40%);
     color: #fff;
 }
 
-.hero-content h1 {
+.hero h1 {
     font-size: 48px;
-    margin-bottom: 12px;
-}
-
-.hero-content p {
-    font-size: 22px;
-}
-
-.btn {
-    padding: 12px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 15px;
-    display: inline-block;
-    font-size: 18px;
-}
-
-.btn.gold {
-    background: #d9a464;
-    color: #000;
+    margin: 0;
     font-weight: bold;
 }
 
+.hero p {
+    font-size: 22px;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 6px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.btn.gold {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn.outline {
+    border: 2px solid var(--gold);
+    color: #fff;
+}
+
+/* Floating Contact Button */
+.floating-contact-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gold);
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    z-index: 99;
+}
 
 /* ============================================================
    WHY CHOOSE US
 ============================================================ */
-.wc-container {
-    max-width: 900px;
-    margin: 0 auto;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #000;
+
+.wc-image-text {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
+.wc-image-text img {
+    width: 45%;
+    border-radius: 12px;
+}
+
+.wc-image-text div {
+    width: 55%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.wc-section-title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 30px;
+    font-weight: bold;
+}
 
 /* ============================================================
-   WHAT SETS US APART
+   WHAT SETS US APART BOXES
 ============================================================ */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 25px;
+
+.wc-prestige-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
 }
 
-.card {
-    background: #f2e8cf;          /* LIGHT BEIGE */
+.wc-box {
+    width: 24%;
+    background: #faf5eb; /* light cream tone */
+    border-left: 6px solid var(--gold);
     padding: 25px;
-    border-left: 6px solid #d9a464;
-    border-radius: 10px;
-    font-size: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
+.wc-box h4 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.wc-box p {
+    margin-top: 10px;
+    font-size: 16px;
+}
 
 /* ============================================================
-   SERVICES (ACCORDION)
+   SERVICES ACCORDION
 ============================================================ */
+
 .accordion .item {
-    background: #d9a464;
+    background: var(--charcoal);
+    border: 2px solid var(--gold);
     margin-bottom: 12px;
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 10px;
 }
 
 .accordion .title {
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
     background: transparent;
+    padding: 18px;
     font-size: 20px;
-    font-weight: bold;
-    color: #000;
+    color: var(--gold);
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    width: 100%;
     cursor: pointer;
+}
+
+.plus {
+    font-size: 26px;
+    font-weight: bold;
 }
 
 .accordion .content {
     display: none;
-    background: #fff3d1;
     padding: 20px;
+    background: var(--gold);
     color: #000;
-    font-size: 18px;
+    border-radius: 0 0 10px 10px;
 }
-
 
 /* ============================================================
-   CASE LAW
+   CASE LAW BOXES
 ============================================================ */
-.case-grid {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap: 20px;
+
+.case-law-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
-.case-box {
-    background: #000;
+.case-law-box {
+    width: 260px;
+    padding: 30px;
+    background: var(--charcoal);
     color: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    border: 2px solid #d9a464;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    cursor: pointer;
     text-align: center;
-    font-weight: bold;
+    transition: 0.3s;
 }
 
+.case-law-box:hover {
+    background: var(--gold);
+    color: #000;
+}
 
 /* ============================================================
-   CLIENT REVIEWS
+   REVIEWS
 ============================================================ */
+
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
 .review {
-    background: #111;
-    border: 2px solid #d9a464;
+    border-radius: 12px;
     padding: 25px;
-    border-radius: 10px;
-    text-align: left;
+    background: var(--charcoal);
+    border: 2px solid var(--gold);
+    color: #fff;
     transition: 0.3s;
 }
 
 .review:hover {
-    background: #d9a464;
+    background: var(--gold);
     color: #000;
 }
 
-
 /* ============================================================
-   RTM SUPPORT
+   CONTACT FORM
 ============================================================ */
-.rtm-box {
-    background: #fff;
-    padding: 30px;
-    border-left: 6px solid #d9a464;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 18px;
-    color: #000;
-}
 
-
-/* ============================================================
-   CONTACT
-============================================================ */
 .contact-grid {
     display: flex;
     justify-content: space-between;
     gap: 40px;
 }
 
-.contact-grid form,
-.contact-info {
-    width: 45%;
+.contact-form {
+    width: 48%;
 }
 
-input,
-textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
 }
 
-textarea {
-    height: 130px;
+.footer-info {
+    width: 48%;
+    line-height: 1.8;
 }
-
 
 /* ============================================================
    FOOTER
 ============================================================ */
+
 footer {
+    background: #ffffff;
+    border-top: 3px solid var(--gold);
+    padding: 40px;
     text-align: center;
-    padding: 30px;
-    background: #fff;
-    border-top: 3px solid #d9a464;
-    color: #000;
+}
+
+.footer-links span {
+    cursor: pointer;
+    color: var(--gold);
+    margin: 0 10px;
 }
