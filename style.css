@@ -149,6 +149,51 @@ header {
 /* ============================================================
    WHY CHOOSE US
 ============================================================ */
+.why-extra-wrapper {
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+}
+
+.why-extra-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 6px solid #d9a464;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.why-extra-intro,
+.why-extra-box p {
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.why-extra-strong {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.why-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 30px 0;
+}
+
+.why-two-col ul {
+    list-style: disc;
+    padding-left: 25px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+@media(max-width: 900px) {
+    .why-two-col {
+        grid-template-columns: 1fr;
+    }
+}
 
 .why-text {
     max-width: 900px;
