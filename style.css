@@ -14,14 +14,17 @@ body {
     margin-right: auto;
 }
 
+/* Modern section backgrounds */
 .section.light {
-    background: #f7f7f7;
+    background: var(--bg-dark);
+    color: var(--text-light);
 }
 
 .section.dark {
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--bg-mid);
+    color: var(--text-light);
 }
+
 
 /* Center all section titles */
 .section h2,
@@ -30,6 +33,9 @@ body {
     margin-bottom: 40px;
     font-size: 36px;
     font-weight: bold;
+    color: var(--text-light);
+}
+
 }
 /* Modern Colour System */
 :root {
@@ -39,7 +45,8 @@ body {
     --text-light: #ffffff;
     --text-dark: #1a1a1a;
     --gold: #cfa96d; /* slightly muted gold for modern premium look */
-    --border-gold: #d9a464;
+    --border-gold: var(--gold)
+
 }
 
 /* ============================================================
@@ -78,7 +85,8 @@ header {
 }
 
 .desktop-nav a:hover {
-    color: #d9a464;
+    var(--gold)
+
 }
 
 .hamburger span {
@@ -143,12 +151,14 @@ header {
 }
 
 .btn.gold {
-    background: #d9a464;
+    background: var(--gold)
+;
     color: #000;
 }
 
 .btn.outline {
-    border: 2px solid #d9a464;
+    border: 2px solid var(--gold)
+
     color: #fff;
 }
 
@@ -159,7 +169,7 @@ header {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    background: #d9a464;
+    background: var(--gold);
     padding: 14px 20px;
     border-radius: 8px;
     color: #000;
@@ -180,7 +190,8 @@ header {
     background: #fff;
     padding: 40px;
     border-radius: 12px;
-    border-left: 6px solid #d9a464;
+    border-left: 6px solid var(--gold)
+;
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
@@ -238,7 +249,8 @@ header {
     background: #fff;
     padding: 40px;
     border-radius: 12px;
-    border-left: 6px solid #d9a464;
+    border-left: 6px solid var(--gold)
+;
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
@@ -272,7 +284,8 @@ header {
     background: #fff;
     padding: 45px 55px;
     border-radius: 12px;
-    border-left: 6px solid #d9a464;
+    border-left: 6px solid var(--gold)
+;
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     width: 100%;
 }
@@ -311,7 +324,8 @@ header {
 .prestige-card {
     width: 32%;
     background: #faf5ee;
-    border: 2px solid #d9a464;
+    border: 2px solid var(--gold)
+;
     padding: 25px;
     border-radius: 12px;
     text-align: center;
@@ -332,7 +346,7 @@ header {
 ============================================================ */
 .accordion .item {
     background: #222;
-    border: 2px solid #d9a464;
+    border: 2px solid var(--gold);
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 0;
@@ -340,7 +354,7 @@ header {
 
 .accordion .title {
     background: none;
-    color: #d9a464;
+    color: var(--gold);
     width: 100%;
     padding: 18px;
     text-align: left;
@@ -358,7 +372,7 @@ header {
 
 .accordion .content {
     display: none;
-    background: #d9a464;
+    background: var(--gold);
     padding: 20px;
     color: #000;
     border-radius: 0 0 10px 10px;
@@ -380,14 +394,14 @@ header {
     background: #1a1a1a;
     color: #fff;
     border-radius: 12px;
-    border: 2px solid #d9a464;
+    border: 2px solid var(--gold);
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
 }
 
 .case-law-box:hover {
-    background: #d9a464;
+    background: var(--gold);
     color: #000;
 }
 
@@ -402,19 +416,19 @@ header {
 
 .review {
     background: #1a1a1a;
-    border: 2px solid #d9a464;
+    border: 2px solid var(--gold);
     padding: 25px;
     border-radius: 12px;
     transition: 0.3s;
 }
 
 .review:hover {
-    background: #d9a464;
+    background: var(--gold);
     color: #000;
 }
 
 .stars {
-    color: #d9a464;
+    color: var(--gold);
     font-size: 22px;
     margin-bottom: 10px;
 }
@@ -433,7 +447,7 @@ header {
     background: #faf5ee;
     padding: 25px;
     border-radius: 12px;
-    border: 2px solid #d9a464;
+    border: 2px solid var(--gold);
 }
 
 .rtm-box h3 {
@@ -471,13 +485,13 @@ footer {
     text-align: center;
     padding: 40px;
     background: #fff;
-    border-top: 3px solid #d9a464;
+    border-top: 3px solid var(--gold);
     color: #000;
 }
 
 .footer-links span {
     cursor: pointer;
-    color: #d9a464;
+    color: var(--gold);
 }
 
 /* ============================================================
@@ -528,7 +542,7 @@ footer {
     padding: 40px 50px;
     border-radius: 12px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    border-left: 6px solid #d9a464;
+    border-left: 6px solid var(--gold);
 }
 
 .why-extra-intro {
@@ -557,7 +571,7 @@ footer {
 
 .why-extra-strong {
     font-weight: bold;
-    color: #d9a464;
+   var(--gold)
     text-align: center;
     font-size: 19px;
     margin-top: 20px;
