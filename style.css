@@ -540,4 +540,9 @@ footer {
     .why-two-col {
         grid-template-columns: 1fr;
     }
+   /* Increase spacing between Why Choose Us grid and the extra text section */
+.why-extra-box {
+    margin-top: 80px; /* increase this number if you want more space */
+}
+
 }
