@@ -471,9 +471,10 @@ body {
    GLOBAL SITE SCALE REFINEMENT – FIXED (no scrolling issue)
 ============================================================ */
 
-.site-wrapper {
+.site-scale {
     transform: scale(0.85);
     transform-origin: top center;
+    width: 100%;
 }
 
 /* Prevent the page from scrolling beyond content */
