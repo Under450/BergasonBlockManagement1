@@ -544,5 +544,12 @@ footer {
 .why-extra-box {
     margin-top: 80px; /* increase this number if you want more space */
 }
+/* Rotating hero background */
+#rotating-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
 
 }
