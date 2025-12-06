@@ -31,6 +31,16 @@ body {
     font-size: 36px;
     font-weight: bold;
 }
+/* Modern Colour System */
+:root {
+    --bg-dark: #2e2e2e;
+    --bg-mid: #3a3a3a;
+    --bg-light: #ffffff;
+    --text-light: #ffffff;
+    --text-dark: #1a1a1a;
+    --gold: #cfa96d; /* slightly muted gold for modern premium look */
+    --border-gold: #d9a464;
+}
 
 /* ============================================================
    HEADER
