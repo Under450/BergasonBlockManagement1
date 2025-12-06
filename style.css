@@ -272,11 +272,18 @@ header {
 }
 
 .accordion .title {
+    background: #ffffff !important;     /* full-width white bar */
     color: var(--gold);
-    padding: 18px;
+    width: 100%;
+    padding: 18px 25px;
+    text-align: left;
     font-size: 20px;
+    border: none;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
+    border-radius: 10px 10px 0 0;       /* smooth round top corners */
+    box-sizing: border-box;
 }
 
 .accordion .content {
