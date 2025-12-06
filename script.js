@@ -84,5 +84,23 @@ const observer = new IntersectionObserver((entries, observerObj) => {
         }
     });
 }, appearOptions);
+/* Rotating hero background images */
+const heroImages = [
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1950&q=80",
+    "https://images.unsplash.com/photo-1529421308413-6221b5b2b3c5?auto=format&fit=crop&w=1950&q=80",
+    "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=1950&q=80",
+    "https://images.unsplash.com/photo-1538688525198-9b88f31739d5?auto=format&fit=crop&w=1950&q=80"
+];
+
+let heroIndex = 0;
+
+function rotateHero() {
+    const hero = document.getElementById("rotating-hero");
+    hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
+    heroIndex = (heroIndex + 1) % heroImages.length;
+}
+
+rotateHero();
+setInterval(rotateHero, 1000); // 1 second rotation
 
 faders.forEach(f => observer.observe(f));
