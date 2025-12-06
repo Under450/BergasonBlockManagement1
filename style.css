@@ -576,3 +576,6 @@ footer {
 #rotating-hero {
     transition: opacity 0.8s ease-in-out;
 }
+#about.section {
+    padding-bottom: 20px !important;
+}
