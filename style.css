@@ -551,5 +551,14 @@ footer {
     background-repeat: no-repeat;
     transition: background-image 1s ease-in-out;
 }
+/* Smooth fade transition for hero background */
+.hero {
+    transition: background-image 1.5s ease-in-out;
+}
+
+.hero.fade {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
 
 }
