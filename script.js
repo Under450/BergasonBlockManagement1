@@ -87,47 +87,35 @@ const observer = new IntersectionObserver((entries, observerObj) => {
 /* Rotating hero background images */
 /* Rotating hero background images with fail-safe */
 
+/* ============================================================
+   ROTATING HERO BACKGROUND WITH SMOOTH FADE
+============================================================ */
+
 const heroImages = [
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1529421308413-6221b5b2b3c5?auto=format&fit=crop&w=2000&q=80"
+    "hero1.jpg",
+    "hero2.jpg",
+    "hero3.jpg"
 ];
 
-let loadedImages = [];
 let heroIndex = 0;
 
-function preloadImages(list, callback) {
-    let loadedCount = 0;
-
-    list.forEach((url, i) => {
-        const img = new Image();
-        img.src = url;
-
-        img.onload = () => {
-            loadedImages.push(url);
-            loadedCount++;
-            if (loadedCount === list.length) callback();
-        };
-
-        img.onerror = () => {
-            console.warn("Image failed:", url);
-            loadedCount++;
-            if (loadedCount === list.length) callback();
-        };
-    });
-}
-
 function rotateHero() {
-    if (loadedImages.length === 0) return;
-
     const hero = document.getElementById("rotating-hero");
-    hero.style.backgroundImage = `url('${loadedImages[heroIndex]}')`;
 
-    heroIndex = (heroIndex + 1) % loadedImages.length;
+    if (!hero) return;
+
+    // Fade out
+    hero.classList.add("fade");
+
+    setTimeout(() => {
+        heroIndex = (heroIndex + 1) % heroImages.length;
+
+        hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
+
+        // Fade back in
+        hero.classList.remove("fade");
+    }, 700);
 }
 
-preloadImages(heroImages, () => {
-    rotateHero();
-    setInterval(rotateHero, 4000); // rotate every 2 seconds
-});
+// Change image every 6 seconds
+setInterval(rotateHero, 6000);
