@@ -438,3 +438,12 @@ footer {
 .why-extra-wrapper {
     margin-top: 60px !important;
 }
+/* Fix prestige card heading color */
+.prestige-card h3 {
+    color: #000 !important;   /* black heading */
+}
+
+/* Fix prestige card paragraph text */
+.prestige-card p {
+    color: #000 !important;   /* black text */
+}
