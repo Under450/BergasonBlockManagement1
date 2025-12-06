@@ -1,10 +1,21 @@
 /* ============================================================
-   GLOBAL
+   GLOBAL + MODERN COLOUR PALETTE
 ============================================================ */
+:root {
+    --bg-dark: #2e2e2e;
+    --bg-mid: #3a3a3a;
+    --bg-light: #ffffff;
+    --text-light: #ffffff;
+    --text-dark: #1a1a1a;
+    --gold: #cfa96d;
+    --border-gold: #d9a464;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #fff;
+    background: var(--bg-dark);
+    color: var(--text-light);
 }
 
 .section {
@@ -12,9 +23,10 @@ body {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--text-light);
 }
 
-/* Modern section backgrounds */
+/* Modern backgrounds */
 .section.light {
     background: var(--bg-dark);
     color: var(--text-light);
@@ -25,8 +37,7 @@ body {
     color: var(--text-light);
 }
 
-
-/* Center all section titles */
+/* Section titles */
 .section h2,
 .section h3 {
     text-align: center;
@@ -36,36 +47,18 @@ body {
     color: var(--text-light);
 }
 
-}
-/* Modern Colour System */
-:root {
-    --bg-dark: #2e2e2e;
-    --bg-mid: #3a3a3a;
-    --bg-light: #ffffff;
-    --text-light: #ffffff;
-    --text-dark: #1a1a1a;
-    --gold: #cfa96d; /* slightly muted gold for modern premium look */
-    --border-gold: var(--gold)
-
-}
-
 /* ============================================================
    HEADER
 ============================================================ */
-/* ============================================================
-   HEADER – TRANSPARENT OVER HERO
-============================================================ */
 header {
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999;
+    background: var(--bg-mid);
+    color: var(--text-light);
+    padding: 20px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
-    background: transparent;
+    border-bottom: 3px solid var(--gold);
     box-sizing: border-box;
 }
 
@@ -74,23 +67,20 @@ header {
 }
 
 .desktop-nav a {
-    margin-left: 30px;
-    color: #ffffff;
+    margin-left: 25px;
+    color: var(--text-light);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    letter-spacing: 0.4px;
-    transition: color 0.3s ease;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
 }
 
 .desktop-nav a:hover {
-    var(--gold)
-
+    color: var(--gold);
 }
 
-.hamburger span {
-    background: #fff;
+.hamburger {
+    display: none;
 }
 
 /* ============================================================
@@ -98,14 +88,12 @@ header {
 ============================================================ */
 .hero {
     width: 100%;
-    height: 620px;
+    height: 600px;
+    background-image: url("hero.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 120px; /* ensures the header does not overlap the title */
+    transition: background-image 1.5s ease-in-out;
 }
 
 .hero-overlay {
@@ -114,19 +102,17 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.25);
 }
 
-.hero-content h1 {
-    font-size: 54px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 40%;
+    transform: translateY(-40%);
+    color: #fff;
 }
-
-.hero-content p {
-    font-size: 24px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-}
-
 
 .hero h1 {
     font-size: 48px;
@@ -151,15 +137,13 @@ header {
 }
 
 .btn.gold {
-    background: var(--gold)
-;
+    background: var(--gold);
     color: #000;
 }
 
 .btn.outline {
-    border: 2px solid var(--gold)
-
-    color: #fff;
+    border: 2px solid var(--gold);
+    color: var(--text-light);
 }
 
 /* ============================================================
@@ -181,59 +165,13 @@ header {
 /* ============================================================
    WHY CHOOSE US
 ============================================================ */
-.why-extra-wrapper {
-    max-width: 1200px;
-    margin: 60px auto 0 auto;
-}
-
-.why-extra-box {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    border-left: 6px solid var(--gold)
-;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-}
-
-.why-extra-intro,
-.why-extra-box p {
-    text-align: center;
-    font-size: 19px;
-    line-height: 1.6;
-}
-
-.why-extra-strong {
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.why-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin: 30px 0;
-}
-
-.why-two-col ul {
-    list-style: disc;
-    padding-left: 25px;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-@media(max-width: 900px) {
-    .why-two-col {
-        grid-template-columns: 1fr;
-    }
-}
-
 .why-text {
     max-width: 900px;
     margin: 0 auto 50px auto;
     font-size: 20px;
     line-height: 1.6;
     text-align: center;
+    color: var(--text-light);
 }
 
 .why-grid {
@@ -245,13 +183,14 @@ header {
     margin: 0 auto;
 }
 
+/* White contrast cards */
 .why-box {
-    background: #fff;
+    background: var(--bg-light) !important;
     padding: 40px;
     border-radius: 12px;
-    border-left: 6px solid var(--gold)
-;
+    border-left: 6px solid var(--gold);
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    color: var(--text-dark) !important;
 }
 
 .why-box h3 {
@@ -264,50 +203,36 @@ header {
     font-size: 18px;
     line-height: 1.6;
 }
-.why-grid {
-    margin-bottom: 20px;
-}
 
 /* ============================================================
-   EXTRA INFO SECTION (NEW BLOCK YOU REQUESTED)
+   EXTRA TEXT SECTION
 ============================================================ */
-
 .why-extra-wrapper {
     width: 100%;
-    max-width: 1200px;      /* aligns with Why Choose Us grid */
-    margin: 60px auto 40px auto;
-    padding: 0 10%;
-    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
 }
 
 .why-extra-box {
-    background: #fff;
-    padding: 45px 55px;
+    background: var(--bg-light) !important;
+    padding: 40px 50px;
     border-radius: 12px;
-    border-left: 6px solid var(--gold)
-;
+    border-left: 6px solid var(--gold);
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    width: 100%;
+    color: var(--text-dark) !important;
 }
 
-.why-extra-grid {
+.why-two-col {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.why-extra-grid ul {
-    padding-left: 20px;
-    line-height: 1.7;
+.why-two-col li {
     font-size: 18px;
-}
-
-/* Mobile responsive */
-@media (max-width: 800px) {
-    .why-extra-grid {
-        grid-template-columns: 1fr;
-    }
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 /* ============================================================
@@ -323,12 +248,12 @@ header {
 
 .prestige-card {
     width: 32%;
-    background: #faf5ee;
-    border: 2px solid var(--gold)
-;
+    background: var(--bg-light) !important;
+    border: 2px solid var(--gold);
     padding: 25px;
     border-radius: 12px;
     text-align: center;
+    color: var(--text-dark) !important;
 }
 
 .prestige-card h3 {
@@ -336,38 +261,22 @@ header {
     font-size: 22px;
 }
 
-.prestige-card p {
-    font-size: 17px;
-    line-height: 1.6;
-}
-
 /* ============================================================
-   SERVICES ACCORDION
+   ACCORDION
 ============================================================ */
 .accordion .item {
-    background: #222;
+    background: var(--bg-mid);
     border: 2px solid var(--gold);
     border-radius: 10px;
     margin-bottom: 15px;
-    padding: 0;
 }
 
 .accordion .title {
-    background: none;
     color: var(--gold);
-    width: 100%;
     padding: 18px;
-    text-align: left;
     font-size: 20px;
-    border: none;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
-}
-
-.plus {
-    font-weight: bold;
-    font-size: 24px;
 }
 
 .accordion .content {
@@ -375,7 +284,6 @@ header {
     background: var(--gold);
     padding: 20px;
     color: #000;
-    border-radius: 0 0 10px 10px;
 }
 
 /* ============================================================
@@ -391,13 +299,12 @@ header {
 .case-law-box {
     width: 260px;
     padding: 30px;
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--bg-mid);
+    color: var(--text-light);
     border-radius: 12px;
     border: 2px solid var(--gold);
-    cursor: pointer;
-    transition: 0.3s;
     text-align: center;
+    transition: 0.3s;
 }
 
 .case-law-box:hover {
@@ -415,7 +322,7 @@ header {
 }
 
 .review {
-    background: #1a1a1a;
+    background: var(--bg-mid);
     border: 2px solid var(--gold);
     padding: 25px;
     border-radius: 12px;
@@ -425,12 +332,6 @@ header {
 .review:hover {
     background: var(--gold);
     color: #000;
-}
-
-.stars {
-    color: var(--gold);
-    font-size: 22px;
-    margin-bottom: 10px;
 }
 
 /* ============================================================
@@ -444,14 +345,11 @@ header {
 
 .rtm-box {
     width: 48%;
-    background: #faf5ee;
+    background: var(--bg-light) !important;
     padding: 25px;
     border-radius: 12px;
     border: 2px solid var(--gold);
-}
-
-.rtm-box h3 {
-    margin-bottom: 10px;
+    color: var(--text-dark) !important;
 }
 
 /* ============================================================
@@ -485,7 +383,7 @@ footer {
     text-align: center;
     padding: 40px;
     background: var(--bg-mid);
-    border-top: 3px solid var(--border-gold);
+    border-top: 3px solid var(--gold);
     color: var(--text-light);
 }
 
@@ -511,121 +409,17 @@ footer {
 }
 
 .modal-content {
-    background: #fff;
+    background: var(--bg-light);
     width: 60%;
     padding: 30px;
     border-radius: 12px;
     max-height: 80vh;
     overflow-y: auto;
-}
-#waaler h2 {
-    font-size: 22px !important;
+    color: var(--text-dark);
 }
 
 .close {
     float: right;
     cursor: pointer;
     font-size: 28px;
-}
-/* ============================================================
-   WHY EXTRA (FULL WIDTH, CENTERED, TWO COLUMNS)
-============================================================ */
-
-.why-extra-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto 0 auto;
-}
-
-.why-extra-box {
-    background: #ffffff;
-    padding: 40px 50px;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    border-left: 6px solid var(--gold);
-}
-
-.why-extra-intro {
-    font-size: 20px;
-    line-height: 1.6;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.why-two-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-.why-two-col ul {
-    padding-left: 20px;
-}
-
-.why-two-col li {
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.why-extra-strong {
-    font-weight: bold;
-   var(--gold)
-    text-align: center;
-    font-size: 19px;
-    margin-top: 20px;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-    .why-two-col {
-        grid-template-columns: 1fr;
-    }
-   /* Increase spacing between Why Choose Us grid and the extra text section */
-.why-extra-box {
-    margin-top: 80px; /* increase this number if you want more space */
-}
-/* Rotating hero background */
-#rotating-hero {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 1s ease-in-out;
-}
-/* Smooth fade transition for hero background */
-.hero {
-    transition: background-image 1.5s ease-in-out;
-}
-
-.hero.fade {
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-}
-/* ============================================================
-   HERO IMAGE FADE TRANSITION
-============================================================ */
-#rotating-hero.fade {
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-}
-
-#rotating-hero {
-    transition: opacity 0.8s ease-in-out;
-}
-#about.section {
-    padding-bottom: 10px !important;
-}
-/* Cards stay white for contrast on dark background */
-.why-box,
-.why-extra-box,
-.prestige-card,
-.review,
-.case-law-box,
-.rtm-box {
-    background: #ffffff !important;
-    color: #1a1a1a !important;
-    border-color: var(--border-gold) !important;
 }
