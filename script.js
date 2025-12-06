@@ -129,5 +129,5 @@ function rotateHero() {
 
 preloadImages(heroImages, () => {
     rotateHero();
-    setInterval(rotateHero, 2000); // rotate every 2 seconds
+    setInterval(rotateHero, 4000); // rotate every 2 seconds
 });
