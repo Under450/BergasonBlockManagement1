@@ -562,3 +562,14 @@ footer {
 }
 
 }
+/* ============================================================
+   HERO IMAGE FADE TRANSITION
+============================================================ */
+#rotating-hero.fade {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+#rotating-hero {
+    transition: opacity 0.8s ease-in-out;
+}
