@@ -484,9 +484,9 @@ header {
 footer {
     text-align: center;
     padding: 40px;
-    background: #fff;
-    border-top: 3px solid var(--gold);
-    color: #000;
+    background: var(--bg-mid);
+    border-top: 3px solid var(--border-gold);
+    color: var(--text-light);
 }
 
 .footer-links span {
@@ -617,4 +617,15 @@ footer {
 }
 #about.section {
     padding-bottom: 10px !important;
+}
+/* Cards stay white for contrast on dark background */
+.why-box,
+.why-extra-box,
+.prestige-card,
+.review,
+.case-law-box,
+.rtm-box {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: var(--border-gold) !important;
 }
