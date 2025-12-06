@@ -135,5 +135,5 @@ function rotateHero() {
 
 validateImages(heroImages, () => {
     rotateHero();
-    setInterval(rotateHero, 6000);
+    setInterval(rotateHero, 4000);
 });
