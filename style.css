@@ -430,3 +430,11 @@ footer {
     cursor: pointer;
     font-size: 28px;
 }
+/* Restore spacing between the two top blocks */
+.why-grid {
+    margin-bottom: 60px !important;
+}
+
+.why-extra-wrapper {
+    margin-top: 60px !important;
+}
