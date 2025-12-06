@@ -467,3 +467,24 @@ body {
         transform: scale(1);    /* keep mobile at normal size */
     }
 }
+/* ============================================================
+   GLOBAL SITE SCALE REFINEMENT – FIXED (no scrolling issue)
+============================================================ */
+
+.site-wrapper {
+    transform: scale(0.85);
+    transform-origin: top center;
+}
+
+/* Prevent the page from scrolling beyond content */
+html, body {
+    height: auto !important;
+    overflow-x: hidden;
+}
+
+/* Mobile stays normal size */
+@media (max-width: 900px) {
+    .site-wrapper {
+        transform: scale(1);
+    }
+}
