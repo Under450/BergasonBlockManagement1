@@ -453,3 +453,17 @@ footer {
 .rtm-box li {
     color: #000 !important;     /* black text so it becomes readable */
 }
+/* ============================================================
+   GLOBAL SITE SCALE REFINEMENT (SLEEK MODERN LOOK)
+   Reduces visual heaviness without breaking layout.
+============================================================ */
+body {
+    transform: scale(0.92);     /* reduce total visual size to 92% */
+    transform-origin: top center;
+}
+
+@media (max-width: 900px) {
+    body {
+        transform: scale(1);    /* keep mobile at normal size */
+    }
+}
