@@ -482,6 +482,9 @@ footer {
     max-height: 80vh;
     overflow-y: auto;
 }
+#waaler h2 {
+    font-size: 22px !important;
+}
 
 .close {
     float: right;
