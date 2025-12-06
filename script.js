@@ -85,22 +85,49 @@ const observer = new IntersectionObserver((entries, observerObj) => {
     });
 }, appearOptions);
 /* Rotating hero background images */
+/* Rotating hero background images with fail-safe */
+
 const heroImages = [
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1529421308413-6221b5b2b3c5?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1538688525198-9b88f31739d5?auto=format&fit=crop&w=1950&q=80"
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80",
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80",
+    "https://images.unsplash.com/photo-1529421308413-6221b5b2b3c5?auto=format&fit=crop&w=2000&q=80"
 ];
 
+let loadedImages = [];
 let heroIndex = 0;
 
-function rotateHero() {
-    const hero = document.getElementById("rotating-hero");
-    hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
-    heroIndex = (heroIndex + 1) % heroImages.length;
+function preloadImages(list, callback) {
+    let loadedCount = 0;
+
+    list.forEach((url, i) => {
+        const img = new Image();
+        img.src = url;
+
+        img.onload = () => {
+            loadedImages.push(url);
+            loadedCount++;
+            if (loadedCount === list.length) callback();
+        };
+
+        img.onerror = () => {
+            console.warn("Image failed:", url);
+            loadedCount++;
+            if (loadedCount === list.length) callback();
+        };
+    });
 }
 
-rotateHero();
-setInterval(rotateHero, 1000); // 1 second rotation
+function rotateHero() {
+    if (loadedImages.length === 0) return;
 
-faders.forEach(f => observer.observe(f));
+    const hero = document.getElementById("rotating-hero");
+    hero.style.backgroundImage = `url('${loadedImages[heroIndex]}')`;
+
+    heroIndex = (heroIndex + 1) % loadedImages.length;
+}
+
+preloadImages(heroImages, () => {
+    rotateHero();
+    setInterval(rotateHero, 2000); // rotate every 2 seconds
+});
