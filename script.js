@@ -92,9 +92,10 @@ const observer = new IntersectionObserver((entries, observerObj) => {
 ============================================================ */
 
 const heroImages = [
-    "hero1.jpg",
-    "hero2.jpg",
-    "hero3.jpg"
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80",
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80",
+    "https://images.unsplash.com/photo-1529421308413-6221b5b2b3c5?auto=format&fit=crop&w=2000&q=80"
 ];
 
 let heroIndex = 0;
