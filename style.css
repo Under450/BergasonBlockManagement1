@@ -458,7 +458,7 @@ footer {
    Reduces visual heaviness without breaking layout.
 ============================================================ */
 body {
-    transform: scale(0.92);     /* reduce total visual size to 92% */
+    transform: scale(0.85);     /* reduce total visual size to 92% */
     transform-origin: top center;
 }
 
