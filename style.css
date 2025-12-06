@@ -447,3 +447,9 @@ footer {
 .prestige-card p {
     color: #000 !important;   /* black text */
 }
+/* Fix RTM support text color */
+.rtm-box h3,
+.rtm-box p,
+.rtm-box li {
+    color: #000 !important;     /* black text so it becomes readable */
+}
