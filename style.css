@@ -34,21 +34,26 @@ body {
    HEADER (STATIC)
 ============================================================ */
 header {
-    width: 100%;
+    position: fixed;          /* stays visible */
+    top: 0;
+    left: 0;
+    width: 100%;              /* ← REQUIRED TO PREVENT DISAPPEARING */
+    z-index: 9999;
+
     background: #fff;
     color: #000;
-    padding: 10px 35px; /* reduce vertical padding */
+    padding: 10px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid #d9a464;
     box-sizing: border-box;
-    height: 80px; /* FIXED HEIGHT */
+    height: 80px;
 }
 
 .logo-img {
     height: 100%;
-    max-height: 55px; /* ← change this to resize */
+    max-height: 55px; /* resize logo only */
 }
 
 .desktop-nav a {
