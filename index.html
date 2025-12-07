@@ -10,20 +10,21 @@
 <body>
 
 <!-- ============================================================
-   FIXED HEADER — TEMPLATE LOCKED
+   HEADER (STATIC NAVIGATION)
 ============================================================ -->
-<header class="fixed-header">
+<header class="transparent-header">
     <div class="logo-container">
         <img src="logo.png" alt="Bergason Logo" class="logo-img">
     </div>
 
     <nav class="desktop-nav">
         <a href="#about">Why Choose Us</a>
+        <a href="#extra">Additional Services</a>
         <a href="#sets">What Sets Us Apart</a>
         <a href="#services">Our Services</a>
         <a href="#case-law">Case Law</a>
         <a href="#reviews">Client Reviews</a>
-        <a href="#rtm">RTM Support</a>
+        <a href="#rtm">Right To Manage Support</a>
         <a href="#contact">Contact Us</a>
     </nav>
 
@@ -32,15 +33,13 @@
     </div>
 </header>
 
-<!-- FLOATING CONTACT BUTTON -->
 <a href="#contact" class="floating-contact-btn">Contact Us</a>
 
 <!-- ============================================================
-   HERO SECTION (NOT SCALED)
+   HERO WITH ROTATING IMAGES
 ============================================================ -->
 <section class="hero fade-in" id="rotating-hero">
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
         <h1>Bergason Property Services Limited</h1>
         <p>Specialists in Residential Block Management, RTM, and Leasehold Support</p>
@@ -52,78 +51,92 @@
     </div>
 </section>
 
-<!-- ============================================================
-   START OF CONTENT SCALE WRAPPER
-============================================================ -->
-<div class="site-scale">
 
 <!-- ============================================================
-   WHY CHOOSE US
+   WHY CHOOSE US (ORIGINAL TEMPLATE)
 ============================================================ -->
 <section id="about" class="section light fade-in">
 
-<h2>Why Choose Us</h2>
+    <h2>Why Choose Us</h2>
 
-<p class="why-text">
-    Bergason Block Management provides comprehensive, structured and highly responsive management services 
-    for freeholders, RMCs, RTM companies and developers across England and Wales.
-</p>
-
-<div class="why-grid">
-
-    <div class="why-box">
-        <h3>Specialised Expertise</h3>
-        <p>Over 37 years in the property and legal sectors ensuring full compliance and governance.</p>
-    </div>
-
-    <div class="why-box">
-        <h3>Direct Contact</h3>
-        <p>24/7 emergency support ensuring issues are handled quickly and safely.</p>
-    </div>
-
-    <div class="why-box">
-        <h3>Cost Efficiency</h3>
-        <p>Typical 15–25 percent expenditure reduction through structured financial management.</p>
-    </div>
-
-    <div class="why-box">
-        <h3>Personalised Service</h3>
-        <p>Family-run, providing personal communication and tailored support.</p>
-    </div>
-
-</div>
-
-<!-- EXTRA INFORMATION BOX -->
-<div class="why-extra-box">
-
-    <p class="why-extra-intro">
-        <strong>The services that might typically be covered include:</strong>
+    <p class="why-text">
+        Bergason Block Management provides comprehensive, structured and highly responsive management 
+        for freeholders, RMCs, RTM companies and developers across England and Wales.
     </p>
 
-    <div class="why-two-col">
-        <ul>
-            <li>Preparing and distributing service charge budgets.</li>
-            <li>Collecting service charges.</li>
-            <li>Preparing invoices for accountant examination.</li>
-            <li>Providing information to auditors.</li>
-            <li>Collecting routine arrears.</li>
-            <li>Liaising with residents/associations.</li>
-        </ul>
+    <div class="why-grid">
 
-        <ul>
-            <li>Employing contractors and arranging quotes.</li>
-            <li>Inspecting the property and minor repairs.</li>
-            <li>Periodic H&S checks.</li>
-            <li>Holding resident meetings.</li>
-            <li>Maintaining resident/tenancy records.</li>
-            <li>Corporate governance for RMC/RTM.</li>
-        </ul>
+        <div class="why-box">
+            <h3>Specialised Expertise</h3>
+            <p>
+                Over 37 years in property and legal sectors ensures full compliance with legislation,
+                leases and RICS guidance.
+            </p>
+        </div>
+
+        <div class="why-box">
+            <h3>Direct Contact</h3>
+            <p>
+                We operate a 24-hour emergency line, seven days a week.
+            </p>
+        </div>
+
+        <div class="why-box">
+            <h3>Cost Efficiency</h3>
+            <p>
+                Developments typically save 15–25 percent via improved tenders and budgeting.
+            </p>
+        </div>
+
+        <div class="why-box">
+            <h3>Personalised Service</h3>
+            <p>
+                A family-run service offering tailored communication and flexible management.
+            </p>
+        </div>
+
     </div>
-
-    <p class="why-extra-strong">Fees typically £15–£20 + VAT per unit per month.</p>
-</div>
-
 </section>
+
+
+<!-- ============================================================
+   NEW EXTRA SECTION (SEPARATE FROM WHY CHOOSE US)
+============================================================ -->
+<section id="extra" class="section light fade-in">
+
+    <h2>Additional Block Management Services</h2>
+
+    <div class="why-extra-box">
+
+        <p class="why-extra-intro">
+            The services typically included within our block management package include:
+        </p>
+
+        <div class="why-two-col">
+            <ul>
+                <li>Preparing and distributing service charge budgets.</li>
+                <li>Collecting service charges.</li>
+                <li>Preparing invoices prior to independent examination.</li>
+                <li>Providing financial information for annual accounts.</li>
+                <li>Routine arrears collection.</li>
+                <li>Liaising with residents and associations.</li>
+            </ul>
+
+            <ul>
+                <li>Employing contractors and obtaining quotes.</li>
+                <li>Inspections and handling non-major repairs.</li>
+                <li>Periodic health and safety checks.</li>
+                <li>Annual resident meetings where required.</li>
+                <li>Maintaining owner and tenancy records.</li>
+                <li>Corporate governance support for RMC/RTM companies.</li>
+            </ul>
+        </div>
+
+        <p><strong>Fees typically range between £15 – £20 + VAT per unit per month.</strong></p>
+
+    </div>
+</section>
+
 
 <!-- ============================================================
    WHAT SETS US APART
@@ -135,29 +148,30 @@
 
     <div class="prestige-card">
         <h3>24/7 Direct Access</h3>
-        <p>Emergency support available at all times.</p>
+        <p>Emergency support available 24 hours a day.</p>
     </div>
 
     <div class="prestige-card">
         <h3>Cost Reduction</h3>
-        <p>Efficient budgeting and procurement.</p>
+        <p>Typical 15–20 percent reduction in expenditure.</p>
     </div>
 
     <div class="prestige-card">
         <h3>Rapid Transition</h3>
-        <p>Full handover within 5–7 days.</p>
+        <p>5–7 day full takeover setup.</p>
     </div>
 
     <div class="prestige-card">
         <h3>Tailored Control</h3>
-        <p>Directors choose preferred involvement level.</p>
+        <p>Directors choose preferred management style.</p>
     </div>
 
 </div>
 </section>
 
+
 <!-- ============================================================
-   OUR SERVICES
+   SERVICES
 ============================================================ -->
 <section id="services" class="section dark fade-in">
 <h2>Our Services</h2>
@@ -166,140 +180,149 @@
 
 <div class="item">
     <button class="title">Full Block Management <span class="plus">+</span></button>
-    <div class="content">Full operational oversight including inspections, safety and accounts.</div>
+    <div class="content">Full operational oversight including inspections, maintenance, accounts and communication.</div>
 </div>
 
 <div class="item">
-    <button class="title">RTM Formation <span class="plus">+</span></button>
-    <div class="content">Eligibility checks, notices, participation and company formation.</div>
+    <button class="title">RTM & Company Formation <span class="plus">+</span></button>
+    <div class="content">Eligibility checks, notices, participation, formation and handover.</div>
 </div>
 
 <div class="item">
     <button class="title">Service Charge Accounts <span class="plus">+</span></button>
-    <div class="content">Budgeting, arrears, ledger control.</div>
+    <div class="content">Budgeting, forecasting, arrears and preparation for annual examination.</div>
 </div>
 
 <div class="item">
     <button class="title">Contractor Procurement <span class="plus">+</span></button>
-    <div class="content">Tendering, verification and quality control.</div>
+    <div class="content">Tendering, compliance checking and quality monitoring.</div>
 </div>
 
 <div class="item">
     <button class="title">Section 20 Compliance <span class="plus">+</span></button>
-    <div class="content">Full statutory major works consultation.</div>
+    <div class="content">Full statutory consultation process.</div>
+</div>
+
+<div class="item">
+    <button class="title">Safety & Compliance <span class="plus">+</span></button>
+    <div class="content">FRA, EICR, asbestos, water hygiene and BSA compliance.</div>
 </div>
 
 </div>
 </section>
 
+
 <!-- ============================================================
-   CASE LAW
+   CASE LAW CARDS
 ============================================================ -->
 <section id="case-law" class="section light fade-in">
 <h2>Key Case Law</h2>
 
 <div class="case-law-container">
 
-    <div class="case-law-box" onclick="openModal('garside')">
-        <h3>Garside v RFYC (2011)</h3>
-        <p>Reasonably Incurred Costs →</p>
-    </div>
+<div class="case-law-box" onclick="openModal('garside')">
+    <h3>Garside v RFYC (2011)</h3>
+    <p>Reasonably incurred →</p>
+</div>
 
-    <div class="case-law-box" onclick="openModal('waaler')">
-        <h3>Waaler v LB Hounslow (2017)</h3>
-        <p>Repairs vs Improvements →</p>
-    </div>
+<div class="case-law-box" onclick="openModal('waaler')">
+    <h3>Waaler v Hounslow (2017)</h3>
+    <p>Repairs vs improvements →</p>
+</div>
 
-    <div class="case-law-box" onclick="openModal('holland')">
-        <h3>Holland v Oxford CC (2002)</h3>
-        <p>Transparency →</p>
-    </div>
+<div class="case-law-box" onclick="openModal('holland')">
+    <h3>Holland v Oxford (2002)</h3>
+    <p>Document inspection →</p>
+</div>
+
+<div class="case-law-box" onclick="openModal('francis')">
+    <h3>Francis v Phillips (2014)</h3>
+    <p>Qualifying works →</p>
+</div>
+
+<div class="case-law-box" onclick="openModal('arnold')">
+    <h3>Arnold v Britton (2015)</h3>
+    <p>Strict interpretation →</p>
+</div>
 
 </div>
 </section>
 
-<!-- CASE LAW MODALS -->
-<div class="modal" id="garside">
-<div class="modal-content">
-<span class="close" onclick="closeModal('garside')">&times;</span>
-<h2>Garside v RFYC (2011)</h2>
-<p>Clarified affordability must be considered when determining whether costs are reasonably incurred under s.19 LTA 1985.</p>
-</div></div>
-
-<div class="modal" id="waaler">
-<div class="modal-content">
-<span class="close" onclick="closeModal('waaler')">&times;</span>
-<h2>Waaler v LB Hounslow (2017)</h2>
-<p>Distinguished mandatory repairs from discretionary improvements and required enhanced consultation.</p>
-</div></div>
-
-<div class="modal" id="holland">
-<div class="modal-content">
-<span class="close" onclick="closeModal('holland')">&times;</span>
-<h2>Holland v Oxford CC (2002)</h2>
-<p>Reinforced leaseholders’ rights to inspect documents supporting service charges.</p>
-</div></div>
 
 <!-- ============================================================
-   CLIENT REVIEWS
+   MODALS WITH SYNOPSES
+============================================================ -->
+<div class="modal" id="garside"><div class="modal-content"><span class="close" onclick="closeModal('garside')">&times;</span>
+<h2>Garside v RFYC (2011)</h2>
+<p>Case confirming affordability is a relevant factor when assessing whether costs are reasonably incurred.</p>
+</div></div>
+
+<div class="modal" id="waaler"><div class="modal-content"><span class="close" onclick="closeModal('waaler')">&times;</span>
+<h2>Waaler v LB Hounslow (2017)</h2>
+<p>Landlords must consult more thoroughly where works are improvements rather than essential repairs.</p>
+</div></div>
+
+<div class="modal" id="holland"><div class="modal-content"><span class="close" onclick="closeModal('holland')">&times;</span>
+<h2>Holland v Oxford (2002)</h2>
+<p>Reaffirmed leaseholders' right to inspect documents under Section 22 LTA 1985.</p>
+</div></div>
+
+<div class="modal" id="francis"><div class="modal-content"><span class="close" onclick="closeModal('francis')">&times;</span>
+<h2>Francis v Phillips (2014)</h2>
+<p>Landlords cannot artificially divide works to avoid the Section 20 process.</p>
+</div></div>
+
+<div class="modal" id="arnold"><div class="modal-content"><span class="close" onclick="closeModal('arnold')">&times;</span>
+<h2>Arnold v Britton (2015)</h2>
+<p>Courts apply strict interpretation of service charge clauses even if the outcome is harsh.</p>
+</div></div>
+
+
+<!-- ============================================================
+   REVIEWS
 ============================================================ -->
 <section id="reviews" class="section dark fade-in">
 <h2>Client Reviews</h2>
 
 <div class="reviews-grid">
-
-    <div class="review">
-        <h3>Sasha Brookes</h3>
-        <div class="stars">★★★★★</div>
-        <p>Bergason’s management has been outstanding.</p>
-    </div>
-
-    <div class="review">
-        <h3>Benjamin Anderson</h3>
-        <div class="stars">★★★★★</div>
-        <p>Excellent communication and proactive service.</p>
-    </div>
-
-    <div class="review">
-        <h3>Lynne Hinsley</h3>
-        <div class="stars">★★★★★</div>
-        <p>Reliable, personal and professional.</p>
-    </div>
-
+    <div class="review"><h3>Sasha Brookes</h3><div class="stars">★★★★★</div><p>Outstanding management.</p></div>
+    <div class="review"><h3>Benjamin Anderson</h3><div class="stars">★★★★★</div><p>Excellent communication.</p></div>
+    <div class="review"><h3>Lynne Hinsley</h3><div class="stars">★★★★★</div><p>Professional and personal service.</p></div>
+    <div class="review"><h3>Natalie</h3><div class="stars">★★★★★</div><p>Resolved long-standing issues quickly.</p></div>
 </div>
 </section>
 
+
 <!-- ============================================================
-   RTM SUPPORT
+   CONTACT
 ============================================================ -->
 <section id="rtm" class="section light fade-in">
 <h2>RTM Support</h2>
 
 <div class="rtm-grid">
+    <div class="rtm-box">
+        <h3>The RTM Process</h3>
+        <ul>
+            <li>Eligibility assessments</li>
+            <li>Participation coordination</li>
+            <li>Notice drafting</li>
+            <li>Company formation</li>
+            <li>Handover</li>
+        </ul>
+    </div>
 
-<div class="rtm-box">
-<h3>The RTM Process</h3>
-<ul>
-<li>Eligibility checks</li>
-<li>Participation coordination</li>
-<li>Notice drafting</li>
-<li>Company formation</li>
-<li>Freeholder handover</li>
-</ul>
-</div>
-
-<div class="rtm-box">
-<h3>Benefits</h3>
-<ul>
-<li>Financial control</li>
-<li>Transparency</li>
-<li>Contractor choice</li>
-<li>Better governance</li>
-</ul>
-</div>
-
+    <div class="rtm-box">
+        <h3>Benefits</h3>
+        <ul>
+            <li>Financial control</li>
+            <li>Transparency</li>
+            <li>Choice of contractors</li>
+            <li>Improved communication</li>
+        </ul>
+    </div>
 </div>
 </section>
+
 
 <!-- ============================================================
    CONTACT
@@ -326,48 +349,34 @@
 <strong>Bergason Property Services Limited</strong><br>
 8a Bore Street<br>
 Lichfield<br>
+Staffordshire<br>
 WS13 6LL<br><br>
-<strong>Company No:</strong> 11329473<br>
-<strong>Redress:</strong> The Property Ombudsman<br>
-<strong>CMP:</strong> UKALA<br>
+
+<strong>Company Number:</strong> 11329473<br>
+<strong>Redress Scheme:</strong> The Property Ombudsman (T02686)<br>
+<strong>Client Money Protection:</strong> UKALA (190119)<br>
+<strong>Memberships:</strong> The Property Institute (ARMA & IRPM)
 </div>
 
 </div>
 </section>
 
+
 <!-- ============================================================
    FOOTER
 ============================================================ -->
 <footer>
-<div class="footer-links">
-    <span onclick="openModal('legal')">Legal</span> •
-    <span onclick="openModal('privacy')">Privacy Policy</span> •
-    <span onclick="openModal('terms')">Terms & Conditions</span>
-</div>
-© 2025 Bergason Property Services Limited. All Rights Reserved.
+    <div class="footer-links">
+        <span onclick="openModal('legal')">Legal</span> •
+        <span onclick="openModal('privacy')">Privacy Policy</span> •
+        <span onclick="openModal('terms')">Terms & Conditions</span> •
+        <span onclick="openModal('cookies')">Cookie Policy</span> •
+        <span onclick="openModal('aup')">Acceptable Use</span>
+    </div>
+    © 2025 Bergason Property Services Limited. All Rights Reserved.
 </footer>
 
-</div> <!-- END site-scale -->
-
-<!-- ============================================================
-   LEGAL MODALS
-============================================================ -->
-
-<div class="modal" id="legal"><div class="modal-content"><span class="close" onclick="closeModal('legal')">&times;</span>
-<h2>Legal Notice</h2>
-<p>All content is for general information only and not legal advice.</p>
-</div></div>
-
-<div class="modal" id="privacy"><div class="modal-content"><span class="close" onclick="closeModal('privacy')">&times;</span>
-<h2>Privacy Policy</h2>
-<p>Details how personal data is processed in accordance with UK GDPR.</p>
-</div></div>
-
-<div class="modal" id="terms"><div class="modal-content"><span class="close" onclick="closeModal('terms')">&times;</span>
-<h2>Terms & Conditions</h2>
-<p>Use of this website constitutes acceptance of these terms.</p>
-</div></div>
-
 <script src="script.js"></script>
+
 </body>
 </html>
