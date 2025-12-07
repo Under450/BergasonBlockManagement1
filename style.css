@@ -1,65 +1,48 @@
-/* ============================================================
-   GLOBAL + MODERN COLOUR PALETTE
-============================================================ */
-:root {
-    --bg-dark: #2e2e2e;
-    --bg-mid: #3a3a3a;
-    --bg-light: #ffffff;
-    --text-light: #ffffff;
-    --text-dark: #1a1a1a;
-    --gold: #cfa96d;
-    --border-gold: #d9a464;
+/* ---------------------------
+   GLOBAL SCALE (LOCKED)
+---------------------------- */
+.site-scale {
+    zoom: 0.88; 
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
+/* ---------------------------
+   GLOBAL BASE
+---------------------------- */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: var(--bg-dark);
-    color: var(--text-light);
+    background: #ffffff;
 }
 
 .section {
-    padding: 90px 10%;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text-light);
+    padding: 90px 8%;
 }
 
-/* Modern backgrounds */
-.section.light {
-    background: var(--bg-dark);
-    color: var(--text-light);
-}
+.section.light { background: #f7f7f7; }
+.section.dark { background: #1a1a1a; color: #fff; }
 
-.section.dark {
-    background: var(--bg-mid);
-    color: var(--text-light);
-}
-
-/* Section titles */
-.section h2,
-.section h3 {
+h2 {
     text-align: center;
-    margin-bottom: 40px;
     font-size: 36px;
-    font-weight: bold;
-    color: var(--text-light);
+    margin-bottom: 40px;
 }
 
-/* ============================================================
+/* ---------------------------
    HEADER
-============================================================ */
-header {
+---------------------------- */
+.header-fixed {
     width: 100%;
-    background: var(--bg-mid);
-    color: var(--text-light);
-    padding: 20px 35px;
+    padding: 18px 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid var(--gold);
-    box-sizing: border-box;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 3px solid #d9a464;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 
 .logo-img {
@@ -68,361 +51,203 @@ header {
 
 .desktop-nav a {
     margin-left: 25px;
-    color: var(--text-light);
+    color: #000;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 0.5px;
 }
 
 .desktop-nav a:hover {
-    color: var(--gold);
+    color: #d9a464;
 }
 
-.hamburger {
-    display: none;
-}
-
-/* ============================================================
+/* ---------------------------
    HERO
-============================================================ */
+---------------------------- */
 .hero {
-    width: 100%;
-    height: 480px;
+    height: 600px;
     background-image: url("hero.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
-    transition: background-image 1.5s ease-in-out;
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.15);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    top: 35%;
     text-align: center;
-    top: 40%;
-    transform: translateY(-40%);
-    color: #fff;
+    color: white;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin: 0;
+.hero-buttons .btn {
+    display: inline-block;
+    margin: 10px;
 }
 
-.hero p {
-    font-size: 22px;
-    margin-top: 10px;
-}
-
-/* ============================================================
+/* ---------------------------
    BUTTONS
-============================================================ */
+---------------------------- */
 .btn {
     padding: 12px 26px;
     border-radius: 6px;
     font-size: 18px;
     text-decoration: none;
-    display: inline-block;
-    margin: 10px;
 }
 
-.btn.gold {
-    background: var(--gold);
-    color: #000;
-}
+.btn.gold { background: #d9a464; color: #000; }
+.btn.outline { border: 2px solid #d9a464; color: #fff; }
 
-.btn.outline {
-    border: 2px solid var(--gold);
-    color: var(--text-light);
-}
-
-/* ============================================================
-   FLOATING CONTACT BUTTON
-============================================================ */
+/* ---------------------------
+   FLOATING BUTTON
+---------------------------- */
 .floating-contact-btn {
     position: fixed;
-    right: 20px;
     bottom: 20px;
-    background: var(--gold);
-    padding: 14px 20px;
-    border-radius: 8px;
-    color: #000;
-    text-decoration: none;
+    right: 20px;
+    background: #d9a464;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: black;
     font-weight: bold;
-    z-index: 999;
+    text-decoration: none;
 }
 
-/* ============================================================
-   WHY CHOOSE US
-============================================================ */
+/* ---------------------------
+   WHY BOXES
+---------------------------- */
 .why-text {
+    text-align: center;
     max-width: 900px;
     margin: 0 auto 50px auto;
-    font-size: 20px;
-    line-height: 1.6;
-    text-align: center;
-    color: var(--text-light);
 }
 
 .why-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-/* White contrast cards */
 .why-box {
-    background: var(--bg-light) !important;
-    padding: 40px;
+    background: white;
+    padding: 35px;
+    border-left: 6px solid #d9a464;
     border-radius: 12px;
-    border-left: 6px solid var(--gold);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    color: var(--text-dark) !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
-.why-box h3 {
-    margin-top: 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.why-box p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* ============================================================
-   EXTRA TEXT SECTION
-============================================================ */
-.why-extra-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 40px auto 40 auto;
-}
-
+/* ---------------------------
+   WHY EXTRA
+---------------------------- */
 .why-extra-box {
-    background: var(--bg-light) !important;
-    padding: 40px 50px;
+    background: white;
+    padding: 40px;
+    margin-top: 60px;
+    border-left: 6px solid #d9a464;
     border-radius: 12px;
-    border-left: 6px solid var(--gold);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    color: var(--text-dark) !important;
 }
 
 .why-two-col {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* ---------------------------
+   WHAT SETS US APART
+---------------------------- */
+.prestige-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    margin-bottom: 30px;
-}
-
-.why-two-col li {
-    font-size: 18px;
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-/* ============================================================
-   WHAT SETS US APART
-============================================================ */
-.prestige-grid {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    gap: 25px;
-    flex-wrap: wrap;
 }
 
 .prestige-card {
-    width: 32%;
-    background: var(--bg-light) !important;
-    border: 2px solid var(--gold);
-    padding: 25px;
+    background: #fff;
     border-radius: 12px;
+    border: 2px solid #d9a464;
+    padding: 30px;
     text-align: center;
-    color: var(--text-dark) !important;
 }
 
-.prestige-card h3 {
-    margin-bottom: 10px;
-    font-size: 22px;
-}
-
-/* ============================================================
-   ACCORDION
-============================================================ */
+/* ---------------------------
+   SERVICES ACCORDION
+---------------------------- */
 .accordion .item {
-    background: var(--bg-mid);
-    border: 2px solid var(--gold);
-    border-radius: 10px;
+    border: 2px solid #d9a464;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .accordion .title {
-    background: #ffffff !important;     /* full-width white bar */
-    color: var(--gold);
     width: 100%;
-    padding: 18px 25px;
+    padding: 18px;
+    background: #222;
+    color: #d9a464;
     text-align: left;
-    font-size: 20px;
     border: none;
+    font-size: 20px;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px 10px 0 0;       /* smooth round top corners */
-    box-sizing: border-box;
 }
 
-.accordion .content {
+.content {
     display: none;
-    background: var(--gold);
+    background: #d9a464;
+    color: black;
     padding: 20px;
-    color: #000;
 }
 
-/* ============================================================
+/* ---------------------------
    CASE LAW
-============================================================ */
+---------------------------- */
 .case-law-container {
     display: flex;
-    gap: 25px;
     flex-wrap: wrap;
+    gap: 25px;
     justify-content: center;
 }
 
 .case-law-box {
     width: 260px;
     padding: 30px;
-    background: var(--bg-mid);
-    color: var(--text-light);
+    background: #1a1a1a;
+    color: white;
+    border: 2px solid #d9a464;
     border-radius: 12px;
-    border: 2px solid var(--gold);
     text-align: center;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
 .case-law-box:hover {
-    background: var(--gold);
-    color: #000;
+    background: #d9a464;
+    color: black;
 }
 
-/* ============================================================
-   REVIEWS
-============================================================ */
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
-}
-
-.review {
-    background: var(--bg-mid);
-    border: 2px solid var(--gold);
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.review:hover {
-    background: var(--gold);
-    color: #000;
-}
-
-/* ============================================================
-   RTM SUPPORT
-============================================================ */
-.rtm-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.rtm-box {
-    width: 48%;
-    background: var(--bg-light) !important;
-    padding: 25px;
-    border-radius: 12px;
-    border: 2px solid var(--gold);
-    color: var(--text-dark) !important;
-}
-
-/* ============================================================
-   CONTACT
-============================================================ */
-.contact-grid {
-    display: flex;
-    justify-content: space-between;
-}
-
-.contact-form {
-    width: 45%;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-}
-
-.footer-info {
-    width: 45%;
-    line-height: 1.8;
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: var(--bg-mid);
-    border-top: 3px solid var(--gold);
-    color: var(--text-light);
-}
-
-.footer-links span {
-    cursor: pointer;
-    color: var(--gold);
-}
-
-/* ============================================================
+/* ---------------------------
    MODALS
-============================================================ */
+---------------------------- */
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0,0,0,0.65);
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 99999;
 }
 
 .modal-content {
-    background: var(--bg-light);
-    width: 60%;
+    background: white;
     padding: 30px;
-    border-radius: 12px;
+    width: 60%;
     max-height: 80vh;
     overflow-y: auto;
-    color: var(--text-dark);
+    border-radius: 12px;
 }
 
 .close {
@@ -430,62 +255,66 @@ footer {
     cursor: pointer;
     font-size: 28px;
 }
-/* Restore spacing between the two top blocks */
-.why-grid {
-    margin-bottom: 60px !important;
+
+/* ---------------------------
+   REVIEWS
+---------------------------- */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-.why-extra-wrapper {
-    margin-top: 60px !important;
-}
-/* Fix prestige card heading color */
-.prestige-card h3 {
-    color: #000 !important;   /* black heading */
-}
-
-/* Fix prestige card paragraph text */
-.prestige-card p {
-    color: #000 !important;   /* black text */
-}
-/* Fix RTM support text color */
-.rtm-box h3,
-.rtm-box p,
-.rtm-box li {
-    color: #000 !important;     /* black text so it becomes readable */
-}
-/* ============================================================
-   GLOBAL SITE SCALE REFINEMENT (SLEEK MODERN LOOK)
-   Reduces visual heaviness without breaking layout.
-============================================================ */
-body {
-    transform: scale(0.85);     /* reduce total visual size to 92% */
-    transform-origin: top center;
+.review {
+    background: #1a1a1a;
+    border: 2px solid #d9a464;
+    border-radius: 12px;
+    padding: 25px;
 }
 
-@media (max-width: 900px) {
-    body {
-        transform: scale(1);    /* keep mobile at normal size */
-    }
+/* ---------------------------
+   RTM
+---------------------------- */
+.rtm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
-/* ============================================================
-   GLOBAL SITE SCALE REFINEMENT – FIXED (no scrolling issue)
-============================================================ */
 
-.site-scale {
-    transform: scale(0.85);
-    transform-origin: top center;
+.rtm-box {
+    background: white;
+    border: 2px solid #d9a464;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* ---------------------------
+   CONTACT
+---------------------------- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
 }
 
-/* Prevent the page from scrolling beyond content */
-html, body {
-    height: auto !important;
-    overflow-x: hidden;
+/* ---------------------------
+   FOOTER
+---------------------------- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-top: 3px solid #d9a464;
 }
 
-/* Mobile stays normal size */
-@media (max-width: 900px) {
-    .site-wrapper {
-        transform: scale(1);
-    }
+.footer-links span {
+    cursor: pointer;
+    color: #d9a464;
 }
