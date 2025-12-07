@@ -1,52 +1,56 @@
-/* ---------------------------
-   GLOBAL SCALE (LOCKED)
----------------------------- */
-.site-scale {
-    zoom: 0.88; 
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* ---------------------------
-   GLOBAL BASE
----------------------------- */
+/* ============================================================
+   GLOBAL — TEMPLATE LOCKED
+============================================================ */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #ffffff;
+    background: #fff;
+    overflow-x: hidden;
 }
 
 .section {
-    padding: 90px 8%;
+    padding: 70px 10%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.section.light { background: #f7f7f7; }
-.section.dark { background: #1a1a1a; color: #fff; }
+.section.light {
+    background: #f7f7f7;
+}
 
-h2 {
+.section.dark {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Center headings */
+.section h2 {
     text-align: center;
-    font-size: 36px;
     margin-bottom: 40px;
+    font-size: 34px;
+    font-weight: bold;
 }
 
-/* ---------------------------
-   HEADER
----------------------------- */
-.header-fixed {
+/* ============================================================
+   FIXED HEADER
+============================================================ */
+.fixed-header {
     width: 100%;
-    padding: 18px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #ffffff;
-    border-bottom: 3px solid #d9a464;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 9999;
+    left: 0;
+    background: #ffffff;
+    padding: 18px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #d9a464;
+    z-index: 1000;
 }
 
 .logo-img {
-    height: 60px;
+    height: 55px;
 }
 
 .desktop-nav a {
@@ -54,25 +58,33 @@ h2 {
     color: #000;
     text-decoration: none;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .desktop-nav a:hover {
     color: #d9a464;
 }
 
-/* ---------------------------
+.hamburger {
+    display: none;
+}
+
+/* ============================================================
    HERO
----------------------------- */
+============================================================ */
 .hero {
-    height: 600px;
-    background-image: url("hero.jpg");
+    width: 100%;
+    height: 550px;
     background-size: cover;
     background-position: center;
     position: relative;
+    margin-top: 90px; /* compensates for fixed header */
 }
 
 .hero-overlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.15);
@@ -80,174 +92,337 @@ h2 {
 
 .hero-content {
     position: relative;
-    top: 35%;
+    z-index: 2;
     text-align: center;
-    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
 }
 
-.hero-buttons .btn {
+.hero h1 {
+    font-size: 46px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+    padding: 12px 26px;
+    border-radius: 6px;
+    font-size: 17px;
+    text-decoration: none;
     display: inline-block;
     margin: 10px;
 }
 
-/* ---------------------------
-   BUTTONS
----------------------------- */
-.btn {
-    padding: 12px 26px;
-    border-radius: 6px;
-    font-size: 18px;
-    text-decoration: none;
+.btn.gold {
+    background: #d9a464;
+    color: #000;
 }
 
-.btn.gold { background: #d9a464; color: #000; }
-.btn.outline { border: 2px solid #d9a464; color: #fff; }
+.btn.outline {
+    border: 2px solid #d9a464;
+    color: #fff;
+}
 
-/* ---------------------------
-   FLOATING BUTTON
----------------------------- */
+/* ============================================================
+   FLOATING CONTACT BUTTON
+============================================================ */
 .floating-contact-btn {
     position: fixed;
-    bottom: 20px;
     right: 20px;
+    bottom: 20px;
     background: #d9a464;
-    padding: 12px 20px;
-    border-radius: 6px;
-    color: black;
-    font-weight: bold;
+    padding: 14px 20px;
+    border-radius: 8px;
+    color: #000;
     text-decoration: none;
+    font-weight: bold;
+    z-index: 999;
 }
 
-/* ---------------------------
-   WHY BOXES
----------------------------- */
+/* ============================================================
+   SITE SCALE — APPLIES ONLY BELOW HERO
+============================================================ */
+.site-scale {
+    transform: scale(0.85);
+    transform-origin: top center;
+}
+
+/* ============================================================
+   WHY CHOOSE US
+============================================================ */
 .why-text {
-    text-align: center;
     max-width: 900px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 40px auto;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .why-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 35px;
+    margin-bottom: 40px;
 }
 
 .why-box {
-    background: white;
+    background: #fff;
     padding: 35px;
-    border-left: 6px solid #d9a464;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-left: 6px solid #d9a464;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
-/* ---------------------------
-   WHY EXTRA
----------------------------- */
+.why-box h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.why-box p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* EXTRA INFO BOX */
 .why-extra-box {
-    background: white;
-    padding: 40px;
-    margin-top: 60px;
-    border-left: 6px solid #d9a464;
+    background: #ffffff;
+    padding: 45px;
     border-radius: 12px;
+    border-left: 6px solid #d9a464;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    margin-top: 40px;
+}
+
+.why-extra-intro {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 25px;
 }
 
 .why-two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 35px;
 }
 
-/* ---------------------------
+.why-two-col li {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.why-extra-strong {
+    text-align: center;
+    margin-top: 25px;
+    font-weight: bold;
+    color: #d9a464;
+}
+
+/* ============================================================
    WHAT SETS US APART
----------------------------- */
+============================================================ */
 .prestige-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px;
 }
 
 .prestige-card {
-    background: #fff;
-    border-radius: 12px;
+    background: #faf5ee;
     border: 2px solid #d9a464;
-    padding: 30px;
+    padding: 28px;
+    border-radius: 12px;
     text-align: center;
 }
 
-/* ---------------------------
+.prestige-card h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #000;
+}
+
+.prestige-card p {
+    font-size: 17px;
+    color: #000;
+}
+
+/* ============================================================
    SERVICES ACCORDION
----------------------------- */
+============================================================ */
 .accordion .item {
+    background: #222;
     border: 2px solid #d9a464;
-    margin-bottom: 15px;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .accordion .title {
-    width: 100%;
-    padding: 18px;
-    background: #222;
     color: #d9a464;
-    text-align: left;
-    border: none;
+    padding: 18px;
     font-size: 20px;
     cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: space-between;
 }
 
-.content {
+.accordion .content {
     display: none;
     background: #d9a464;
-    color: black;
     padding: 20px;
+    color: #000;
+    border-radius: 0 0 10px 10px;
 }
 
-/* ---------------------------
+/* ============================================================
    CASE LAW
----------------------------- */
+============================================================ */
 .case-law-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .case-law-box {
     width: 260px;
-    padding: 30px;
+    padding: 25px;
     background: #1a1a1a;
-    color: white;
-    border: 2px solid #d9a464;
+    color: #fff;
     border-radius: 12px;
-    text-align: center;
+    border: 2px solid #d9a464;
     cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
 }
 
 .case-law-box:hover {
     background: #d9a464;
-    color: black;
+    color: #000;
 }
 
-/* ---------------------------
+/* ============================================================
+   REVIEWS
+============================================================ */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review {
+    background: #1a1a1a;
+    border: 2px solid #d9a464;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.review:hover {
+    background: #d9a464;
+    color: #000;
+}
+
+.stars {
+    color: #d9a464;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* ============================================================
+   RTM SUPPORT
+============================================================ */
+.rtm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.rtm-box {
+    background: #faf5ee;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #d9a464;
+}
+
+.rtm-box h3 {
+    margin-top: 0;
+}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-info {
+    width: 45%;
+    color: #fff;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #fff;
+    border-top: 3px solid #d9a464;
+    color: #000;
+}
+
+.footer-links span {
+    cursor: pointer;
+    color: #d9a464;
+    font-weight: bold;
+}
+
+/* ============================================================
    MODALS
----------------------------- */
+============================================================ */
 .modal {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.65);
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    z-index: 9999;
 }
 
 .modal-content {
-    background: white;
-    padding: 30px;
+    background: #fff;
     width: 60%;
+    padding: 30px;
+    border-radius: 12px;
     max-height: 80vh;
     overflow-y: auto;
-    border-radius: 12px;
 }
 
 .close {
@@ -256,65 +431,40 @@ h2 {
     font-size: 28px;
 }
 
-/* ---------------------------
-   REVIEWS
----------------------------- */
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
+/* ============================================================
+   MOBILE RESPONSIVENESS
+============================================================ */
+@media (max-width: 900px) {
 
-.review {
-    background: #1a1a1a;
-    border: 2px solid #d9a464;
-    border-radius: 12px;
-    padding: 25px;
-}
+    .desktop-nav { display: none; }
 
-/* ---------------------------
-   RTM
----------------------------- */
-.rtm-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
 
-.rtm-box {
-    background: white;
-    border: 2px solid #d9a464;
-    padding: 30px;
-    border-radius: 12px;
-}
+    .why-grid,
+    .prestige-grid,
+    .why-two-col,
+    .rtm-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
 
-/* ---------------------------
-   CONTACT
----------------------------- */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
+    .contact-grid {
+        flex-direction: column;
+    }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-}
+    .contact-form,
+    .footer-info {
+        width: 100%;
+    }
 
-/* ---------------------------
-   FOOTER
----------------------------- */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: white;
-    border-top: 3px solid #d9a464;
-}
+    .modal-content {
+        width: 90%;
+    }
 
-.footer-links span {
-    cursor: pointer;
-    color: #d9a464;
+    .site-scale {
+        transform: scale(1); /* Stop scaling on mobile */
+    }
 }
