@@ -1,114 +1,433 @@
 /* ============================================================
-   MOBILE MENU TOGGLE
+   GLOBAL
 ============================================================ */
-function toggleMenu() {
-    const nav = document.getElementById("mobileNav");
-    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
 }
 
-/* Close menu when clicking a link */
-document.addEventListener("click", function(e) {
-    if (e.target.closest("#mobileNav a")) {
-        document.getElementById("mobileNav").style.display = "none";
+.section {
+    padding: 90px 10%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section.light {
+    background: #f7f7f7;
+}
+
+.section.dark {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* ============================================================
+   HEADER (STATIC)
+============================================================ */
+.transparent-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 3px solid #d9a464;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 35px;
+    box-sizing: border-box;
+}
+
+.logo-img {
+    height: 60px;
+}
+
+.desktop-nav a {
+    margin-left: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+}
+
+.desktop-nav a:hover {
+    color: #d9a464;
+}
+
+/* ============================================================
+   HERO (ROTATING IMAGES)
+============================================================ */
+.hero {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: background-image 1.2s ease-in-out;
+    margin-top: 95px; /* accounts for fixed header */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 45%;
+    transform: translateY(-45%);
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+    padding: 12px 26px;
+    border-radius: 6px;
+    font-size: 18px;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn.gold {
+    background: #d9a464;
+    color: #000;
+}
+
+.btn.outline {
+    border: 2px solid #d9a464;
+    color: #fff;
+}
+
+/* ============================================================
+   FLOATING CONTACT BUTTON
+============================================================ */
+.floating-contact-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #d9a464;
+    color: #000;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 99999;
+}
+
+/* ============================================================
+   WHY CHOOSE US
+============================================================ */
+.why-text {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    border-left: 6px solid #d9a464;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.why-box h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.why-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   EXTRA SECTION
+============================================================ */
+.why-extra-box {
+    background: #fff;
+    padding: 45px 55px;
+    border-radius: 12px;
+    border-left: 6px solid #d9a464;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.why-extra-intro {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.why-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 30px 0;
+}
+
+.why-two-col ul {
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   WHAT SETS US APART
+============================================================ */
+.prestige-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.prestige-card {
+    width: 32%;
+    background: #faf5ee;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #d9a464;
+    text-align: center;
+}
+
+.prestige-card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+/* ============================================================
+   SERVICES ACCORDION
+============================================================ */
+.accordion .item {
+    background: #222;
+    border-radius: 10px;
+    border: 2px solid #d9a464;
+    margin-bottom: 15px;
+}
+
+.accordion .title {
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    color: #d9a464;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.accordion .content {
+    display: none;
+    padding: 20px;
+    background: #d9a464;
+    color: #000;
+}
+
+/* ============================================================
+   CASE LAW
+============================================================ */
+.case-law-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.case-law-box {
+    width: 260px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid #d9a464;
+    cursor: pointer;
+    transition: .3s;
+    color: #fff;
+}
+
+.case-law-box:hover {
+    background: #d9a464;
+    color: #000;
+}
+
+/* ============================================================
+   MODALS
+============================================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left:0;
+    width: 100%; height:100%;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.modal-content {
+    background: #fff;
+    width: 60%;
+    padding: 30px;
+    border-radius: 12px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ============================================================
+   REVIEWS
+============================================================ */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
+.review {
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #d9a464;
+    padding: 25px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.review:hover {
+    background: #d9a464;
+    color: #000;
+}
+
+.stars {
+    color: #d9a464;
+    font-size: 22px;
+}
+
+/* ============================================================
+   RTM SUPPORT
+============================================================ */
+.rtm-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.rtm-box {
+    width: 48%;
+    background: #faf5ee;
+    border: 2px solid #d9a464;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-info {
+    width: 45%;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    border-top: 3px solid #d9a464;
+}
+
+.footer-links span {
+    cursor: pointer;
+    color: #d9a464;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE
+============================================================ */
+@media(max-width: 900px) {
+
+    .desktop-nav { display: none; }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
     }
-});
 
+    .why-grid { grid-template-columns: 1fr; }
 
-/* ============================================================
-   ACCORDION FUNCTION
-============================================================ */
-document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll(".accordion .item");
+    .why-two-col { grid-template-columns: 1fr; }
 
-    items.forEach(item => {
-        const title = item.querySelector(".title");
-        const content = item.querySelector(".content");
-        const plus = item.querySelector(".plus");
+    .prestige-card { width: 100%; }
 
-        title.addEventListener("click", () => {
-            const isOpen = content.style.display === "block";
+    .reviews-grid { grid-template-columns: 1fr; }
 
-            // Close all
-            document.querySelectorAll(".accordion .content").forEach(c => c.style.display = "none");
-            document.querySelectorAll(".accordion .plus").forEach(p => p.textContent = "+");
+    .contact-grid { flex-direction: column; }
+    .contact-form, .footer-info { width: 100%; }
 
-            // Open selected
-            if (!isOpen) {
-                content.style.display = "block";
-                plus.textContent = "−";
-            }
-        });
-    });
-});
+    .rtm-grid { flex-direction: column; }
+    .rtm-box { width: 100%; }
 
-
-/* ============================================================
-   MODALS — OPEN / CLOSE
-============================================================ */
-function openModal(id) {
-    document.getElementById(id).style.display = "flex";
+    .modal-content { width: 90%; }
 }
-
-function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-}
-
-/* Close modal if clicking outside the content */
-window.addEventListener("click", function(e) {
-    document.querySelectorAll(".modal").forEach(modal => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-});
-
-
-/* ============================================================
-   HERO IMAGE ROTATION WITH FADE
-============================================================ */
-const heroImages = [
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1529421308413-6221b5b2b3c5?auto=format&fit=crop&w=2000&q=80"
-];
-
-let heroIndex = 0;
-const hero = document.getElementById("rotating-hero");
-
-function rotateHero() {
-    hero.classList.add("fade");
-
-    setTimeout(() => {
-        hero.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
-        hero.classList.remove("fade");
-        heroIndex = (heroIndex + 1) % heroImages.length;
-    }, 800);
-}
-
-if (hero) {
-    rotateHero();
-    setInterval(rotateHero, 5000);
-}
-
-
-/* ============================================================
-   FADE-IN ON SCROLL
-============================================================ */
-const faders = document.querySelectorAll(".fade-in");
-
-const appearOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const observer = new IntersectionObserver((entries, observerObj) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observerObj.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => observer.observe(fader));
