@@ -8,6 +8,16 @@
 </head>
 
 <body>
+/* Scale whole site smaller */
+.site-scale {
+    transform: scale(0.85);
+    transform-origin: top center;
+}
+
+/* Prevent long page scroll */
+body {
+    overflow-x: hidden;
+}
 
 <!-- ============================================================
    HEADER (STATIC NAVIGATION)
@@ -375,6 +385,48 @@ WS13 6LL<br><br>
     </div>
     © 2025 Bergason Property Services Limited. All Rights Reserved.
 </footer>
+<div class="modal" id="cookies">
+    <div class="modal-content legal-scroll">
+        <span class="close" onclick="closeModal('cookies')">&times;</span>
+        <h2>Cookie Policy</h2>
+
+        <p>This website uses only strictly necessary cookies required for security, load balancing, session stability and accessibility.</p>
+
+        <h3>What We Do NOT Use</h3>
+        <ul>
+            <li>No analytics cookies</li>
+            <li>No advertising cookies</li>
+            <li>No tracking or profiling cookies</li>
+            <li>No third–party marketing cookies</li>
+        </ul>
+
+        <h3>Types of Cookies Used</h3>
+        <ul>
+            <li><strong>Essential Cookies</strong> – Required for the core operation of the site.</li>
+            <li><strong>Session Cookies</strong> – Deleted automatically when you close your browser.</li>
+        </ul>
+
+        <p>By continuing to browse this website you consent to the use of strictly necessary cookies only.</p>
+    </div>
+</div>
+<div class="modal" id="aup">
+    <div class="modal-content legal-scroll">
+        <span class="close" onclick="closeModal('aup')">&times;</span>
+        <h2>Acceptable Use Policy</h2>
+
+        <p>You may only use this website for lawful purposes and in a manner that is responsible and does not interfere with the security or performance of the platform.</p>
+
+        <h3>You Must NOT:</h3>
+        <ul>
+            <li>Attempt to gain unauthorised access to the site, server or databases</li>
+            <li>Introduce viruses, worms, malware or harmful code</li>
+            <li>Disrupt, overload or impair the performance of the website</li>
+            <li>Use the website to conduct or promote unlawful activity</li>
+        </ul>
+
+        <p>We may restrict or block access for any action that breaches this policy or creates risk to the site or its users.</p>
+    </div>
+</div>
 
 <script src="script.js"></script>
 
