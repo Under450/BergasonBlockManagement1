@@ -462,7 +462,7 @@ footer {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: #999;
+    background: none;
 }
 
 .timeline-item {
