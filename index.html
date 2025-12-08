@@ -409,21 +409,10 @@
 
 <div class="contact-grid">
 
-<form class="contact-form">
-<label>Name</label>
-<input type="text" placeholder="Full Name">
-
-<label>Email</label>
-<input type="email" placeholder="Email Address">
-
-<label>Message</label>
-<textarea placeholder="How can we help?"></textarea>
-
-<button type="submit" class="btn gold">Send Message</button>
-</form>
-<div class="contact-grid">
-
-<form class="contact-form" action="https://formspree.io/f/mdkjvjvp" method="POST">
+<form class="contact-form" 
+      action="https://formspree.io/f/mdkjvjvp" 
+      method="POST"
+      id="contactForm">
 
     <label>Name</label>
     <input type="text" name="name" placeholder="Full Name" required>
@@ -431,10 +420,62 @@
     <label>Email</label>
     <input type="email" name="email" placeholder="Email Address" required>
 
+    <input type="hidden" name="_subject" value="New Bergason Website Contact">
+
     <button type="submit">Send</button>
 </form>
 
 </div>
+
+<!-- Popup message -->
+<div id="thankYouPopup" 
+     style="
+        display:none;
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        background:white;
+        padding:30px 40px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.25);
+        border-radius:8px;
+        font-size:18px;
+        z-index:9999;">
+    Thank you contacting us. A member of the team will contact you shortly.
+</div>
+
+<script>
+// Handle form submission
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    // Send to Formspree
+    const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+        form.reset();
+
+        // Show popup after 4 seconds
+        setTimeout(() => {
+            const popup = document.getElementById("thankYouPopup");
+            popup.style.display = "block";
+
+            // Hide popup after 4 seconds
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 4000);
+
+        }, 4000);
+    }
+});
+</script>
 
 <div class="footer-info">
 <strong>Bergason Property Services Limited</strong><br>
