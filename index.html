@@ -415,10 +415,13 @@
       id="contactForm">
 
     <label>Name</label>
-    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="text" name="name" required>
 
     <label>Email</label>
-    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="email" name="email" required>
+
+    <label>How Can We Help?</label>
+    <textarea name="message" rows="5" required></textarea>
 
     <input type="hidden" name="_subject" value="New Bergason Website Contact">
 
@@ -427,7 +430,7 @@
 
 </div>
 
-<!-- Popup message -->
+<!-- Thank You Popup -->
 <div id="thankYouPopup" 
      style="
         display:none;
@@ -435,13 +438,15 @@
         top:50%;
         left:50%;
         transform:translate(-50%, -50%);
-        background:white;
+        background:#D4A017;             /* Bergason gold/orange */
         padding:30px 40px;
-        box-shadow:0 4px 20px rgba(0,0,0,0.25);
+        box-shadow:0 4px 20px rgba(0,0,0,0.3);
         border-radius:8px;
         font-size:18px;
+        font-weight:bold;
+        color:black;                    /* Black text */
         z-index:9999;">
-    Thank you contacting us. A member of the team will contact you shortly.
+    Thank you for contacting us. A member of the team will contact you shortly.
 </div>
 
 <script>
@@ -462,20 +467,18 @@ document.getElementById("contactForm").addEventListener("submit", async function
     if (response.ok) {
         form.reset();
 
-        // Show popup after 4 seconds
+        // Show popup immediately
+        const popup = document.getElementById("thankYouPopup");
+        popup.style.display = "block";
+
+        // Hide popup after 3 seconds
         setTimeout(() => {
-            const popup = document.getElementById("thankYouPopup");
-            popup.style.display = "block";
-
-            // Hide popup after 4 seconds
-            setTimeout(() => {
-                popup.style.display = "none";
-            }, 4000);
-
-        }, 4000);
+            popup.style.display = "none";
+        }, 3000);
     }
 });
 </script>
+
 
 <div class="footer-info">
 <strong>Bergason Property Services Limited</strong><br>
